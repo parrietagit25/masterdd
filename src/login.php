@@ -46,7 +46,8 @@ if (isset($_POST["email"]) && isset($_POST["password"])) {
 <body>
     <div class="container login-container">
         <div class="login-form">
-            <h1 class="h3 mb-3 fw-normal text-center">Iniciar sesión</h1>
+            <img src="vistas/img/logonf.png" alt="" width="300">
+            <h1 class="h3 mb-3 fw-normal text-center"></h1>
             <?php if (isset($error)): ?>
                 <div class="alert alert-danger" role="alert">
                     <?php echo $error; ?>

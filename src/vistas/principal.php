@@ -1,6 +1,5 @@
 <?php  include 'cabeza.php'; ?>
 <div class="container">
-    <h1 class="my-4">Reportes PowerBI </h1>
-    <p>Sistema de almacenado de reporte de Power BI</p>
+    <h2>Bienvenid al sistema de PANAMA CAR RENTAL, S.A.</h2>
 </div>
 <?php include 'pie.php'; ?>
