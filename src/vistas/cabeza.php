@@ -72,7 +72,9 @@
                             Formularios
                         </a>
                         <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="formularios.php?view=requisitos_debida_diligencia">Requisitos debida diligencia</a></li>
                             <li><a class="dropdown-item" href="formularios.php?view=formulario_cliente_natural">Cliente Persona Natural</a></li>
+                            <li><a class="dropdown-item" href="formularios.php?view=ver_fomularios">Ver Clientes</a></li>
                             <!--<li><a class="dropdown-item" href="#">Another action</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="#">Something else here</a></li>-->

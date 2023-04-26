@@ -35,10 +35,8 @@ if (isset($_GET["view"])) {
         //$tipos = $usuarioController->obtenerTipos();
         require_once("vistas/formulario_cliente_natural.php");
         break;
-      case "editar":
-        $id = $_GET["id"];
-        $usuario = $usuarioController->obtenerUsuario($id);
-        require_once("vistas/editar_usuario.php");
+      case "requisitos_debida_diligencia":
+        require_once("vistas/requisitos_debida_diligencia.php");
         break;
       default:
         $usuarios = $usuarioController->obtenerUsuarios();
