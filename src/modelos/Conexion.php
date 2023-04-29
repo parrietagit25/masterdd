@@ -1,16 +1,33 @@
 <?php
 class Conexion {
-  private $host = "localhost";
-  private $user = "root";
-  private $password = "";
-  private $database = "masterdd";
 
-  protected function conectar() {
-    $conn = new mysqli($this->host, $this->user, $this->password, $this->database);
+  private $server;
+  private $database;
+  //private $username = 'AD\pedro.arrieta'; 
+  //private $password = 'Dollar2022'; 
+
+  public function __construct(){
+    $this->server = 'PCRID239\SQLEXPRESS';  
+    $this->database = 'masterdd';
+  }
+
+  public function conectar() {
+
+    $conn = "";
+
+    try {
+        $connectionString = "odbc:Driver={SQL Server};Server=PCRID239\SQLEXPRESS;Database=masterdd;Trusted_Connection=yes;";
+        $conn = new PDO($connectionString);
+    } catch (PDOException $e) {
+        echo "Error de conexión: " . $e->getMessage();
+    }
+
     return $conn;
+
   }
 
   public function desconectar($conn) {
     $conn->close();
   }
+
 }

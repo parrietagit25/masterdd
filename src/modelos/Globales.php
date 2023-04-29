@@ -1,7 +1,7 @@
 <?php
 require_once("Conexion.php");
 
-class Usuario extends Conexion {
+class ModelGlobal extends Conexion {
   private $conn;
 
   public function __construct() {
@@ -16,54 +16,16 @@ class Usuario extends Conexion {
   
   }
 
-  public function eliminarUsuario($id) {
-    $stmt = $this->conn->prepare("DELETE FROM usuarios WHERE id = ?");
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
-    echo 'Usuario eliminado';
-  }
-
-  public function obtenerUsuario($id) {
-    $stmt = $this->conn->prepare("SELECT * FROM usuarios WHERE id = ?");
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    return $result->fetch_assoc();
-  }
-
-  public function autenticar($email, $password) {
-
-    $result = $this->conn->query("SELECT count(*) as contar FROM usuarios WHERE email = '".$email."'");
-    $rows = $result->fetchAll(PDO::FETCH_ASSOC);
-    
-    foreach ($rows as $row) {
-      $contar = $row['contar']; 
-    }
-
-    if ($contar > 0) {
-
-      $result = $this->conn->query("SELECT * FROM usuarios WHERE email = '".$email."'");
-      $rowss = $result->fetchAll(PDO::FETCH_ASSOC);
-
-      foreach ($rowss as $row) {
-        $pass = $row['password']; 
-      }
-
-      if (password_verify($password, $pass)) {
-        return $rowss;
-      }
-    }
-
-    return null;
-  }
-
   function obtenerTodos($tabla) {
 
     $result = $this->conn->query("SELECT * FROM $tabla WHERE stat = 1");
-    return $result->fetch_all(MYSQLI_ASSOC);
+    $rows = $result->fetchAll(PDO::FETCH_ASSOC);
+    return $rows;
 
   }
 
+  /* Para mysql  */
+  /*
   public function agregar($tabla, $datos) {
 
     $columnas = implode(", ", array_keys($datos));
@@ -81,7 +43,42 @@ class Usuario extends Conexion {
     echo 'Registro Realizados';
     return $resultado;
     
+  } */
+
+  /* para sql server */
+
+  public function agregar($tabla, $datos) {
+    $columnas = implode(", ", array_keys($datos));
+    $placeholders = implode(", ", array_fill(0, count($datos), "?"));
+    $sql = "INSERT INTO $tabla ($columnas) VALUES ($placeholders)";
+    $stmt = $this->conn->prepare($sql);
+    $tipos = str_repeat("s", count($datos));
+    $params = array_values($datos);
+    for ($i = 0; $i < count($params); $i++) {
+        $stmt->bindParam($i + 1, $params[$i]);
+    }
+    $resultado = $stmt->execute();
+    if ($resultado) {
+        echo 'Registro Realizado';
+    }
+    
+    $stmt = $this->conn->query(" SELECT TOP 1 id FROM $tabla ORDER BY id DESC");
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($rows as $key => $value) {
+      $ultimoIdInsertado = $value['id'];
+    }
+    return $ultimoIdInsertado;
   }
+
+  public function sub_agregar($tabla, $datos) {
+    $columnas = implode(", ", array_keys($datos));
+    $params = "'" . implode("', '", array_values($datos)) . "'";
+    $sql = "INSERT INTO $tabla ($columnas) VALUES ($params)";
+    $insert = $this->conn->query($sql);
+
+}
+
+
 
   function actualizar($tabla, $id, $datos) {
     $set_values = "";

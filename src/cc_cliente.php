@@ -7,33 +7,23 @@ if (!isset($_SESSION["usuario"])) {
   exit();
 }
 
-require_once("controladores/UsuarioController.php");
-$usuarioController = new UsuarioController();
+require_once("controladores/CcClienteController.php");
+$usuarioController = new CcclienteController();
 
-if (isset($_POST['registro_usuario'])) {
+if (isset($_POST['registro_cc_cliente'])) {
     $datos = $_POST;  
-    unset($datos['registro_usuario']);
-    $usuarioController->agregar_usuario($datos);
-}
-
-if (isset($_POST['editar_usuario'])) {
-    $datos = $_POST;  
-    unset($datos['editar_usuario']);
-    $usuarioController->actualizarUsuario($datos);
-}
-
-if(isset($_POST['eliminar_usuario'])){
-    $usuarioController->eliminarUsuario($_POST['id']);
+    unset($datos['registro_cc_cliente']);
+    $usuarioController->agregar_cc_cliente($datos);
 }
 
 if (isset($_GET["view"])) {
     $view = $_GET["view"];
   
     switch ($view) {
-      case "formulario_cliente_natural": 
+      case "cc_cliente_natural": 
         //$usuarios = $usuarioController->obtenerUsuarios();
         //$tipos = $usuarioController->obtenerTipos();
-        require_once("vistas/formulario_cliente_natural.php");
+        require_once("vistas/cc_cliente_natural.php");
         break;
       case "requisitos_debida_diligencia":
         require_once("vistas/requisitos_debida_diligencia.php");
@@ -43,6 +33,7 @@ if (isset($_GET["view"])) {
         require_once("vistas/usuarios.php");
         break;
     }
+
   } else {
     $usuarios = $usuarioController->obtenerUsuarios();
     require_once("vistas/principal.php");

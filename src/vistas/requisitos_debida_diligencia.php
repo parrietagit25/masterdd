@@ -1,5 +1,4 @@
 <?php  include 'cabeza.php'; ?>
-
 <div class="container">
     <br>
     <table class="table">
