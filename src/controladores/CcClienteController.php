@@ -17,6 +17,8 @@ class CcclienteController {
   private $tabla_cc_declaracion_jurada;
   private $tabla_cc_adjuntos;
   private $tabla_cc_uso_interno;
+  private $tabla_paises;
+  private $tabla_codigo;
 
     public function __construct() {
         $this->ModelGlobal = new ModelGlobal();
@@ -30,6 +32,8 @@ class CcclienteController {
         $this->tabla_cc_declaracion_jurada = "cc_declaracion_jurada";
         $this->tabla_cc_adjuntos = "cc_adjuntos";
         $this->tabla_cc_uso_interno = "cc_uso_interno";
+        $this->tabla_paises = "paises";
+        $this->tabla_codigo = "codigos";
     }
 
     public function obtenerUsuarios() {
@@ -55,8 +59,40 @@ class CcclienteController {
         $this->usuarioModel->eliminarUsuario($id);
     }
 
-    public function obtenerUsuario($id) {
-        return $this->usuarioModel->obtenerUsuario($id);
+    public function obtener_pais(){
+        return $this->ModelGlobal->obtenerTodos($this->tabla_paises);
+    }
+
+    public function obtener_genero(){
+        return $this->ModelGlobal->obtener_codigo($this->tabla_codigo, "in('01GEN', '02GEN', '03GEN')");    
+    }
+
+    public function obtener_estado_civil(){
+        return $this->ModelGlobal->obtener_codigo($this->tabla_codigo, "in('04ECL', '05ECL')");    
+    }
+
+    public function obtener_profesion(){
+        return $this->ModelGlobal->obtener_codigo($this->tabla_codigo, "like '%PRO'");
+    }
+
+    public function obtener_actividad_principal(){
+        return $this->ModelGlobal->obtener_codigo($this->tabla_codigo, "in ('77FUE', '78FUE', '79FUE', '80FUE', '81FUE')");
+    }
+    
+    public function obtener_actividad_otras(){
+        return $this->ModelGlobal->obtener_codigo($this->tabla_codigo, "in ('82FUE', '83FUE', '84FUE', '85FUE', '86FUE', '87FUE', '88FUE', '89FUE')");
+    }
+
+    public function obtener_forma_pago(){
+        return $this->ModelGlobal->obtener_codigo($this->tabla_codigo, "like '%FDP'");
+    }
+
+    public function obtener_limite(){
+        return $this->ModelGlobal->obtener_codigo($this->tabla_codigo, "like '%LIM'");
+    }
+
+    public function obtener_motodo_pago(){
+        return $this->ModelGlobal->obtener_codigo($this->tabla_codigo, "like '%MDP'");
     }
 
     public function agregar_cc_cliente($datos){

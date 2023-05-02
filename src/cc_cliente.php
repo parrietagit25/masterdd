@@ -1,14 +1,15 @@
 <?php 
 
-session_start();
+//session_start();
 
 if (!isset($_SESSION["usuario"])) {
   header("Location: login.php");
   exit();
 }
 
-require_once("controladores/CcClienteController.php");
-$usuarioController = new CcclienteController();
+ require_once("controladores/CcClienteController.php"); 
+ $clienteController = new CcclienteController(); 
+ $paises = $clienteController->obtener_pais(); 
 
 if (isset($_POST['registro_cc_cliente'])) {
     $datos = $_POST;  
@@ -23,7 +24,8 @@ if (isset($_GET["view"])) {
       case "cc_cliente_natural": 
         //$usuarios = $usuarioController->obtenerUsuarios();
         //$tipos = $usuarioController->obtenerTipos();
-        require_once("vistas/cc_cliente_natural.php");
+        require_once("vistas/modelo_pagina.php");
+        //require_once("vistas/cc_cliente_natural.php");
         break;
       case "requisitos_debida_diligencia":
         require_once("vistas/requisitos_debida_diligencia.php");

@@ -122,6 +122,7 @@
                             <b>Direccion residencial</b>
                             <textarea name="fg_direccion_residencial" class="form-control"></textarea>
                             </div>
+                            
                             <div class="col-3">
                                 <b>Pais de Residencia Fiscal</b>
                                     <select name="fg_pais_residencia_fiscal" id="" class="form-control">

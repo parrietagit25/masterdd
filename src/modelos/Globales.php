@@ -24,6 +24,12 @@ class ModelGlobal extends Conexion {
 
   }
 
+  function obtener_codigo($tabla, $codigos){
+    $result = $this->conn->query("SELECT * FROM $tabla WHERE codigo $codigos");
+    $rows = $result->fetchAll(PDO::FETCH_ASSOC);
+    return $rows;
+  }
+
   /* Para mysql  */
   /*
   public function agregar($tabla, $datos) {

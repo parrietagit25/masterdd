@@ -1,8 +1,5 @@
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    </div> <!-- <<<< solo esta linea - incluido por el tema -->
     <script>
         $(document).ready(function () {
             $('#supertabla').DataTable();
@@ -83,5 +80,11 @@
             
         }
     </script>
-</body>
+        
+        <!-- END layout-wrapper  incluido por el tema -->
+        <?php include 'vistas/layouts/customizer.php'; ?>
+        <?php include 'vistas/layouts/vendor-scripts.php'; ?>
+        <!-- App js -->
+        <script src="vistas/assets/js/app.js"></script>
+    </body>
 </html>

@@ -7,7 +7,7 @@ class Conexion {
   //private $password = 'Dollar2022'; 
 
   public function __construct(){
-    $this->server = 'PCRID239\SQLEXPRESS';  
+    $this->server = 'PEDRO\SQLEXPRESS';  
     $this->database = 'masterdd';
   }
 
@@ -16,7 +16,7 @@ class Conexion {
     $conn = "";
 
     try {
-        $connectionString = "odbc:Driver={SQL Server};Server=PCRID239\SQLEXPRESS;Database=masterdd;Trusted_Connection=yes;";
+        $connectionString = "odbc:Driver={SQL Server};Server=PEDRO\SQLEXPRESS;Database=masterdd;Trusted_Connection=yes;";
         $conn = new PDO($connectionString);
     } catch (PDOException $e) {
         echo "Error de conexión: " . $e->getMessage();
