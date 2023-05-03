@@ -54,20 +54,26 @@ class ModelGlobal extends Conexion {
   /* para sql server */
 
   public function agregar($tabla, $datos) {
-    $columnas = implode(", ", array_keys($datos));
+    /*$columnas = implode(", ", array_keys($datos));
     $placeholders = implode(", ", array_fill(0, count($datos), "?"));
     $sql = "INSERT INTO $tabla ($columnas) VALUES ($placeholders)";
     $stmt = $this->conn->prepare($sql);
     $tipos = str_repeat("s", count($datos));
     $params = array_values($datos);
+    
     for ($i = 0; $i < count($params); $i++) {
         $stmt->bindParam($i + 1, $params[$i]);
     }
     $resultado = $stmt->execute();
     if ($resultado) {
         echo 'Registro Realizado';
-    }
+    } */
     
+    $columnas = implode(", ", array_keys($datos));
+    $params = "'" . implode("', '", array_values($datos)) . "'";
+    $sql = "INSERT INTO $tabla ($columnas) VALUES ($params)";
+    $insert = $this->conn->query($sql);
+
     $stmt = $this->conn->query(" SELECT TOP 1 id FROM $tabla ORDER BY id DESC");
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     foreach ($rows as $key => $value) {
@@ -83,7 +89,6 @@ class ModelGlobal extends Conexion {
     $insert = $this->conn->query($sql);
 
 }
-
 
 
   function actualizar($tabla, $id, $datos) {

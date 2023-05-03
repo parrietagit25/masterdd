@@ -730,14 +730,6 @@
                         </select>
                     </div>
                     <div class="col-3">
-                        <b>Otro</b>
-                        <select name="fp_otro" id="" class="form-control">
-                            <option value="">Seleccionar</option>
-                            <option value="opcion1">Opción 1</option>
-                            <option value="opcion2">Opción 2</option>
-                        </select>
-                    </div>
-                    <div class="col-3">
                         <b>Fecha cargo actual</b>
                         <input type="date" name="fp_fecha" id="" class="form-control">
                     </div>
@@ -871,6 +863,7 @@
                         <b>Fecha</b>
                         <input type="date" name="fui_fecha_2" id="" class="form-control">
                     </div>
+                    
                     <div class="col-4">
                         <b>Nombre y apellidos del analista de cumplimiento</b>
                         <input type="text" name="fui_nombre_completo_3" id="" class="form-control">

@@ -95,6 +95,10 @@ class CcclienteController {
         return $this->ModelGlobal->obtener_codigo($this->tabla_codigo, "like '%MDP'");
     }
 
+    public function obtener_profesion_personas_expuestas(){
+        return $this->ModelGlobal->obtener_codigo($this->tabla_codigo, "like '%PPEP'");
+    }
+
     public function agregar_cc_cliente($datos){
 
         // principal
