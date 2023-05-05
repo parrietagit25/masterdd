@@ -1,18 +1,6 @@
 
     </div> <!-- <<<< solo esta linea - incluido por el tema -->
     <script>
-        $(document).ready(function () {
-            $('#supertabla').DataTable();
-
-            $("#summernote").summernote({
-                height: 300, // Establece la altura del editor en píxeles
-            });
-        }); 
-    </script>
-    <script>
-        tinymce.init({
-            selector: '#mi-campo-de-texto'
-        });
 
         function id_modal_edit_rec(id_edit){
             var id = id_edit;
@@ -79,11 +67,30 @@
                 document.querySelector("#registro_usuario").style.display="block";
             
         }
+
+        function nombre_completo(){
+
+            var primer_nombre = document.querySelector("#primer_nombre").value;
+            var segundo_nombre = document.querySelector("#segundo_nombre").value;
+            var apellido_paterno = document.querySelector("#apellido_paterno").value;
+            var apellido_materno = document.querySelector("#apellido_materno").value;
+            var apellido_casada = document.querySelector("#apellido_casada").value;
+            var nombre_completo = document.querySelector("#nombre_completo_inp");
+
+            document.querySelector("#nombre_completo_inp").value = primer_nombre + ' ' + segundo_nombre + ' ' + apellido_paterno + ' ' + apellido_materno + ' ' + apellido_casada;
+
+        }
+
     </script>
         
         <!-- END layout-wrapper  incluido por el tema -->
         <?php include 'vistas/layouts/customizer.php'; ?>
         <?php include 'vistas/layouts/vendor-scripts.php'; ?>
+
+        <!-- Sweet Alerts js -->
+        <script src="assets/libs/sweetalert2/sweetalert2.min.js"></script>
+        <!-- Sweet alert init js-->
+        <script src="assets/js/pages/sweetalerts.init.js"></script>
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
@@ -101,5 +108,10 @@
         <script src="assets/js/pages/datatables.init.js"></script>
         <!-- App js -->
         <script src="vistas/assets/js/app.js"></script>
+        <script>
+            <?php if(isset($alerta) && $alerta == 1){ ?>
+            setTimeout(document.getElementById("sa-success").click(), 3000);
+            <?php } ?>
+        </script>
     </body>
 </html>

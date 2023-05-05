@@ -385,7 +385,7 @@
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Cliente</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="exp_cliente" readonly>
+                                                                                                    <input type="text" class="form-control" id="nombre_completo_inp" name="exp_cliente" readonly>
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
@@ -482,35 +482,35 @@
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Primer Nombre</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="fg_primer_nombre">
+                                                                                                    <input type="text" class="form-control" id="primer_nombre" name="fg_primer_nombre" onkeyup="nombre_completo()">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Segundo Nombre</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="fg_segundo_nombre">
+                                                                                                    <input type="text" class="form-control" id="segundo_nombre" name="fg_segundo_nombre"  onkeyup="nombre_completo()">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Apellido Paterno</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="fg_apellido_paterno">
+                                                                                                    <input type="text" class="form-control" id="apellido_paterno" name="fg_apellido_paterno"  onkeyup="nombre_completo()">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Apellido Materno</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="fg_apellido_materno">
+                                                                                                    <input type="text" class="form-control" id="apellido_materno" name="fg_apellido_materno"  onkeyup="nombre_completo()">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Apellido de Casada</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="fg_apellido_casada">
+                                                                                                    <input type="text" class="form-control" id="apellido_casada" name="fg_apellido_casada" onkeyup="nombre_completo()">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
@@ -1871,6 +1871,7 @@
                                                                                         </div>
                                                                                         <!--end row-->
                                                                                         <input type="submit" class="btn btn-primary" value="Guardar" name="registro_cc_cliente">
+                                                                                        <button type="button" class="btn btn-primary btn-sm" id="sa-success" style="display:none;">Click me</button>
                                                                                     </div>
                                                                                     <div class="d-none code-view">
                                                                                         <pre class="language-markup" style="height: 450px;">

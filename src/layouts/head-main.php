@@ -30,4 +30,4 @@ if($isScssconverted){
 }
 ?>
 <!DOCTYPE html>
-<html lang="<?=$lng?>" data-layout="vertical" data-topbar="light" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">
+<html lang="<?=$lng?>" data-layout="vertical" data-topbar="dark" data-sidebar="dark" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable">

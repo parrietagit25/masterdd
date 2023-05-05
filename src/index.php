@@ -18,6 +18,8 @@ if (isset($_POST['registro_cc_cliente'])) {
 
   $cCclienteController->subir_archivos($_FILES, $id_general);
 
+  $alerta = 1;
+
 }
 
 if (isset($_GET["view"])) {
@@ -25,6 +27,7 @@ if (isset($_GET["view"])) {
   
     switch ($view) {
       case "ver_clientes":
+        $todos_registros_cc = $cCclienteController->obtenerRegistroClientes();
         require_once("vistas/ver_cc_form.php");
         break;
       case "editar":

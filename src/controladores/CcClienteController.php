@@ -19,6 +19,7 @@ class CcclienteController {
   private $tabla_cc_uso_interno;
   private $tabla_paises;
   private $tabla_codigo;
+  private $tabla_cc_expediente;
 
     public function __construct() {
         $this->ModelGlobal = new ModelGlobal();
@@ -34,6 +35,7 @@ class CcclienteController {
         $this->tabla_cc_uso_interno = "cc_uso_interno";
         $this->tabla_paises = "paises";
         $this->tabla_codigo = "codigos";
+        $this->tabla_cc_expediente = "cc_expediente";
     }
 
     public function obtenerUsuarios() {
@@ -115,6 +117,19 @@ class CcclienteController {
         $ultimo_id = $this->ModelGlobal->agregar($this->tabla_cc_generales, $datos_generales);
         
         $datos["id_general"]= $ultimo_id;
+
+        // Portada
+
+        $datos_expediente = [];
+        foreach ($datos as $key => $value) {
+            if (strpos($key, 'exp_') === 0) {
+                $datos_expediente[$key] = $value; 
+            }
+        }
+
+        $datos_expediente["id_general"] = $ultimo_id;
+
+        $this->ModelGlobal->sub_agregar($this->tabla_cc_expediente, $datos_expediente);
 
         // ocupacion
 
@@ -318,5 +333,9 @@ class CcclienteController {
             }
         }
 
+    }
+
+    public function obtenerRegistroClientes(){
+        return $this->ModelGlobal->obtenerRegistroClientes();
     }
 }

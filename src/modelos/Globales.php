@@ -101,7 +101,6 @@ class ModelGlobal extends Conexion {
 
     $sql = "UPDATE $tabla SET $set WHERE $where";
 
-    echo $sql;
     $insert = $this->conn->query($sql);
 
   }
@@ -139,6 +138,26 @@ class ModelGlobal extends Conexion {
     $resultado = $stmt->execute();
     echo 'Registro Actualizado';
     return $resultado;
+
+  }
+
+  function obtenerRegistroClientes() {
+
+    $result = $this->conn->query("SELECT 
+                                  ge.id,
+                                  ex.exp_codigo_dollar, 
+                                  ex.exp_cliente, 
+                                  (ex.exp_marca  + ' | ' + ex.exp_modelo + ' | ' + ex.exp_color + ' | ' + ex.exp_placa) as vehiculo, 
+                                  ge.fg_fecha_log, 
+                                  CASE
+                                  WHEN ge.fg_stat = 1 THEN 'Registrado'
+                                  WHEN ge.fg_stat = 2 THEN 'No activo'
+                                  ELSE 'Bajo'
+                                  END AS estado
+                                  FROM
+                                  cc_expediente ex INNER JOIN cc_generales ge on ge.id = ex.id_general");
+    $rows = $result->fetchAll(PDO::FETCH_ASSOC);
+    return $rows;
 
   }
 

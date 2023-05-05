@@ -35,14 +35,21 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                        <?php foreach ($todos_registros_cc  as $key => $value) { ?>
                                                         <tr>
-                                                            <td>Tiger Nixon</td>
-                                                            <td>System Architect</td>
-                                                            <td>Edinburgh</td>
-                                                            <td>61</td>
-                                                            <td>2011/04/25</td>
-                                                            <td>$320,800</td>
+                                                            <td><?php echo $value['exp_codigo_dollar']; ?></td>
+                                                            <td><?php echo $value['exp_cliente']; ?></td>
+                                                            <td><?php echo $value['vehiculo']; ?></td>
+                                                            <td><?php echo $value['fg_fecha_log']; ?></td>
+                                                            <td><?php echo $value['estado']; ?></td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-primary btn-icon waves-effect waves-light"><i class="ri-file-2-fill"></i></button>
+                                                                <button type="button" class="btn btn-success btn-icon waves-effect waves-light"><i class=" ri-file-copy-2-line"></i></button>
+                                                                <button type="button" class="btn btn-warning btn-icon waves-effect waves-light"><i class=" ri-attachment-2"></i></button>
+                                                                <button type="button" class="btn btn-danger btn-icon waves-effect waves-light"><i class="ri-delete-bin-5-line"></i></button>
+                                                            </td>
                                                         </tr>
+                                                        <?php } ?>
                                                     </tbody>    
                                                 </table>
                                             </div>

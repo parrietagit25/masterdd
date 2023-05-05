@@ -34,17 +34,17 @@ if (document.getElementById("sa-title"))
 if (document.getElementById("sa-success"))
     document.getElementById("sa-success").addEventListener("click", function () {
         Swal.fire({
-            title: 'Good job!',
-            text: 'You clicked the button!',
+            title: 'Registro Realizado!',
+            text: 'Los datos del cliente se han registrado con exito!',
             icon: 'success',
-            showCancelButton: true,
+            showCancelButton: false,
             confirmButtonClass: 'btn btn-primary w-xs me-2 mt-2',
             cancelButtonClass: 'btn btn-danger w-xs mt-2',
             buttonsStyling: false,
             showCloseButton: true
         })
     });
-
+    
 //error Message
 if (document.getElementById("sa-error"))
     document.getElementById("sa-error").addEventListener("click", function () {
