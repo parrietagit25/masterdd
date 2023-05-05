@@ -5,19 +5,19 @@
         <!-- Dark Logo-->
         <a href="index.php" class="logo logo-dark">
             <span class="logo-sm">
-                <img src="assets/images/logo-sm.png" alt="" height="22">
+                <img src="assets/images/logonf.png" alt="" height="42">
             </span>
             <span class="logo-lg">
-                <img src="assets/images/logo-dark.png" alt="" height="17">
+                <img src="assets/images/logonf.png" alt="" height="27">
             </span>
         </a>
         <!-- Light Logo-->
         <a href="index.php" class="logo logo-light">
             <span class="logo-sm">
-                <img src="assets/images/logo-sm.png" alt="" height="22">
+                <img src="assets/images/logonf.png" alt="" height="42">
             </span>
             <span class="logo-lg">
-                <img src="assets/images/logo-light.png" alt="" height="17">
+                <img src="assets/images/logonf.png" alt="" height="27">
             </span>
         </a>
         <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
@@ -33,11 +33,12 @@
             </div>
             <ul class="navbar-nav" id="navbar-nav">
                 <li class="menu-title"><span><?=$lang['t-menu']?></span></li>
-                <li class="nav-item">
+                <?php /* ?><li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="sidebarDashboards">
                         <i class="ri-dashboard-2-line"></i> <span><?=$lang['t-dashboards']?></span>
                     </a>
+                    
                     <div class="collapse menu-dropdown" id="sidebarDashboards">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
@@ -63,7 +64,8 @@
                             </li>
                         </ul>
                     </div>
-                </li> <!-- end Dashboard Menu -->
+                    <?php 
+                </li> <!-- end Dashboard Menu --> 
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarApps" data-bs-toggle="collapse" role="button"
                         aria-expanded="false" aria-controls="sidebarApps">
@@ -829,58 +831,7 @@
                     <a class="nav-link menu-link" href="widgets.php">
                         <i class="ri-honour-line"></i> <span><?=$lang['t-widgets']?></span>
                     </a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link menu-link" href="#sidebarForms" data-bs-toggle="collapse" role="button"
-                        aria-expanded="false" aria-controls="sidebarForms">
-                        <i class="ri-file-list-3-line"></i> <span><?=$lang['t-forms']?></span>
-                    </a>
-                    <div class="collapse menu-dropdown" id="sidebarForms">
-                        <ul class="nav nav-sm flex-column">
-                            <li class="nav-item">
-                                <a href="forms-elements.php" class="nav-link"><?=$lang['t-basic-elements']?></a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="forms-select.php" class="nav-link"><?=$lang['t-form-select']?></a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="forms-checkboxs-radios.php"
-                                    class="nav-link"><?=$lang['t-checkboxs-radios']?></a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="forms-pickers.php" class="nav-link"><?=$lang['t-pickers']?></a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="forms-masks.php" class="nav-link"><?=$lang['t-input-masks']?></a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="forms-advanced.php" class="nav-link"><?=$lang['t-advanced']?></a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="forms-range-sliders.php" class="nav-link"><?=$lang['t-range-slider']?></a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="forms-validation.php" class="nav-link"><?=$lang['t-validation']?></a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="forms-wizard.php" class="nav-link"><?=$lang['t-wizard']?></a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="forms-editors.php" class="nav-link"><?=$lang['t-editors']?></a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="forms-file-uploads.php" class="nav-link"><?=$lang['t-file-uploads']?></a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="forms-layouts.php" class="nav-link"><?=$lang['t-form-layouts']?></a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="forms-select2.php" class="nav-link" data-key="t-select2"><?=$lang['t-select2']?> </a>
-                            </li>
-                        </ul>
-                    </div>
-                </li>
+                </li> 
 
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="#sidebarTables" data-bs-toggle="collapse" role="button"
@@ -1077,6 +1028,64 @@
                                     </ul>
                                 </div>
                             </li>
+                        </ul>
+                    </div>
+                </li> */ ?>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link" href="#sidebarForms" data-bs-toggle="collapse" role="button"
+                        aria-expanded="false" aria-controls="sidebarForms">
+                        <i class="ri-file-list-3-line"></i> <span><?=$lang['t-forms']?></span>
+                    </a>
+                    <div class="collapse menu-dropdown" id="sidebarForms">
+                        <ul class="nav nav-sm flex-column">
+                            <li class="nav-item">
+                                <a href="index.php" class="nav-link">Conozca a su cliente</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="index.php?view=ver_clientes" class="nav-link">Ver clientes</a>
+                            </li>
+                            <!--
+                            <li class="nav-item">
+                                <a href="forms-elements.php" class="nav-link"><?=$lang['t-basic-elements']?></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="forms-select.php" class="nav-link"><?=$lang['t-form-select']?></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="forms-checkboxs-radios.php"
+                                    class="nav-link"><?=$lang['t-checkboxs-radios']?></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="forms-pickers.php" class="nav-link"><?=$lang['t-pickers']?></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="forms-masks.php" class="nav-link"><?=$lang['t-input-masks']?></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="forms-advanced.php" class="nav-link"><?=$lang['t-advanced']?></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="forms-range-sliders.php" class="nav-link"><?=$lang['t-range-slider']?></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="forms-validation.php" class="nav-link"><?=$lang['t-validation']?></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="forms-wizard.php" class="nav-link"><?=$lang['t-wizard']?></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="forms-editors.php" class="nav-link"><?=$lang['t-editors']?></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="forms-file-uploads.php" class="nav-link"><?=$lang['t-file-uploads']?></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="forms-layouts.php" class="nav-link"><?=$lang['t-form-layouts']?></a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="forms-select2.php" class="nav-link" data-key="t-select2"><?=$lang['t-select2']?> </a>
+                            </li> -->
                         </ul>
                     </div>
                 </li>

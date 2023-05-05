@@ -90,8 +90,36 @@ class ModelGlobal extends Conexion {
 
 }
 
+  function actualizar($tabla, $where, $datos) {
+    /* para sql server */
 
-  function actualizar($tabla, $id, $datos) {
+    $set = "";
+    foreach ($datos as $columna => $valor) {
+        $set .= "$columna = '$valor', ";
+    }
+    $set = rtrim($set, ", ");
+
+    $sql = "UPDATE $tabla SET $set WHERE $where";
+
+    echo $sql;
+    $insert = $this->conn->query($sql);
+
+  }
+
+  function get_param_type($value) {
+    if (is_integer($value)) {
+        return "i";
+    } elseif (is_double($value)) {
+        return "d";
+    } elseif (is_string($value)) {
+        return "s";
+    } else {
+        return "b";
+    }
+  }
+
+  function actualizar_mysql($tabla, $id, $datos) {
+    /* para mysql */
     $set_values = "";
     $param_types = "";
     foreach ($datos as $column => $value) {
@@ -111,18 +139,7 @@ class ModelGlobal extends Conexion {
     $resultado = $stmt->execute();
     echo 'Registro Actualizado';
     return $resultado;
-  }
 
-  function get_param_type($value) {
-    if (is_integer($value)) {
-        return "i";
-    } elseif (is_double($value)) {
-        return "d";
-    } elseif (is_string($value)) {
-        return "s";
-    } else {
-        return "b";
-    }
   }
 
 }

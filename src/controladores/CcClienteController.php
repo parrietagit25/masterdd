@@ -233,6 +233,90 @@ class CcclienteController {
 
         $this->ModelGlobal->sub_agregar($this->tabla_cc_uso_interno, $datos_cc_uso_interno);
 
+        return $ultimo_id;
+
     }
 
+    public function subir_archivos($datos, $id_general){
+
+        if (!empty($_FILES["fdc_firma"]) && $_FILES["fdc_firma"]["error"] == 0) {
+            if (isset($_FILES["fdc_firma"])) {
+
+                $ruta = "vistas/adjuntos/firma/";
+                $file_name = basename($_FILES["fdc_firma"]["name"]);
+                $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
+                $new_file_name = $id_general.'_'.uniqid() . "." . $file_ext;
+                $target_file = $ruta . $new_file_name;
+                $uploadOk = 1;
+                
+                // Verifica si el archivo ya existe
+                if (file_exists($target_file)) {
+                    echo "El archivo ya existe.";
+                    $uploadOk = 0;
+                }
+        
+                // Intenta mover el archivo a la carpeta de destino
+
+                if ($uploadOk == 1 && move_uploaded_file($_FILES["fdc_firma"]["tmp_name"], $target_file)) {
+
+                    $where = "id_general = $id_general";
+                    $datos = array('fdc_firma'=>$target_file);
+                    $this->ModelGlobal->actualizar($this->tabla_cc_declaracion_jurada, $where, $datos);
+
+                } else {
+                    echo "Error al subir el archivo.";
+                }
+            }
+        }
+
+        foreach ($_FILES as $key => $file) {
+            if (!empty($file) && $file["error"] == 0) {
+                $file_name = basename($file["name"]);
+                if ($key == 'fdcad_documento_identidad') {
+
+                    $ruta = "vistas/adjuntos/cedula/";
+
+                }elseif($key == 'fdcad_recibo'){
+
+                    $ruta = "vistas/adjuntos/recibo_contrato/";
+
+                }elseif($key == 'fdcad_aviso_operaciones'){
+
+                    $ruta = "vistas/adjuntos/aviso_licencia/";
+
+                }elseif($key == 'fdcad_evidencia_ingresos'){
+
+                    $ruta = "vistas/adjuntos/evidencia_ingreso/";
+                }
+
+                if (strpos($key, 'fdcad_') === 0) { 
+                    $ruta = $ruta;
+                    $file_name = basename($_FILES[$key]["name"]);
+                    $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
+                    $new_file_name = $id_general.'_'.uniqid() . "." . $file_ext;
+                    $target_file = $ruta . $new_file_name;
+                    $uploadOk = 1;
+                    
+                    // Verifica si el archivo ya existe
+                    if (file_exists($target_file)) {
+                        echo "El archivo ya existe.";
+                        $uploadOk = 0;
+                    }
+            
+                    // Intenta mover el archivo a la carpeta de destino
+                    if ($uploadOk == 1 && move_uploaded_file($_FILES[$key]["tmp_name"], $target_file)) {
+                        $where = "id_general = $id_general";
+                        $datos = array($key=>$target_file);
+                        $this->ModelGlobal->actualizar($this->tabla_cc_adjuntos, $where, $datos);
+                    } else {
+                        echo "Error al subir el archivo.";
+                    }
+                    
+                }
+            } else {
+                echo "No se ha seleccionado un archivo o el archivo está vacío.<br>";
+            }
+        }
+
+    }
 }

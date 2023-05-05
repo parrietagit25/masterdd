@@ -13,15 +13,19 @@ $cCclienteController = new CcclienteController();
 if (isset($_POST['registro_cc_cliente'])) {
   $datos = $_POST;  
   unset($datos['registro_cc_cliente']);
-  $cCclienteController->agregar_cc_cliente($datos);
+
+  $id_general = $cCclienteController->agregar_cc_cliente($datos);
+
+  $cCclienteController->subir_archivos($_FILES, $id_general);
+
 }
 
 if (isset($_GET["view"])) {
     $view = $_GET["view"];
   
     switch ($view) {
-      case "ver":
-        require_once("vistas/usuarios.php");
+      case "ver_clientes":
+        require_once("vistas/ver_cc_form.php");
         break;
       case "editar":
         require_once("vistas/editar_usuario.php");
