@@ -3192,7 +3192,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
 
 <?php }elseif(isset($_GET['portada_formulario_cc'])){ ?>
     <div class="col-xl-3 col-lg-4 col-sm-6" style="margin-left:75px;">
-        <a href="portada_venta/generar_pdf.php" target="_black"><i class="bx bxs-file-pdf" style="font-size: 100px;" ></i></a>
+        <a href="vistas/documentos_generados/generar_pdf.php?id=<?php echo $id; ?>" target="_black"><i class="bx bxs-file-pdf" style="font-size: 100px;" ></i></a>
     </div>
 <?php }elseif(isset($_GET['recaudos_contratos_formulario_cc'])){ ?> 
 <h1>Recaudos</h1>
