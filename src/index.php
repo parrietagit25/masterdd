@@ -13,13 +13,27 @@ $cCclienteController = new CcclienteController();
 if (isset($_POST['registro_cc_cliente'])) {
   $datos = $_POST;  
   unset($datos['registro_cc_cliente']);
-
   $id_general = $cCclienteController->agregar_cc_cliente($datos);
-
   $cCclienteController->subir_archivos($_FILES, $id_general);
-
   $alerta = 1;
+}
 
+if (isset($_POST['actualizar_cc_cliente'])) {
+  $datos = $_POST;  
+  unset($datos['actualizar_cc_cliente']);
+  $id_general = $_POST['id_general'];
+  $cCclienteController->actualizar_cc_cliente($datos, $id_general);
+  $cCclienteController->subir_archivos($_FILES, $id_general);
+  $alerta = 2;
+}
+
+if (isset($_POST['eliminar_cc_cliente'])) {
+  $datos = $_POST;  
+  unset($datos['eliminar_cc_cliente']);
+  $id_general = $_POST['id_eliminar'];
+  $cCclienteController->eliminar_cc_cliente($id_general);
+  //$cCclienteController->subir_archivos($_FILES, $id_general);
+  $alerta = 3;
 }
 
 if (isset($_GET["view"])) {

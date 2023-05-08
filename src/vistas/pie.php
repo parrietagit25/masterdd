@@ -4,28 +4,43 @@
 
         function id_modal_edit_rec(id_edit){
             var id = id_edit;
-            fetch('vistas/modal/modalUsuario.php?id=' + id)
+            fetch('vistas/modal/modalVercCliente.php?editar_formulario_cc=1&id=' + id)
                 .then(function(response) {
                 return response.text();
                 })
                 .then(function(data) {
-                    $('#editar_contenido').modal('show');
-                document.querySelector('#contenido_modal').innerHTML = data;
+                    $('.cClienteFormulario').modal('show');
+                document.querySelector('#contenido_modal_ccliente').innerHTML = data;
                 })
                 .catch(function(error) {
                 console.log('Error al obtener los detalles:', error);
                 });
         }
 
-        function id_model_eli_rec(id_eliminar){
-            var id = id_eliminar;
-            fetch('vistas/modal/modalUsuario.php?eliminar_usuario=1&id=' + id)
+        function id_modal_eliminar_rec(id_eli){
+            var id = id_eli;
+            fetch('vistas/modal/modalVercCliente.php?eliminar_formulario_cc=1&id=' + id)
                 .then(function(response) {
                 return response.text();
                 })
                 .then(function(data) {
-                    $('#eliminar_contenido').modal('show');
-                document.querySelector('#contenido_modal_eliminar').innerHTML = data;
+                    $('.cClienteFormulario_eliminar').modal('show');
+                document.querySelector('#contenido_modal_ccliente_eliminar').innerHTML = data;
+                })
+                .catch(function(error) {
+                console.log('Error al obtener los detalles:', error);
+                });
+        }
+
+        function modal_portada_id(id_portada){
+            var id = id_portada;
+            fetch('vistas/modal/modalVercCliente.php?portada_formulario_cc=1&id=' + id)
+                .then(function(response) {
+                return response.text();
+                })
+                .then(function(data) {
+                    $('.portada_contenido').modal('show');
+                document.querySelector('#contenido_modal_portada').innerHTML = data;
                 })
                 .catch(function(error) {
                 console.log('Error al obtener los detalles:', error);
@@ -110,8 +125,12 @@
         <script src="vistas/assets/js/app.js"></script>
         <script>
             <?php if(isset($alerta) && $alerta == 1){ ?>
-            setTimeout(document.getElementById("sa-success").click(), 3000);
-            <?php } ?>
+                setTimeout(document.getElementById("sa-success").click(), 2000);
+            <?php }elseif(isset($alerta) && $alerta == 2){ ?> 
+                setTimeout(document.getElementById("sa-close").click(), 2000);
+            <?php }elseif(isset($alerta) && $alerta == 3){ ?> 
+                setTimeout(document.getElementById("sa-error").click(), 2000);
+            <?php } ?> 
         </script>
     </body>
 </html>

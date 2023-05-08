@@ -49,12 +49,12 @@ if (document.getElementById("sa-success"))
 if (document.getElementById("sa-error"))
     document.getElementById("sa-error").addEventListener("click", function () {
         Swal.fire({
-            title: 'Oops...',
-            text: 'Something went wrong!',
+            title: 'Registro Eliminado',
+            text: 'El registro se a eliminado!',
             icon: 'error',
             confirmButtonClass: 'btn btn-primary w-xs mt-2',
             buttonsStyling: false,
-            footer: '<a href="">Why do I have this issue?</a>',
+            footer: '<a href="">Eliminado</a>',
             showCloseButton: true
         })
     });
@@ -157,8 +157,8 @@ if (document.getElementById("sa-close"))
     document.getElementById("sa-close").addEventListener("click", function () {
         var timerInterval;
         Swal.fire({
-            title: 'Auto close alert!',
-            html: 'I will close in <strong></strong> seconds.',
+            title: 'Cliente Actualizado!',
+            html: 'El cliente se ha actualizado con exito',
             timer: 2000,
             timerProgressBar: true,
             showCloseButton: true,

@@ -16,7 +16,7 @@ class ModelGlobal extends Conexion {
   
   }
 
-  function obtenerTodos($tabla) {
+  public function obtenerTodos($tabla) {
 
     $result = $this->conn->query("SELECT * FROM $tabla WHERE stat = 1");
     $rows = $result->fetchAll(PDO::FETCH_ASSOC);
@@ -24,7 +24,7 @@ class ModelGlobal extends Conexion {
 
   }
 
-  function obtener_codigo($tabla, $codigos){
+  public function obtener_codigo($tabla, $codigos){
     $result = $this->conn->query("SELECT * FROM $tabla WHERE codigo $codigos");
     $rows = $result->fetchAll(PDO::FETCH_ASSOC);
     return $rows;
@@ -88,21 +88,17 @@ class ModelGlobal extends Conexion {
     $sql = "INSERT INTO $tabla ($columnas) VALUES ($params)";
     $insert = $this->conn->query($sql);
 
-}
+  }
 
-  function actualizar($tabla, $where, $datos) {
+  public function actualizar($tabla, $where, $datos) {
     /* para sql server */
-
     $set = "";
     foreach ($datos as $columna => $valor) {
         $set .= "$columna = '$valor', ";
     }
     $set = rtrim($set, ", ");
-
     $sql = "UPDATE $tabla SET $set WHERE $where";
-
     $insert = $this->conn->query($sql);
-
   }
 
   function get_param_type($value) {
@@ -117,7 +113,7 @@ class ModelGlobal extends Conexion {
     }
   }
 
-  function actualizar_mysql($tabla, $id, $datos) {
+  public function actualizar_mysql($tabla, $id, $datos) {
     /* para mysql */
     $set_values = "";
     $param_types = "";
@@ -136,12 +132,11 @@ class ModelGlobal extends Conexion {
     $stmt->bind_param($param_types, ...$param_values);
 
     $resultado = $stmt->execute();
-    echo 'Registro Actualizado';
     return $resultado;
 
   }
 
-  function obtenerRegistroClientes() {
+  public function obtenerRegistroClientes() {
 
     $result = $this->conn->query("SELECT 
                                   ge.id,
@@ -159,6 +154,19 @@ class ModelGlobal extends Conexion {
     $rows = $result->fetchAll(PDO::FETCH_ASSOC);
     return $rows;
 
+  }
+
+  public function obtenerRegistrosPorId($tabla, $where){
+
+    $result = $this->conn->query("SELECT * FROM $tabla WHERE $where");
+    $rows = $result->fetchAll(PDO::FETCH_ASSOC);
+    return $rows;
+  }
+
+  public function eliminarRegistrosPorId($tabla, $where){
+
+    $result = $this->conn->query("delete FROM $tabla WHERE $where");
+    return $result;
   }
 
 }

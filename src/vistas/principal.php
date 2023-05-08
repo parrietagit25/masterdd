@@ -339,7 +339,7 @@
 
                                 <form method="POST" action="" enctype="multipart/form-data">
                                     <div class="col-xxl-12">
-                                        <h5 class="mb-3">Vertical Nav Tabs</h5>
+                                        <h5 class="mb-3">Tabs</h5>
                                         <div class="card">
                                             <div class="card-body">
                                                 <div class="row">
@@ -757,7 +757,7 @@
                                                                                                 <div>
                                                                                                     <label for="disabledInput" class="form-label">Licita con el estado</label>
                                                                                                     <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="fg_pais_residencia_fiscal">
+                                                                                                        id="choices-single-default" name="fo_licita_estado">
                                                                                                         <option value="">Seleccione</option>
                                                                                                         <option value="SI">SI</option>
                                                                                                         <option value="NO">NO</option>
@@ -769,7 +769,7 @@
                                                                                                 <div>
                                                                                                     <label for="disabledInput" class="form-label">En caso de ser afirmativo, pais o paises con el que licita</label>
                                                                                                     <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="fg_pais_residencia_fiscal">
+                                                                                                        id="choices-single-default" name="fo_pais_residencia_fiscal">
                                                                                                         <option value="">Seleccione</option>
                                                                                                         <?php foreach ($paises as $key => $value) { ?>
                                                                                                         <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
@@ -1871,7 +1871,7 @@
                                                                                         </div>
                                                                                         <!--end row-->
                                                                                         <input type="submit" class="btn btn-primary" value="Guardar" name="registro_cc_cliente">
-                                                                                        <button type="button" class="btn btn-primary btn-sm" id="sa-success" style="display:none;">Click me</button>
+                                                                                        <button type="button" class="btn btn-primary btn-sm" id="sa-success" style="display:none;"></button>
                                                                                     </div>
                                                                                     <div class="d-none code-view">
                                                                                         <pre class="language-markup" style="height: 450px;">
