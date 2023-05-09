@@ -440,7 +440,7 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Codigo Dollar</label>
+                                                                                                    <label for="basiInput" class="form-label">Código Dollar</label>
                                                                                                     <input type="text" class="form-control" id="basiInput" name="exp_codigo_dollar">
                                                                                                 </div>
                                                                                             </div>
@@ -516,7 +516,7 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Pais de Naciemiento</label>
+                                                                                                    <label for="basiInput" class="form-label">País de Naciemiento</label>
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="fg_fecha_nacimiento">
                                                                                                         <option value="">Seleccione</option>
@@ -537,7 +537,7 @@
                                                                                             <!-- end col --> 
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Genero</label>
+                                                                                                    <label for="disabledInput" class="form-label">Género</label>
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="fg_genero">
                                                                                                         <option value="">Seleccione</option>
@@ -576,14 +576,14 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Cedula / N# Pasaporte</label>
+                                                                                                    <label for="basiInput" class="form-label">Cédula/N# Pasaporte</label>
                                                                                                     <input type="text" class="form-control" id="basiInput" name="fg_cedula">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Pais de Residencia</label>
+                                                                                                    <label for="disabledInput" class="form-label">País de Residencia</label>
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="fg_pais_residencia">
                                                                                                         <option value="">Seleccione</option>
@@ -596,7 +596,7 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="exampleFormControlTextarea5" class="form-label">Direccion residencial</label>
+                                                                                                    <label for="exampleFormControlTextarea5" class="form-label">Dirección Residencial</label>
                                                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
                                                                                                         rows="3" name="fg_direccion_residencial"></textarea>
                                                                                                 </div>
@@ -604,7 +604,7 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Pais de Residencia Fiscal</label>
+                                                                                                    <label for="disabledInput" class="form-label">País de Residencia Fiscal</label>
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="fg_pais_residencia_fiscal">
                                                                                                         <option value="">Seleccione</option>
@@ -617,7 +617,7 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="iconInput" class="form-label">Correo Electronico </label>
+                                                                                                    <label for="iconInput" class="form-label">Correo Electrónico </label>
                                                                                                     <div class="form-icon">
                                                                                                         <input type="text" class="form-control form-control-icon"
                                                                                                             id="iconInput" placeholder="example@gmail.com" name="fg_email">
@@ -628,14 +628,14 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Telefono Residencial</label>
+                                                                                                    <label for="basiInput" class="form-label">Teléfono Residencial</label>
                                                                                                     <input type="text" class="form-control" id="basiInput" name="fg_telefono_residencia">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Telefono Movil</label>
+                                                                                                    <label for="basiInput" class="form-label">Teléfono Móvil</label>
                                                                                                     <input type="text" class="form-control" id="basiInput" name="fg_telefono_movil">
                                                                                                 </div>
                                                                                             </div>
@@ -668,7 +668,7 @@
                                                                                         <div class="row gy-4">
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Profesion</label>
+                                                                                                    <label for="disabledInput" class="form-label">Profesión</label>
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="fo_profesion">
                                                                                                         <option value="">Seleccione</option>
@@ -681,7 +681,7 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Ocupacion</label>
+                                                                                                    <label for="disabledInput" class="form-label">Ocupación</label>
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="fo_ocupacion">
                                                                                                         <option value="">Seleccione</option>
@@ -702,7 +702,7 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="exampleFormControlTextarea5" class="form-label">Direccion de Trabajo</label>
+                                                                                                    <label for="exampleFormControlTextarea5" class="form-label">Dirección de Trabajo</label>
                                                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
                                                                                                         rows="3" name="fo_direccion_trabajo"></textarea>
                                                                                                 </div>
@@ -710,7 +710,7 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="iconInput" class="form-label">Correo Electronico del trabajo </label>
+                                                                                                    <label for="iconInput" class="form-label">Correo Electrónico del trabajo </label>
                                                                                                     <div class="form-icon">
                                                                                                         <input type="text" class="form-control form-control-icon"
                                                                                                             id="iconInput" placeholder="example@gmail.com" name="fo_correo_trabajo">
@@ -721,7 +721,7 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Telefono del trabajo</label>
+                                                                                                    <label for="basiInput" class="form-label">Teléfono del trabajo</label>
                                                                                                     <input type="text" class="form-control" id="basiInput" name="fo_telefono_trabajo">
                                                                                                 </div>
                                                                                             </div>
@@ -742,7 +742,7 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Pais de Residencia Fiscal</label>
+                                                                                                    <label for="disabledInput" class="form-label">País de Residencia Fiscal</label>
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="fg_pais_residencia_fiscal">
                                                                                                         <option value="">Seleccione</option>
@@ -755,7 +755,7 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Licita con el estado</label>
+                                                                                                    <label for="disabledInput" class="form-label">Licita con el Estado</label>
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="fo_licita_estado">
                                                                                                         <option value="">Seleccione</option>
@@ -836,7 +836,7 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Limite de compra</label>
+                                                                                                    <label for="disabledInput" class="form-label">Límite de Compra</label>
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="fd_limite_compra">
                                                                                                         <option value="">Seleccione</option>
@@ -862,7 +862,7 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Metodo de Pago</label>
+                                                                                                    <label for="disabledInput" class="form-label">Método de Pago</label>
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="fd_metodo_pago_1">
                                                                                                         <option value="">Seleccione</option>
@@ -875,7 +875,7 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Metodo de Pago 2</label>
+                                                                                                    <label for="disabledInput" class="form-label">Método de Pago 2</label>
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="fd_metodo_pago_2">
                                                                                                         <option value="">Seleccione</option>
@@ -909,13 +909,13 @@
                                                                                 <div class="card-header align-items-center d-flex">
                                                                                     <h4 class="card-title mb-0 flex-grow-1">REFERENCIAS</h4>
                                                                                 </div><!-- end card header -->
-                                                                                <div class="card-body">Referencia Bancarias</div>
+                                                                                <div class="card-body">Referencias Bancarias</div>
                                                                                     <div class="card-body">
                                                                                     <div class="live-preview">
                                                                                         <div class="row gy-4">
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Nombre o razon social</label>
+                                                                                                    <label for="basiInput" class="form-label">Nombre o Razón Social</label>
                                                                                                     <input type="text" class="form-control" id="basiInput" name="fr_razon_social_1">
                                                                                                 </div>
                                                                                             </div>
@@ -929,21 +929,21 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Relacion con cliente</label>
+                                                                                                    <label for="basiInput" class="form-label">Relación con cliente</label>
                                                                                                     <input type="text" class="form-control" id="basiInput" name="fr_relacion_cliente_1">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Telefono</label>
+                                                                                                    <label for="basiInput" class="form-label">Teléfono</label>
                                                                                                     <input type="text" class="form-control" id="basiInput" name="fr_telefono_1">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="iconInput" class="form-label">Correo Electronico </label>
+                                                                                                    <label for="iconInput" class="form-label">Correo Electrónico </label>
                                                                                                     <div class="form-icon">
                                                                                                         <input type="text" class="form-control form-control-icon"
                                                                                                             id="iconInput" placeholder="example@gmail.com" name="fr_correo_electronico_1">
@@ -952,12 +952,12 @@
                                                                                                 </div>
                                                                                             </div>
                                                                                             <div class="card-header align-items-center d-flex">
-                                                                                                <h4 class="card-title mb-0 flex-grow-1">Referencias personales o comerciales(clientes o proveedores)</h4>
+                                                                                                <h4 class="card-title mb-0 flex-grow-1">Rerefencias personales o comerciales( clientes o proveedores)</h4>
                                                                                             </div>
                                                                                                 <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Nombre o razon social</label>
+                                                                                                    <label for="basiInput" class="form-label">Nombre o Razón social</label>
                                                                                                     <input type="text" class="form-control" id="basiInput" name="fr_razon_social_2">
                                                                                                 </div>
                                                                                             </div>
@@ -969,19 +969,19 @@
                                                                                             </div>
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Relacion con cliente</label>
+                                                                                                    <label for="basiInput" class="form-label">Relación con cliente</label>
                                                                                                     <input type="text" class="form-control" id="basiInput" name="fr_relacion_cliente_2">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Telefono</label>
+                                                                                                    <label for="basiInput" class="form-label">Teléfono</label>
                                                                                                     <input type="text" class="form-control" id="basiInput" name="fr_telefono_2">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="iconInput" class="form-label">Correo Electronico </label>
+                                                                                                    <label for="iconInput" class="form-label">Correo Electrónico </label>
                                                                                                     <div class="form-icon">
                                                                                                         <input type="text" class="form-control form-control-icon"
                                                                                                             id="iconInput" placeholder="example@gmail.com" name="fr_correo_electronico_2">
@@ -1016,7 +1016,7 @@
                                                                                 <div class="card-body">
                                                                                     <p>EN ESTE ÚLTIMO CASO, COMPLETE CON LOS DATOS DEL BENEFICIARIO FINAL DE LA TRANSACCIÓN. DE SER PERSONA JURÍDICA,
                                                                                     UTILIZAR EL FORMULARIO DE DEBIDA DILIGENCIA PERSONA JURÍDICA PCR-CUMP-FORM02 Y LA DECLARACIÓN JURADA DE BENEFICIARIOS
-                                                                                    FINALES DE LAS PERSONAS JURÍDICAS</p>
+                                                                                    FINALES DE LAS PERSONAS JURÍDICAS.</p>
                                                                                 </div>
                                                                                 <div class="card-body">
                                                                                     <div class="live-preview">
@@ -1033,7 +1033,7 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Relacion con el cliente</label>
+                                                                                                    <label for="basiInput" class="form-label">Relación con el cliente</label>
                                                                                                     <label for="basiInput" class="form-label">Familiar</label>
                                                                                                     <input class="form-check-input" type="radio" name="fb_relacion_familiar_tercero" id="formradioRight6" value="111BFF">
                                                                                                     <label for="basiInput" class="form-label">Tercero</label>
@@ -1085,7 +1085,7 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Pais de Nacimiento</label>
+                                                                                                    <label for="disabledInput" class="form-label">País de Nacimiento</label>
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="fb_pais_nacimiento">
                                                                                                         <option value="">Seleccione</option>
@@ -1119,7 +1119,7 @@
                                                                                             <!--end col-->  
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Genero</label>
+                                                                                                    <label for="disabledInput" class="form-label">Género</label>
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="fb_genero">
                                                                                                         <option value="">Seleccione</option>
@@ -1145,14 +1145,14 @@
                                                                                             <!--end col-->       
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Cedula / N# Pasaporte</label>
+                                                                                                    <label for="basiInput" class="form-label">Cédula / N# Pasaporte</label>
                                                                                                     <input type="text" class="form-control" id="basiInput" name="fb_identificacion">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->      
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Pais de Residencia</label>
+                                                                                                    <label for="disabledInput" class="form-label">País de Residencia</label>
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="fb_pais_residencia">
                                                                                                         <option value="">Seleccione</option>
@@ -1165,7 +1165,7 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="exampleFormControlTextarea5" class="form-label">Direccion residencial</label>
+                                                                                                    <label for="exampleFormControlTextarea5" class="form-label">Dirección residencial</label>
                                                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
                                                                                                         rows="3" name="fb_direccion_residencial"></textarea>
                                                                                                 </div>
@@ -1173,7 +1173,7 @@
                                                                                             <!--end col--> 
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Pais de Residencia Fiscal</label>
+                                                                                                    <label for="disabledInput" class="form-label">País de Residencia Fiscal</label>
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="fb_pais_residencia_fiscal">
                                                                                                         <option value="">Seleccione</option>
@@ -1186,7 +1186,7 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="iconInput" class="form-label">Correo Electronico </label>
+                                                                                                    <label for="iconInput" class="form-label">Correo Electrónico </label>
                                                                                                     <div class="form-icon">
                                                                                                         <input type="text" class="form-control form-control-icon"
                                                                                                             id="iconInput" placeholder="example@gmail.com" name="fb_email">
@@ -1197,7 +1197,7 @@
                                                                                             <!--end col-->   
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Telefono Residencial</label>
+                                                                                                    <label for="basiInput" class="form-label">Teléfono Residencial</label>
                                                                                                     <input type="text" class="form-control" id="basiInput" name="fb_telefono_residencia">
                                                                                                 </div>
                                                                                             </div>
@@ -1211,7 +1211,7 @@
                                                                                             <!--end col-->    
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Profesion</label>
+                                                                                                    <label for="disabledInput" class="form-label">Profesión</label>
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="fb_profesion">
                                                                                                         <option value="">Seleccione</option>
@@ -1224,7 +1224,7 @@
                                                                                             <!--end col-->   
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Ocupacion</label>
+                                                                                                    <label for="disabledInput" class="form-label">Ocupación</label>
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="fb_ocupacion">
                                                                                                         <option value="">Seleccione</option>
@@ -1302,7 +1302,7 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Detalle relacion</label>
+                                                                                                    <label for="basiInput" class="form-label">Detalle Relación</label>
                                                                                                     <input type="text" class="form-control" id="basiInput" name="ft_relacion_detalle">
                                                                                                 </div>
                                                                                             </div>
@@ -1344,7 +1344,7 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Pais de Nacimiento</label>
+                                                                                                    <label for="disabledInput" class="form-label">País de Nacimiento</label>
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="ft_pais_nacimiento">
                                                                                                         <option value="">Seleccione</option>
@@ -1377,7 +1377,7 @@
                                                                                             </div>   
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Genero</label>
+                                                                                                    <label for="disabledInput" class="form-label">Género</label>
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="ft_genero">
                                                                                                         <option value="">Seleccione</option>
@@ -1401,14 +1401,14 @@
                                                                                             </div>      
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Cedula / N# Pasaporte</label>
+                                                                                                    <label for="basiInput" class="form-label">Cédula / N# Pasaporte</label>
                                                                                                     <input type="text" class="form-control" id="basiInput" name="ft_identificacion">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->      
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Pais de Residencia</label>
+                                                                                                    <label for="disabledInput" class="form-label">País de Residencia</label>
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="ft_pais_residencia">
                                                                                                         <option value="">Seleccione</option>
@@ -1421,7 +1421,7 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="exampleFormControlTextarea5" class="form-label">Direccion residencial</label>
+                                                                                                    <label for="exampleFormControlTextarea5" class="form-label">Dirección residencial</label>
                                                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
                                                                                                         rows="3" name="ft_direccion_residencial"></textarea>
                                                                                                 </div>
@@ -1429,7 +1429,7 @@
                                                                                             <!--end col--> 
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Pais de Residencia Fiscal</label>
+                                                                                                    <label for="disabledInput" class="form-label">País de Residencia Fiscal</label>
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="ft_pais_residencia_fiscal">
                                                                                                         <option value="">Seleccione</option>
@@ -1442,7 +1442,7 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="iconInput" class="form-label">Correo Electronico </label>
+                                                                                                    <label for="iconInput" class="form-label">Correo Electrónico </label>
                                                                                                     <div class="form-icon">
                                                                                                         <input type="text" class="form-control form-control-icon"
                                                                                                             id="iconInput" placeholder="example@gmail.com" name="ft_email">
@@ -1453,21 +1453,21 @@
                                                                                             <!--end col-->   
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Telefono Residencial</label>
+                                                                                                    <label for="basiInput" class="form-label">Teléfono Residencial</label>
                                                                                                     <input type="text" class="form-control" id="basiInput" name="ft_telefono_residencia">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->     
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Telefono Movil</label>
+                                                                                                    <label for="basiInput" class="form-label">Teléfono Movil</label>
                                                                                                     <input type="text" class="form-control" id="basiInput" name="ft_telefono_movil">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->    
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Profesion</label>
+                                                                                                    <label for="disabledInput" class="form-label">Profesión</label>
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="ft_profesion">
                                                                                                         <option value="">Seleccione</option>
@@ -1480,7 +1480,7 @@
                                                                                             <!--end col-->   
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Ocupacion</label>
+                                                                                                    <label for="disabledInput" class="form-label">Ocupación</label>
                                                                                                     <select class="form-control" data-choices
                                                                                                         id="choices-single-default" name="ft_ocupacion">
                                                                                                         <option value="">Seleccione</option>
@@ -1501,7 +1501,7 @@
                                                                                             <!--end col-->   
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="exampleFormControlTextarea5" class="form-label">Direccion de trabajo</label>
+                                                                                                    <label for="exampleFormControlTextarea5" class="form-label">Dirección de trabajo</label>
                                                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
                                                                                                         rows="3" name="ft_direccion_trabajo"></textarea>
                                                                                                 </div>
@@ -1601,7 +1601,7 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-12 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="exampleFormControlTextarea5" class="form-label">Direccion de trabajo</label>
+                                                                                                    <label for="exampleFormControlTextarea5" class="form-label">Comentarios</label>
                                                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
                                                                                                         rows="3" name="fp_comentario"></textarea>
                                                                                                 </div>

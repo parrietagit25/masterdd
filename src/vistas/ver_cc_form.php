@@ -77,9 +77,31 @@
                                             </div>
                                             <div class="modal-body">
                                                 <h6 class="fs-15">
-                                                    Portada FilenVentas.
+                                                    Portada Filen Ventas.
                                                 </h6>
                                                 <div id="contenido_modal_portada">
+
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
+                                            </div>
+                                        </div><!-- /.modal-content -->
+                                    </div><!-- /.modal-dialog -->
+                                </div><!-- /.modal -->
+
+                                <div class="modal fade documentos_contenido" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg">
+                                        <div class="modal-content" style="text-align: center;">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleMocClienteFormulario"></h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <h6 class="fs-15">
+                                                    Documentos 
+                                                </h6>
+                                                <div id="contenido_modal_documentos">
 
                                                 </div>
                                             </div>
@@ -119,7 +141,7 @@
                                                             <td>
                                                                 <button type="button" class="btn btn-secondary btn-icon waves-effect waves-light" onclick="id_modal_edit_rec(<?php echo $value['id']; ?>)"><i class="ri-edit-line"></i></button>
                                                                 <button type="button" class="btn btn-primary btn-icon waves-effect waves-light" onclick="modal_portada_id(<?php echo $value['id']; ?>)"><i class="ri-file-2-fill"></i></button>
-                                                                <button type="button" class="btn btn-success btn-icon waves-effect waves-light"><i class=" ri-file-copy-2-line"></i></button>
+                                                                <button type="button" class="btn btn-success btn-icon waves-effect waves-light" onclick="modal_contrato_id(<?php echo $value['id']; ?>)"><i class=" ri-file-copy-2-line"></i></button>
                                                                 <button type="button" class="btn btn-warning btn-icon waves-effect waves-light"><i class=" ri-attachment-2"></i></button>
                                                                 <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="id_modal_eliminar_rec(<?php echo $value['id']; ?>)"><i class="ri-delete-bin-5-line"></i></button>
                                                             </td>

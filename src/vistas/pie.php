@@ -47,15 +47,15 @@
                 });
         }
 
-        function id_modal_ver_rec(id_reporte){ 
-            var id = id_reporte;
-            fetch('vistas/modal/modalReporte.php?ver_reporte=1&id=' + id)
+        function modal_contrato_id(id_contrato){ 
+            var id = id_contrato;
+            fetch('vistas/modal/modalVercCliente.php?recaudos_contratos_formulario_cc=1&id=' + id)
                 .then(function(response) {
                 return response.text();
                 })
                 .then(function(data) {
-                    $('#ver_contenido_reporte').modal('show');
-                document.querySelector('#contenido_modal_reporte').innerHTML = data;
+                    $('.documentos_contenido').modal('show');
+                document.querySelector('#contenido_modal_documentos').innerHTML = data;
                 })
                 .catch(function(error) {
                 console.log('Error al obtener los detalles:', error);

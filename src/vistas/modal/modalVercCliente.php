@@ -136,7 +136,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <!--end col-->
                                                             <div class="col-xxl-3 col-md-6">
                                                                 <div>
-                                                                    <label for="basiInput" class="form-label">Codigo Dollar</label>
+                                                                    <label for="basiInput" class="form-label">Código Dollar</label>
                                                                     <input type="text" class="form-control" id="basiInput" name="exp_codigo_dollar" value="<?php echo $value['exp_codigo_dollar']; ?>">
                                                                 </div>
                                                             </div>
@@ -1300,7 +1300,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <!--end col-->
                                                             <div class="col-xxl-12 col-md-6">
                                                                 <div>
-                                                                    <label for="exampleFormControlTextarea5" class="form-label">Direccion de trabajo</label>
+                                                                    <label for="exampleFormControlTextarea5" class="form-label">Comentarios</label>
                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
                                                                         rows="3" name="fp_comentario"><?php echo $valueExpuestas['fp_comentario']; ?></textarea>
                                                                 </div>
@@ -2881,7 +2881,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <!--end col-->
                                                             <div class="col-xxl-12 col-md-6">
                                                                 <div>
-                                                                    <label for="exampleFormControlTextarea5" class="form-label">Direccion de trabajo</label>
+                                                                    <label for="exampleFormControlTextarea5" class="form-label">Comentarios</label>
                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
                                                                         rows="3" name="fp_comentario"><?php echo $valueExpuestas['fp_comentario']; ?></textarea>
                                                                 </div>
@@ -3195,7 +3195,77 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
         <a href="vistas/documentos_generados/generar_pdf.php?id=<?php echo $id; ?>" target="_black"><i class="bx bxs-file-pdf" style="font-size: 100px;" ></i></a>
     </div>
 <?php }elseif(isset($_GET['recaudos_contratos_formulario_cc'])){ ?> 
-<h1>Recaudos</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                Contrato <br>
+                <a href="vistas/documentos_generados/contrato_aut.php?id=<?php echo $id; ?>" target="_black"><i class="bx bx-highlight" style="font-size: 100px;" ></i></a>
+                <br>
+                <a href="" class="btn btn-success">Enviar por Email</a>
+            </div>
+            <div class="col-sm-4">
+                Declaracion de domicilio<br>
+                <a href="vistas/documentos_generados/declaracion_domicilio.php?id=<?php echo $id; ?>" target="_black"><i class="bx bx-building-house" style="font-size: 100px;" ></i></a>
+                <br>
+                <a href="" class="btn btn-success">Enviar por Email</a>
+            </div>
+            <div class="col-sm-4">
+                Declaracion de Actividad <br>
+                <a href="vistas/documentos_generados/contrato_aut.php?id=<?php echo $id; ?>" target="_black"><i class="bx bx-show" style="font-size: 100px;" ></i></a>
+                <br>
+                <a href="" class="btn btn-success">Enviar por Email</a>
+            </div>
+            <div class="col-sm-4" style="margin-top:20px;">
+                Pago de Familiares<br>
+                <a href="vistas/documentos_generados/declaracion_domicilio.php?id=<?php echo $id; ?>" target="_black"><i class="bx bxs-group" style="font-size: 100px;" ></i></a>
+                <br>
+                <a href="" class="btn btn-success">Enviar por Email</a>
+            </div>
+            <div class="col-sm-4" style="margin-top:20px;">
+                Pago de Terceros<br>
+                <a href="vistas/documentos_generados/declaracion_domicilio.php?id=<?php echo $id; ?>" target="_black"><i class=" bx bx-user-circle" style="font-size: 100px;" ></i></a>
+                <br>
+                <a href="" class="btn btn-success">Enviar por Email</a>
+            </div>
+            <div class="col-sm-4" style="margin-top:20px;">
+                Traspaso PN<br>
+                <a href="vistas/documentos_generados/declaracion_domicilio.php?id=<?php echo $id; ?>" target="_black"><i class="bx bx-repost" style="font-size: 100px;" ></i></a>
+                <br>
+                <a href="" class="btn btn-success">Enviar por Email</a>
+            </div>
+            <div class="col-sm-4" style="margin-top:20px;">
+                Traspaso PJ<br>
+                <a href="vistas/documentos_generados/declaracion_domicilio.php?id=<?php echo $id; ?>" target="_black"><i class="bx bx-rotate-right" style="font-size: 100px;" ></i></a>
+                <br>
+                <a href="" class="btn btn-success">Enviar por Email</a>
+            </div>
+            <div class="col-sm-4" style="margin-top:20px;">
+                Exoneracion Total<br>
+                <a href="vistas/documentos_generados/declaracion_domicilio.php?id=<?php echo $id; ?>" target="_black"><i class="bx bx-user-voice" style="font-size: 100px;" ></i></a>
+                <br>
+                <a href="" class="btn btn-success">Enviar por Email</a>
+            </div>
+            <div class="col-sm-4" style="margin-top:20px;">
+                Tesoreria Municipal<br>
+                <a href="vistas/documentos_generados/declaracion_domicilio.php?id=<?php echo $id; ?>" target="_black"><i class="bx bx-building" style="font-size: 100px;" ></i></a>
+                <br>
+                <a href="" class="btn btn-success">Enviar por Email</a>
+            </div>
+
+            <div class="col-sm-4" style="margin-top:20px;">
+                Aviso Legal<br>
+                <a href="vistas/documentos_generados/declaracion_domicilio.php?id=<?php echo $id; ?>" target="_black"><i class="bx bx-layer" style="font-size: 100px;" ></i></a>
+                <br>
+                <a href="" class="btn btn-success">Enviar por Email</a>
+            </div>
+            <div class="col-sm-4" style="margin-top:20px;">
+                Detalle de Transaccion<br>
+                <a href="vistas/documentos_generados/declaracion_domicilio.php?id=<?php echo $id; ?>" target="_black"><i class="bx bx-transfer" style="font-size: 100px;" ></i></a>
+                <br>
+                <a href="" class="btn btn-success">Enviar por Email</a>
+            </div>
+        </div>
+    </div>
 <?php }elseif(isset($_GET['adjuntos_formulario_cc'])){ ?>
 <h1>Adjuntos</h1>
 <?php } ?>
