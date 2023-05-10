@@ -1040,7 +1040,10 @@
                     <div class="collapse menu-dropdown" id="sidebarForms">
                         <ul class="nav nav-sm flex-column">
                             <li class="nav-item">
-                                <a href="index.php" class="nav-link">Conozca a su cliente</a>
+                                <a href="index.php" class="nav-link">CC. Persona Natural</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="index.php" class="nav-link">CC. Persona Juridica</a>
                             </li>
                             <li class="nav-item">
                                 <a href="index.php?view=ver_clientes" class="nav-link">Ver clientes</a>

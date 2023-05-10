@@ -1,34 +1,39 @@
 TESTING
 
 campo de correo electrónico y contraseña confunde
-para eliminar un registro al principio no agarra
+--para eliminar un registro al principio no agarra
 
-para llenar los campos, propongo que se coloque un boton de "next" en la esquina inferior derecha para pasar a los siguientes campos.
+para llenar los campos, propongo que se coloque un boton de "next" en la esquina inferior derecha para pasar a 
+los siguientes campos.
 
-cliente: no se puede llenar y no aparece ningún mensaje del porqué
+--cliente: no se puede llenar y no aparece ningún mensaje del porqué
 
 colocar un máximo de caracteres al llenar placa y motor
 que en color no se pueda llenar con números
 
-En fecha de nacimiento, colocar un campo que pueda ser rellenable a mano y no escogido en el calendario, una persona de 50 años o 40, debe tirar 40 años hacia atrás para poder llenar el campo.
+En fecha de nacimiento, colocar un campo que pueda ser rellenable a mano y no escogido en el calendario, una persona 
+de 50 años o 40, debe tirar 40 años hacia atrás para poder llenar el campo.
 No se sobreentiende que se puede reescribir el año
 
 En el campo de profesión, que se pueda llenar otra aparte de las que aparecen.
 
 En ocupación lo mismo
 
-Al elegir la fecha de nacimiento, hay que poner un límite de hasta cuan atras se puede ir en la fecha, o colocar que el usuario ingrese una fecha válida, pues acabo de colocar que Yandel Fernando Salazar Murillo, nació el 8 de marzo de 1200 :D
+Al elegir la fecha de nacimiento, hay que poner un límite de hasta cuan atras se puede ir en la fecha, o colocar que el 
+usuario ingrese una fecha válida, pues acabo de colocar que Yandel Fernando Salazar Murillo, nació el 8 de marzo de 1200 :D
 
 en el estado civil de "beneficiario" hay que separar "casadoa" al igual que "solteroa" 
 
 poner un limite de números en cedula/n de pasaporte, Cédula lleva tilde por ser una palabra esdrújula.
 País lleva tilde también, teléfono, ocupación, correo electrónico, profesión, dirección
 
-en los campos de correo electrónico, colocar un mensaje de error cuando el correo no es válido, al igual que con los números de teléfono, pasaporte y cédula.
+en los campos de correo electrónico, colocar un mensaje de error cuando el correo no es válido, al igual que con los números 
+de teléfono, pasaporte y cédula.
 
 marcar de color rojo cuando en los detalles de relación se ingresa algo sin coherencia, ni signos ni números.
 
-especificar cuales son los campos obligatorios y los que no, pues Yandel probablemente no tiene apellido de casada... O si, no se, ¿Quienes somos para juzgar?
+especificar cuales son los campos obligatorios y los que no, pues Yandel probablemente no tiene apellido de casada... O si, 
+no se, ¿Quienes somos para juzgar?
 
 En P.Expuestas, colocar la opción de que la persona llene el campo por su cuenta, aparte de las opciones que se ofrecen
 
@@ -36,11 +41,15 @@ En declaración Jurídica, cuando se pone la barra de "nombre completo" dar un e
 
 Es decir: 1er nombre, 2do nombre, 1er apellido, 2do apellido
 
-O juro por Dios que habrá alguien que solo llene nombre y apellido, en caso de que lo que se requiera sea todo el nombre, habrá un problema :D...
+O juro por Dios que habrá alguien que solo llene nombre y apellido, en caso de que lo que se requiera sea todo el nombre, 
+habrá un problema :D...
 
-Para poner la firma, no hay una opción de eliminar la imagen en caso de que se haya equivocado. También debe restringirse cuales son los archivos que se pueden seleccionar en donde van las imágenes, no aceptar nada que no sean los 3 formatos de imagen mas comunes.
+Para poner la firma, no hay una opción de eliminar la imagen en caso de que se haya equivocado. También debe restringirse 
+cuales son los archivos que se pueden seleccionar en donde van las imágenes, no aceptar nada que no sean los 3 formatos de 
+imagen mas comunes.
 
-En uso interno, ¿A qué se refiere con nombre y apellidos? solo el primer nombre y los apellidos? en caso de que se necesite solo el primer nombre y el primer apellido, especificar, lo mismo que si es necesario el nombre completo de la persona.
+En uso interno, ¿A qué se refiere con nombre y apellidos? solo el primer nombre y los apellidos? en caso de que se necesite 
+solo el primer nombre y el primer apellido, especificar, lo mismo que si es necesario el nombre completo de la persona.
 
 Le di a pdf y se congeló la página, no funciona para ponerlo en formato pdf.
 

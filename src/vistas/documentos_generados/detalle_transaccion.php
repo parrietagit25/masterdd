@@ -38,16 +38,18 @@ $html = '<div class="container" style="font-size: 10px;">
                     Monto: _______________________________________ <br>
                     <br>
 
-                    <table class="table" style="width:40%; font-size: 10px;" border="1">
+                    <table class="table" style="width:40%; font-size: 10px; position:absolute; left:50%; margin-left:33%; " border="1">
                         <tr>
                             <td style="text-align:center">Formato de pago</td>
                         </tr>
                         <tr>
-                            <td></td>
+                            <td>
+                                |
+                            </td>
                         </tr>
                     </table>
                     <br>
-                    <table class="table" style="width:40%; font-size: 10px;">
+                    <table class="table" style="width:64%; font-size: 10px;">
                         <tr>
                             <td>Recibo N°:</td>
                             <td>__________________</td>
@@ -107,19 +109,30 @@ $html = '<div class="container" style="font-size: 10px;">
                     </table>
                     <br>
                     <b>NOTA:</b> El monto total de pagos debe ser igual al valor de la factura <br>
-                    <table class="table" style="width:100%; font-size: 10px;">
+                    
+                    <table class="table" style="width:90%; font-size: 10px;" border="1">
                         <tr>
-                            <td style="text-align:right">
+                            <td style="text-align:left">
                                 <b>OBSERVACIÓN ADICIONAL:</b>________________________________________________________________________ <br>
-                                <b>Recibo N°:</b>__________________________________ <b>CANCELA TRASPASO</p>_________________________________<br>
+                                <b>Recibo N°:</b>___________________________ <b>CANCELA TRASPASO</b>___________________________________<b>Monto</b><br>
                                 ________________________________________________________________________________________________________<br>
                                 ________________________________________________________________________________________________________<br>
-                            <td>
+                                ___________________________________________________________________________________________________<b>Total</b><br>
+                            </td>
                             <td border="1">
+                            ______________________<br>
+                            B/.
                             </td>
                         </tr>
                     </table>
-                                <br>
+                    
+                    <br>
+
+                    <p>
+                        <b>Vendedor:</b> __________________________________________ <b>Tráfico:</b> ______________________________________ <br>
+                        <b>Encargado de Sucursal:</b>_____________________________________ <b>Contabilidad:</b>____________________________________
+                    </p>
+                    
                     <table class="table" style="width:90%; font-size: 10px; text-align:center;">
                         <tr>
                             <td style="background-color:#5467DE;">AVISO LEGAL</td>

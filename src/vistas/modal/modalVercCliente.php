@@ -3251,13 +3251,6 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                 <br>
                 <button href="" class="btn btn-success">Enviar por Email</button>
             </div>
-
-            <div class="col-sm-4" style="margin-top:20px;">
-                Aviso Legal<br>
-                <a href="vistas/documentos_generados/declaracion_domicilio.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-layer" style="font-size: 100px;" ></i></a>
-                <br>
-                <button href="" class="btn btn-success">Enviar por Email</button>
-            </div>
             <div class="col-sm-4" style="margin-top:20px;">
                 Detalle de Transaccion<br>
                 <a href="vistas/documentos_generados/detalle_transaccion.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-transfer" style="font-size: 100px;" ></i></a>
