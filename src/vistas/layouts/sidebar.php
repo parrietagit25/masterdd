@@ -1043,7 +1043,7 @@
                                 <a href="index.php" class="nav-link">CC. Persona Natural</a>
                             </li>
                             <li class="nav-item">
-                                <a href="index.php" class="nav-link">CC. Persona Juridica</a>
+                                <a href="cc_formulario.php" class="nav-link">CC. Persona Juridica</a>
                             </li>
                             <li class="nav-item">
                                 <a href="index.php?view=ver_clientes" class="nav-link">Ver clientes</a>

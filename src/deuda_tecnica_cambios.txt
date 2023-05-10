@@ -7,4 +7,5 @@ agregar en "Aprobación" al lado "solo para PEPs"
 - Llenar los pdf con los datos suministrado en el formulairio
 - limitar la longitud de caracteres por campo con el lugin que trae el tema 
 - validar campos obligatorios  
-
+- los campos que se ingresan varios paises hay q agregarle esa funcion ya que solo se estan agregando 1 solo
+- agregar el enrutamiento
