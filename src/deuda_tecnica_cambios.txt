@@ -1,0 +1,10 @@
+Para uso Interno de Panama Car Rental
+agregar en "Aprobación" al lado "solo para PEPs"
+
+-- Deuda tecnica y pendientes -- 
+
+- Hacer un boton que imprima todos los docuemntos en 1 solo pdf 
+- Llenar los pdf con los datos suministrado en el formulairio
+- limitar la longitud de caracteres por campo con el lugin que trae el tema 
+- validar campos obligatorios  
+
