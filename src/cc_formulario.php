@@ -7,7 +7,7 @@ if (!isset($_SESSION["usuario"])) {
   exit();
 }
 
-require_once("controladores/CcClienteController.php");
+require_once("controladores/CcclientePjController.php");
 $cCclienteController = new CcclienteController();
 
 if (isset($_POST['registro_cc_cliente'])) {
@@ -63,6 +63,7 @@ if (isset($_GET["view"])) {
     $limite = $cCclienteController->obtener_limite();
     $motodo_pago = $cCclienteController->obtener_motodo_pago();
     $profesion_personas_expuestas = $cCclienteController->obtener_profesion_personas_expuestas();
+    $tipo_persona = $cCclienteController->obtener_tipo_persona();
     require_once("vistas/cc_persona_juridica.php");
   }
   
