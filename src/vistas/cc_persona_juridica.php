@@ -333,6 +333,179 @@
                                     </div><!-- /.modal-content -->
                                 </div><!-- /.modal-dialog -->
                             </div><!-- /.modal -->
+
+                            <!-- MODAL DE LA JUNTA DIRECTIVA -->
+
+                            <div class="modal fade junta_directiva" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content" style="text-align: center;">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleMocClienteFormulario"></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h6 class="fs-15">
+                                                JUNTA DIRECTIVA Y DIGNATARIOS. 
+                                            </h6>
+                                            <div id="contenido_modal_documentos">
+
+                                                <div class="row gy-4">
+                                                    <div class="col-xxl-4 col-md-6">
+                                                        <div>
+                                                            <label for="basiInput" class="form-label">Nombre completo.</label>
+                                                            <input type="text" class="form-control" id="basiInput jd_temp_nombre_completo" name="">
+                                                        </div>
+                                                    </div>
+                                                    <!--end col-->
+                                                    <div class="col-xxl-4 col-md-6">
+                                                        <div>
+                                                            <label for="basiInput" class="form-label">Cargo</label>
+                                                            <input type="text" class="form-control" id="basiInput jd_temp_cargo" name="">
+                                                        </div>
+                                                    </div>
+                                                    <!--end col-->
+                                                    <div class="col-xxl-4 col-md-6">
+                                                        <div>
+                                                            <label for="disabledInput" class="form-label">Nacionalidad</label>
+                                                            <select class="form-control" data-choices
+                                                                id="choices-single-default jd_temp_nacionalidad" name="">
+                                                                <option value="">Seleccione</option>
+                                                                <?php foreach ($paises as $key => $value) { ?>
+                                                                <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
+                                                                <?php } ?>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <!--end col-->
+                                                    <div class="col-xxl-4 col-md-6">
+                                                        <div>
+                                                            <label for="basiInput" class="form-label">I.D.</label>
+                                                            <input type="text" class="form-control" id="basiInput jd_temp_id" name="">
+                                                        </div>
+                                                    </div>
+                                                    <!--end col-->
+                                                    <div class="col-xxl-4 col-md-6">
+                                                        <div>
+                                                            <label for="iconInput" class="form-label">Correo Electrónico </label>
+                                                            <div class="form-icon">
+                                                                <input type="text" class="form-control form-control-icon"
+                                                                    id="iconInput jd_temp_correo" placeholder="example@gmail.com" name="">
+                                                                <i class="ri-mail-unread-line"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                        <!--end col-->
+                                                    <div class="col-xxl-4 col-md-6">
+                                                        <div>
+                                                            <label for="basiInput" class="form-label">Teléfono</label>
+                                                            <input type="text" class="form-control" id="basiInput jd_temp_telefono" name="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xxl-4 col-md-6">
+                                                        <div>
+                                                            <label for="basiInput" class="form-label">Dirección</label>
+                                                            <input type="text" class="form-control" id="basiInput jd_temp_direccion" name="">
+                                                        </div>
+                                                    </div>
+                                                    <!--end col-->
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
+                                            <a href="#" class="btn btn-success">Guardar</a>
+                                        </div>
+                                    </div><!-- /.modal-content -->
+                                </div><!-- /.modal-dialog -->
+                            </div><!-- /.modal -->
+                        
+                            <!-- MODAL APODERADOS -->
+
+                            <div class="modal fade apoderados" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content" style="text-align: center;">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleMocClienteFormulario"></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h6 class="fs-15">
+                                                APODERADOS. 
+                                            </h6>
+                                            <div id="contenido_modal_documentos">
+
+                                                <div class="row gy-4">
+                                                    <div class="col-xxl-4 col-md-6">
+                                                        <div>
+                                                            <label for="basiInput" class="form-label">Nombre completo.</label>
+                                                            <input type="text" class="form-control" id="basiInput a_temp_nombre_completo" name="">
+                                                        </div>
+                                                    </div>
+                                                    <!--end col-->
+                                                    <div class="col-xxl-4 col-md-6">
+                                                        <div>
+                                                            <label for="basiInput" class="form-label">Cargo</label>
+                                                            <input type="text" class="form-control" id="basiInput a_temp_cargo" name="">
+                                                        </div>
+                                                    </div>
+                                                    <!--end col-->
+                                                    <div class="col-xxl-4 col-md-6">
+                                                        <div>
+                                                            <label for="disabledInput" class="form-label">Nacionalidad</label>
+                                                            <select class="form-control" data-choices
+                                                                id="choices-single-default a_temp_nacionalidad" name="">
+                                                                <option value="">Seleccione</option>
+                                                                <?php foreach ($paises as $key => $value) { ?>
+                                                                <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
+                                                                <?php } ?>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <!--end col-->
+                                                    <div class="col-xxl-4 col-md-6">
+                                                        <div>
+                                                            <label for="basiInput" class="form-label">I.D.</label>
+                                                            <input type="text" class="form-control" id="basiInput a_temp_id" name="">
+                                                        </div>
+                                                    </div>
+                                                    <!--end col-->
+                                                    <div class="col-xxl-4 col-md-6">
+                                                        <div>
+                                                            <label for="iconInput" class="form-label">Correo Electrónico </label>
+                                                            <div class="form-icon">
+                                                                <input type="text" class="form-control form-control-icon"
+                                                                    id="iconInput a_temp_correo" placeholder="example@gmail.com" name="fr_correo_electronico_1">
+                                                                <i class="ri-mail-unread-line"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                        <!--end col-->
+                                                    <div class="col-xxl-4 col-md-6">
+                                                        <div>
+                                                            <label for="basiInput" class="form-label">Teléfono</label>
+                                                            <input type="text" class="form-control" id="basiInput a_temp_telefono" name="fr_razon_social_2">
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xxl-4 col-md-6">
+                                                        <div>
+                                                            <label for="basiInput" class="form-label">Dirección</label>
+                                                            <input type="text" class="form-control" id="basiInput a_temp_direccion" name="fr_actividad_2">
+                                                        </div>
+                                                    </div>
+                                                    <!--end col-->
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
+                                            <a href="#" class="btn btn-success">Guardar</a>
+                                        </div>
+                                    </div><!-- /.modal-content -->
+                                </div><!-- /.modal-dialog -->
+                            </div><!-- /.modal -->
+
                         </div>
                     </div>
                     <!-- tabs principal -->
@@ -904,90 +1077,6 @@
                                                                                 <div class="card-body">DETALLE LOS DIRECTORES Y DIGNATARIOS. AGREGUE MÁS LÍNEAS SEGÚN SEA NECESARIO.</div>
                                                                                     <div class="card-body">
                                                                                         <div class="live-preview">
-                                                                                           
-                                                                                            <div class="modal fade junta_directiva" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-                                                                                                <div class="modal-dialog modal-lg">
-                                                                                                    <div class="modal-content" style="text-align: center;">
-                                                                                                        <div class="modal-header">
-                                                                                                            <h5 class="modal-title" id="exampleMocClienteFormulario"></h5>
-                                                                                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                                                        </div>
-                                                                                                        <div class="modal-body">
-                                                                                                            <h6 class="fs-15">
-                                                                                                                JUNTA DIRECTIVA Y DIGNATARIOS. 
-                                                                                                            </h6>
-                                                                                                            <div id="contenido_modal_documentos">
-
-                                                                                                                <div class="row gy-4">
-                                                                                                                    <div class="col-xxl-4 col-md-6">
-                                                                                                                        <div>
-                                                                                                                            <label for="basiInput" class="form-label">Nombre completo.</label>
-                                                                                                                            <input type="text" class="form-control" id="basiInput jd_temp_nombre_completo" name="">
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                    <!--end col-->
-                                                                                                                    <div class="col-xxl-4 col-md-6">
-                                                                                                                        <div>
-                                                                                                                            <label for="basiInput" class="form-label">Cargo</label>
-                                                                                                                            <input type="text" class="form-control" id="basiInput jd_temp_cargo" name="">
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                    <!--end col-->
-                                                                                                                    <div class="col-xxl-4 col-md-6">
-                                                                                                                        <div>
-                                                                                                                            <label for="disabledInput" class="form-label">Nacionalidad</label>
-                                                                                                                            <select class="form-control" data-choices
-                                                                                                                                id="choices-single-default jd_temp_nacionalidad" name="">
-                                                                                                                                <option value="">Seleccione</option>
-                                                                                                                                <?php foreach ($paises as $key => $value) { ?>
-                                                                                                                                <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
-                                                                                                                                <?php } ?>
-                                                                                                                            </select>
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                    <!--end col-->
-                                                                                                                    <div class="col-xxl-4 col-md-6">
-                                                                                                                        <div>
-                                                                                                                            <label for="basiInput" class="form-label">I.D.</label>
-                                                                                                                            <input type="text" class="form-control" id="basiInput jd_temp_id" name="">
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                    <!--end col-->
-                                                                                                                    <div class="col-xxl-4 col-md-6">
-                                                                                                                        <div>
-                                                                                                                            <label for="iconInput" class="form-label">Correo Electrónico </label>
-                                                                                                                            <div class="form-icon">
-                                                                                                                                <input type="text" class="form-control form-control-icon"
-                                                                                                                                    id="iconInput jd_temp_correo" placeholder="example@gmail.com" name="">
-                                                                                                                                <i class="ri-mail-unread-line"></i>
-                                                                                                                            </div>
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                        <!--end col-->
-                                                                                                                    <div class="col-xxl-4 col-md-6">
-                                                                                                                        <div>
-                                                                                                                            <label for="basiInput" class="form-label">Teléfono</label>
-                                                                                                                            <input type="text" class="form-control" id="basiInput jd_temp_telefono" name="">
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                    <div class="col-xxl-4 col-md-6">
-                                                                                                                        <div>
-                                                                                                                            <label for="basiInput" class="form-label">Dirección</label>
-                                                                                                                            <input type="text" class="form-control" id="basiInput jd_temp_direccion" name="">
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                    <!--end col-->
-                                                                                                                </div>
-
-                                                                                                            </div>
-                                                                                                        </div>
-                                                                                                        <div class="modal-footer">
-                                                                                                            <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
-                                                                                                            <a href="#" class="btn btn-success">Guardar</a>
-                                                                                                        </div>
-                                                                                                    </div><!-- /.modal-content -->
-                                                                                                </div><!-- /.modal-dialog -->
-                                                                                            </div><!-- /.modal -->
                                                                                             
                                                                                             <a href="#" data-bs-toggle="modal" data-bs-target=".junta_directiva" class="btn btn-primary">Agregar</a>
 
@@ -1004,7 +1093,7 @@
                                                                                                 </thead>
                                                                                                 <tbody>
                                                                                                     <tr>
-                                                                                                        <td scope="row"></td>
+                                                                                                        <td></td>
                                                                                                         <td></td>
                                                                                                         <td></td>
                                                                                                         <td></td>
@@ -1012,7 +1101,7 @@
                                                                                                         <td></td>
                                                                                                     </tr>
                                                                                                 </tbody>
-                                                                                            </table>
+                                                                                            </table> 
                                                                                             <!--end row-->
                                                                                         </div>
                                                                                         <div class="d-none code-view">
@@ -1023,10 +1112,9 @@
                                                                             </div>
                                                                             <!--end col-->
                                                                         </div>
-
                                                                     </div>
                                                                 </div>
-                                                            </div>
+                                                            
                                                             <!-- Apoderados -->
                                                             <div class="tab-pane fade" id="apoderados" role="tabpanel" aria-labelledby="apoderados-tab">
                                                                 <div class="d-flex mb-2">
@@ -1040,91 +1128,7 @@
                                                                                 
                                                                                 <div class="card-body">
                                                                                     <div class="live-preview">
-                                                                                        <?php /* 
-                                                                                        <div class="modal fade apoderados" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
-                                                                                            <div class="modal-dialog modal-lg">
-                                                                                                <div class="modal-content" style="text-align: center;">
-                                                                                                    <div class="modal-header">
-                                                                                                        <h5 class="modal-title" id="exampleMocClienteFormulario"></h5>
-                                                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                                                    </div>
-                                                                                                    <div class="modal-body">
-                                                                                                        <h6 class="fs-15">
-                                                                                                            APODERADOS. 
-                                                                                                        </h6>
-                                                                                                        <div id="contenido_modal_documentos">
-
-                                                                                                            <div class="row gy-4">
-                                                                                                                <div class="col-xxl-4 col-md-6">
-                                                                                                                    <div>
-                                                                                                                        <label for="basiInput" class="form-label">Nombre completo.</label>
-                                                                                                                        <input type="text" class="form-control" id="basiInput a_temp_nombre_completo" name="">
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                                <!--end col-->
-                                                                                                                <div class="col-xxl-4 col-md-6">
-                                                                                                                    <div>
-                                                                                                                        <label for="basiInput" class="form-label">Cargo</label>
-                                                                                                                        <input type="text" class="form-control" id="basiInput a_temp_cargo" name="">
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                                <!--end col-->
-                                                                                                                <div class="col-xxl-4 col-md-6">
-                                                                                                                    <div>
-                                                                                                                        <label for="disabledInput" class="form-label">Nacionalidad</label>
-                                                                                                                        <select class="form-control" data-choices
-                                                                                                                            id="choices-single-default a_temp_nacionalidad" name="">
-                                                                                                                            <option value="">Seleccione</option>
-                                                                                                                            <?php foreach ($paises as $key => $value) { ?>
-                                                                                                                            <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
-                                                                                                                            <?php } ?>
-                                                                                                                        </select>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                                <!--end col-->
-                                                                                                                <div class="col-xxl-4 col-md-6">
-                                                                                                                    <div>
-                                                                                                                        <label for="basiInput" class="form-label">I.D.</label>
-                                                                                                                        <input type="text" class="form-control" id="basiInput a_temp_id" name="">
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                                <!--end col-->
-                                                                                                                <div class="col-xxl-4 col-md-6">
-                                                                                                                    <div>
-                                                                                                                        <label for="iconInput" class="form-label">Correo Electrónico </label>
-                                                                                                                        <div class="form-icon">
-                                                                                                                            <input type="text" class="form-control form-control-icon"
-                                                                                                                                id="iconInput a_temp_correo" placeholder="example@gmail.com" name="fr_correo_electronico_1">
-                                                                                                                            <i class="ri-mail-unread-line"></i>
-                                                                                                                        </div>
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                                    <!--end col-->
-                                                                                                                <div class="col-xxl-4 col-md-6">
-                                                                                                                    <div>
-                                                                                                                        <label for="basiInput" class="form-label">Teléfono</label>
-                                                                                                                        <input type="text" class="form-control" id="basiInput a_temp_telefono" name="fr_razon_social_2">
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                                <div class="col-xxl-4 col-md-6">
-                                                                                                                    <div>
-                                                                                                                        <label for="basiInput" class="form-label">Dirección</label>
-                                                                                                                        <input type="text" class="form-control" id="basiInput a_temp_direccion" name="fr_actividad_2">
-                                                                                                                    </div>
-                                                                                                                </div>
-                                                                                                                <!--end col-->
-                                                                                                            </div>
-
-                                                                                                        </div>
-                                                                                                    </div>
-                                                                                                    <div class="modal-footer">
-                                                                                                        <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
-                                                                                                        <a href="#" class="btn btn-success">Guardar</a>
-                                                                                                    </div>
-                                                                                                </div><!-- /.modal-content -->
-                                                                                            </div><!-- /.modal-dialog -->
-                                                                                        </div><!-- /.modal -->
-                                                                                        */ ?>
+                                                                                        
                                                                                         <a href="#" data-bs-toggle="modal" data-bs-target=".apoderados" class="btn btn-primary">Agregar</a>
 
                                                                                         <table class="table">
@@ -1261,7 +1265,7 @@
 
                                                                 </div>
                                                             </div>
-
+                                                            <!-- DECLARACION DE ACCIONISTAS -->
                                                             <div class="tab-pane fade" id="declaracion_accionistas" role="tabpanel" aria-labelledby="declaracion_accionistas-tab">
                                                                 <div class="d-flex mb-2">
 
@@ -1269,82 +1273,65 @@
                                                                         <div class="col-lg-12">
                                                                             <div class="card">
                                                                                 <div class="card-header align-items-center d-flex">
-                                                                                    <h4 class="card-title mb-0 flex-grow-1">PERSONAS EXPUESTAS POLÍTICAMENTE (PEPS)</h4>
+                                                                                    <h4 class="card-title mb-0 flex-grow-1">DECLARACIÓN DE ACCIONISTAS.</h4>
                                                                                 </div><!-- end card header -->
                                                                                 <div class="card-body">
                                                                                     <div class="live-preview">
                                                                                         <div class="row gy-4">
-                                                                                        <p>
-                                                                                        LAS PERSONAS EXPUESTAS POLÍTICAMENTE SON LAS PERSONAS NACIONALES O EXTRANJERAS QUE CUMPLEN FUNCIONES PÚBLICAS DESTACADAS DE ALTO NIVEL O CON MANDO Y 
-                                                                                        JURISDICCIÓN EN UN ESTADO, COMO (PERO SIN LIMITARSE) LOS JEFES DE ESTADO O DE UN GOBIERNO, LOS POLÍTICOS DE ALTO PERFIL, LOS FUNCIONARIOS GUBERNAMENTALES, 
-                                                                                        JUDICIALES O MILITARES DE ALTA JERARQUÍA, LOS EJECUTIVOS DE EMPRESAS O CORPORACIONES ESTATALES LOS FUNCIONARIOS PÚBLICOS QUE OCUPEN POSICIONES DE ELECCIÓN 
-                                                                                        POPULAR, ENTRE OTROS QUE EJERZAN LA TOMA DE DECISIONES EN LAS ENTIDADES PÚBLICAS; PERSONAS QUE CUMPLEN  O A QUIÉNES SE LES HA CONFIADO FUNCIONES IMPORTANTES 
-                                                                                        POR UNA ORGANIZACIÓN INSTITUCIONAL, COMO LOS MIEMBROS DE LA ALTA GERENCIA, ES DECIR DIRECTORES, SUBDIRECTORES Y MIEMBROS DE LA JUNTA DIRECTIVA O FUNCIONES EQUIVALENTES.
-                                                                                        </p>
-                                                                                            <div class="col-xxl-7 col-md-6">
+                                                                                        <p>DETALLE LOS NOMBRES DE LOS ACCIONISTAS QUE TENGAN EL DERECHO A EJERCER EL VOTO CON RESPECTO AL VEINTICINCO POR CIENTO (25%) O MÁS DE LAS ACCIONES EMITIDAS Y EN CIRCULACIÓN. ADICIONAL DEBERÁ COMPLETAR LA DECLARACIÓN JURADA DE BENEFICIARIOS FINALES PERSONA JURÍDICA.</p>
+                                                                                            <div class="col-xxl-6 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">¿ES EL CLIENTE, EL BENEFICIARIO FINAL O EL TERCERO AUTORIZADO UN PEP, FAMILIAR CERCANO O ESTRECHO COLABORADOR DE UN PEP?</label>
-                                                                                                    <label for="basiInput" class="form-label">Cliente</label>
-                                                                                                    <input class="form-check-input" type="radio" name="fp_beneficiario" value="109BFF">
-                                                                                                    <label for="basiInput" class="form-label">Tercero</label>
-                                                                                                    <input class="form-check-input" type="radio" name="fp_beneficiario" value="110BFF">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-5 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Nombre Completo</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="fp_nombre_completo">
+                                                                                                    <label for="basiInput" class="form-label">Nombre del accionista(Natural o Jurídica).</label>
+                                                                                                    <input class="form-control" type="text" name="pjda_nombre_completo_accionista[]">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-6 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Cargo Actual</label>
-                                                                                                    <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="fp_cargo_actual">
-                                                                                                        <option value="">Seleccione</option>
-                                                                                                        <?php foreach ($profesion_personas_expuestas as $key => $value) { ?>
-                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
-                                                                                                        <?php } ?>
-                                                                                                    </select>
+                                                                                                    <label for="basiInput" class="form-label">Participación Accionarias</label>
+                                                                                                    <input type="text" class="form-control" id="basiInput" name="pjda_participacion_accionaria[]">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-6 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Fecha Actual</label>
-                                                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                                                    data-date-format="d M, Y" name="fp_fecha">
+                                                                                                    <label for="basiInput" class="form-label">Nombre del accionista(Natural o Jurídica).</label>
+                                                                                                    <input class="form-control" type="text" name="pjda_nombre_completo_accionista[]">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-6 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Cargo Anterior</label>
-                                                                                                    <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="fp_cargo_anterior">
-                                                                                                        <option value="">Seleccione</option>
-                                                                                                        <?php foreach ($profesion_personas_expuestas as $key => $value) { ?>
-                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
-                                                                                                        <?php } ?>
-                                                                                                    </select>
+                                                                                                    <label for="basiInput" class="form-label">Participación Accionarias</label>
+                                                                                                    <input type="text" class="form-control" id="basiInput" name="pjda_participacion_accionaria[]">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-6 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Fecha Anterior</label>
-                                                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                                                    data-date-format="d M, Y" name="fp_fecha_anterior">
+                                                                                                    <label for="basiInput" class="form-label">Nombre del accionista(Natural o Jurídica).</label>
+                                                                                                    <input class="form-control" type="text" name="pjda_nombre_completo_accionista[]">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-12 col-md-6">
+                                                                                            <div class="col-xxl-6 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="exampleFormControlTextarea5" class="form-label">Comentarios</label>
-                                                                                                    <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                                                        rows="3" name="fp_comentario"></textarea>
+                                                                                                    <label for="basiInput" class="form-label">Participación Accionarias</label>
+                                                                                                    <input type="text" class="form-control" id="basiInput" name="pjda_participacion_accionaria[]">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-6 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="basiInput" class="form-label">Nombre del accionista(Natural o Jurídica).</label>
+                                                                                                    <input class="form-control" type="text" name="pjda_nombre_completo_accionista[]">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-6 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="basiInput" class="form-label">Participación Accionarias</label>
+                                                                                                    <input type="text" class="form-control" id="basiInput" name="pjda_participacion_accionaria[]">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!-- end col -->                        
@@ -1362,7 +1349,7 @@
 
                                                                 </div>
                                                             </div>
-
+                                                            <!-- Beneficiario final -->
                                                             <div class="tab-pane fade" id="beneficio_final" role="tabpanel" aria-labelledby="beneficio_final-tab">
                                                                 <div class="d-flex mb-2">
 
@@ -1370,148 +1357,65 @@
                                                                         <div class="col-lg-12">
                                                                             <div class="card">
                                                                                 <div class="card-header align-items-center d-flex">
-                                                                                    <h4 class="card-title mb-0 flex-grow-1">CONTROL DE ENTREGA DE EXPEDIENTES  DE VENTAS DE AUTOS</h4>
+                                                                                    <h4 class="card-title mb-0 flex-grow-1">BENEFICIARIO FINAL.</h4>
                                                                                 </div><!-- end card header -->
                                                                                 <div class="card-body">
                                                                                     <div class="live-preview">
                                                                                         <div class="row gy-4">
-                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                            <div class="col-xxl-4 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Fecha</label>
-                                                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                                                    data-date-format="d M, Y" name="exp_fecha">
+                                                                                                    <label for="basiInput" class="form-label">INDIQUE SI EL AUTO SERÁ TRASPASADO A NOMBRE DEL CLIENTE O DE UN TERCERO. ?  </label>
+                                                                                                    <br>
+                                                                                                    <label for="basiInput" class="form-label">Cliente </label>
+                                                                                                    <input class="form-check-input" type="radio" name="pjbf_transpaso_cliente_tercero" id="formradioRight6" value="109BFF">
+                                                                                                    <label for="basiInput" class="form-label">Tercero </label>
+                                                                                                    <input class="form-check-input" type="radio" name="pjbf_transpaso_cliente_tercero" id="formradioRight6" value="110BFF">
                                                                                                 </div>
                                                                                             </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                            <!-- end col -->
+                                                                                            <div class="col-xxl-4 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Cliente</label>
-                                                                                                    <input type="text" class="form-control" id="nombre_completo_inp" name="exp_cliente" readonly>
+                                                                                                    <label for="basiInput" class="form-label">EN ESTE ÚLTIMO CASO, COMPLETE CON LOS DATOS DEL BENEFICIARIO FINAL DE LA TRANSACCIÓN. DE SER PERSONA JURÍDICA, UTILIZAR EL FORMULARIO DE DEBIDA DILIGENCIA PERSONA JURÍDICA PCR-CUMP-FORM02 Y LA DECLARACIÓN JURADA DE BENEFICIARIOS FINALES DE LAS PERSONAS JURÍDICAS.</label>
+                                                                                                    <br>
+                                                                                                    <label for="basiInput" class="form-label">Familiar </label>
+                                                                                                    <input class="form-check-input" type="radio" name="pjbf_relacion_cliente" id="formradioRight6" value="111BFF">
+                                                                                                    <label for="basiInput" class="form-label">Tercero </label>
+                                                                                                    <input class="form-check-input" type="radio" name="pjbf_relacion_cliente" id="formradioRight6" value="110BFF">
                                                                                                 </div>
                                                                                             </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Marca</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="exp_marca">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Modelo</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="exp_modelo">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Año</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="exp_anio">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Placa</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="exp_placa">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Chasis</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="exp_chasis">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!-- end col --> 
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Motor</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="exp_motor">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Color</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="exp_color">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Código Dollar</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="exp_codigo_dollar">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">N° INTELISIS</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="exp_n_intelisis">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                        </div>
-                                                                                        <!--end row-->
-                                                                                    </div>
-                                                                                    <div class="d-none code-view">
-                                                                                        <pre class="language-markup" style="height: 450px;">
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!--end col-->
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="tab-pane fade" id="terceros_autorizados" role="tabpanel" aria-labelledby="terceros_autorizados-tab">
-                                                                <div class="d-flex mb-2">
-
-                                                                    <div class="row">
-                                                                        <div class="col-lg-12">
-                                                                            <div class="card">
-                                                                                <div class="card-header align-items-center d-flex">
-                                                                                    <h4 class="card-title mb-0 flex-grow-1">DATOS GENERALES</h4>
-                                                                                </div><!-- end card header -->
-                                                                                <div class="card-body">
-                                                                                    <div class="live-preview">
-                                                                                        <div class="row gy-4">
+                                                                                            <!-- end col -->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Primer Nombre</label>
-                                                                                                    <input type="text" class="form-control" id="primer_nombre" name="fg_primer_nombre" onkeyup="nombre_completo()">
+                                                                                                    <input type="text" class="form-control" id="primer_nombre" name="pjbf_primer_nombre">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Segundo Nombre</label>
-                                                                                                    <input type="text" class="form-control" id="segundo_nombre" name="fg_segundo_nombre"  onkeyup="nombre_completo()">
+                                                                                                    <input type="text" class="form-control" id="segundo_nombre" name="pjbf_segundo_nomnbre">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Apellido Paterno</label>
-                                                                                                    <input type="text" class="form-control" id="apellido_paterno" name="fg_apellido_paterno"  onkeyup="nombre_completo()">
+                                                                                                    <input type="text" class="form-control" id="apellido_paterno" name="pjbf_apellido_parterno">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Apellido Materno</label>
-                                                                                                    <input type="text" class="form-control" id="apellido_materno" name="fg_apellido_materno"  onkeyup="nombre_completo()">
+                                                                                                    <input type="text" class="form-control" id="apellido_materno" name="pjbf_apellido_materno">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Apellido de Casada</label>
-                                                                                                    <input type="text" class="form-control" id="apellido_casada" name="fg_apellido_casada" onkeyup="nombre_completo()">
+                                                                                                    <input type="text" class="form-control" id="apellido_casada" name="pjbf_apellido_casada">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
@@ -1519,7 +1423,7 @@
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">País de Naciemiento</label>
                                                                                                     <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="fg_fecha_nacimiento">
+                                                                                                        id="choices-single-default" name="pjbf_pais_nacimiento">
                                                                                                         <option value="">Seleccione</option>
                                                                                                         <?php foreach ($paises as $key => $value) { ?>
                                                                                                         <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
@@ -1532,7 +1436,7 @@
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Fecha Nacimiento</label>
                                                                                                     <input type="text" class="form-control" data-provider="flatpickr"
-                                                                                                    data-date-format="d M, Y" name="fg_fecha_nacimiento">
+                                                                                                    data-date-format="d M, Y" name="pjbf_fecha_nacimiento">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!-- end col --> 
@@ -1540,7 +1444,7 @@
                                                                                                 <div>
                                                                                                     <label for="disabledInput" class="form-label">Género</label>
                                                                                                     <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="fg_genero">
+                                                                                                        id="choices-single-default" name="pjbf_genero">
                                                                                                         <option value="">Seleccione</option>
                                                                                                         <?php foreach ($genero as $key => $value) { ?>
                                                                                                         <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
@@ -1553,7 +1457,7 @@
                                                                                                 <div>
                                                                                                     <label for="disabledInput" class="form-label">Nacionalidad</label>
                                                                                                     <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="fg_nacionalidad">
+                                                                                                        id="choices-single-default" name="pjbf_nacionalidad">
                                                                                                         <option value="">Seleccione</option>
                                                                                                         <?php foreach ($paises as $key => $value) { ?>
                                                                                                         <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
@@ -1566,7 +1470,7 @@
                                                                                                 <div>
                                                                                                     <label for="disabledInput" class="form-label">Estado Civil</label>
                                                                                                     <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="fg_estado_civil">
+                                                                                                        id="choices-single-default" name="pjbf_estado_civil">
                                                                                                         <option value="">Seleccione</option>
                                                                                                         <?php foreach ($estado_civil as $key => $value) { ?>
                                                                                                         <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
@@ -1578,7 +1482,7 @@
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Cédula/N# Pasaporte</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="fg_cedula">
+                                                                                                    <input type="text" class="form-control" id="basiInput" name="pjbf_cedula_pasaporte">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
@@ -1586,7 +1490,7 @@
                                                                                                 <div>
                                                                                                     <label for="disabledInput" class="form-label">País de Residencia</label>
                                                                                                     <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="fg_pais_residencia">
+                                                                                                        id="choices-single-default" name="pjbf_pais_residencia">
                                                                                                         <option value="">Seleccione</option>
                                                                                                         <?php foreach ($paises as $key => $value) { ?>
                                                                                                         <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
@@ -1599,7 +1503,7 @@
                                                                                                 <div>
                                                                                                     <label for="exampleFormControlTextarea5" class="form-label">Dirección Residencial</label>
                                                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                                                        rows="3" name="fg_direccion_residencial"></textarea>
+                                                                                                        rows="3" name="pjbf_direccion_residencia"></textarea>
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
@@ -1607,7 +1511,7 @@
                                                                                                 <div>
                                                                                                     <label for="disabledInput" class="form-label">País de Residencia Fiscal</label>
                                                                                                     <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="fg_pais_residencia_fiscal">
+                                                                                                        id="choices-single-default" name="pjbf_pais_residencia_fiscal">
                                                                                                         <option value="">Seleccione</option>
                                                                                                         <?php foreach ($paises as $key => $value) { ?>
                                                                                                         <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
@@ -1621,7 +1525,7 @@
                                                                                                     <label for="iconInput" class="form-label">Correo Electrónico </label>
                                                                                                     <div class="form-icon">
                                                                                                         <input type="text" class="form-control form-control-icon"
-                                                                                                            id="iconInput" placeholder="example@gmail.com" name="fg_email">
+                                                                                                            id="iconInput" placeholder="example@gmail.com" name="pjbf_correo">
                                                                                                         <i class="ri-mail-unread-line"></i>
                                                                                                     </div>
                                                                                                 </div>
@@ -1630,14 +1534,56 @@
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Teléfono Residencial</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="fg_telefono_residencia">
+                                                                                                    <input type="text" class="form-control" id="basiInput" name="pjbf_telefono_residencial">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Teléfono Móvil</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="fg_telefono_movil">
+                                                                                                    <input type="text" class="form-control" id="basiInput" name="pjbf_telefono_celular">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="basiInput" class="form-label">Profesión</label>
+                                                                                                    <select class="form-control" data-choices
+                                                                                                        id="choices-single-default" name="pjbf_profesion">
+                                                                                                        <option value="">Seleccione</option>
+                                                                                                        <?php foreach ($profesion as $key => $value) { ?>
+                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
+                                                                                                        <?php } ?>
+                                                                                                    </select>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="basiInput" class="form-label">Ocupación</label>
+                                                                                                    <select class="form-control" data-choices
+                                                                                                        id="choices-single-default" name="pjbf_ocupacion">
+                                                                                                        <option value="">Seleccione</option>
+                                                                                                        <?php foreach ($profesion as $key => $value) { ?>
+                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
+                                                                                                        <?php } ?>
+                                                                                                    </select>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="exampleFormControlTextarea5" class="form-label">Lugar de trabajo</label>
+                                                                                                    <textarea class="form-control" id="exampleFormControlTextarea5"
+                                                                                                        rows="3" name="pjbf_lugar_trabajo"></textarea>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="exampleFormControlTextarea5" class="form-label">Dirección de trabajo</label>
+                                                                                                    <textarea class="form-control" id="exampleFormControlTextarea5"
+                                                                                                        rows="3" name="pjbf_direccion_trabajo"></textarea>
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
@@ -1655,7 +1601,257 @@
 
                                                                 </div>
                                                             </div>
-                                                            
+                                                            <!-- Terceros autorizados -->
+                                                            <div class="tab-pane fade" id="terceros_autorizados" role="tabpanel" aria-labelledby="terceros_autorizados-tab">
+                                                                <div class="d-flex mb-2">
+
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12">
+                                                                            <div class="card">
+                                                                                <div class="card-header align-items-center d-flex">
+                                                                                    <h4 class="card-title mb-0 flex-grow-1">TERCEROS AUTORIZADOS.</h4>
+                                                                                </div><!-- end card header -->
+                                                                                <div class="card-body" >
+
+                                                                                <p>¿LOS PAGOS PARCIALES (ABONOS) O TOTALES AL PRECIO DE VENTA SERÁN REALIZADOS POR UNA TERCERA PERSONA DISTINTA DEL CLIENTE O DEL BENEFICIARIO FINAL? (NO ENTIDAD BANCARIA) 
+                                                                                    EN CASO AFIRMATIVO, COMPLETE CON LOS DATOS DEL TERCERO AUTORIZADO. DE SER PERSONA JURÍDICA, UTILIZAR EL FORMULARIO DE DEBIDA DILIGENCIA PERSONA JURÍDICA PCR-CUMP-FORM02.</p>
+                                                                                <p>
+                                                                                    EN CASO AFIRMATIVO, COMPLETE CON LOS DATOS DEL TERCERO AUTORIZADO. DE SER PERSONA JURÍDICA, UTILIZAR EL FORMULARIO DE DEBIDA DILIGENCIA PERSONA JURÍDICA PCR-CUMP-FORM02.
+                                                                                </p>
+
+                                                                                </div>
+                                                                                <div class="card-body">
+                                                                                    <div class="live-preview">
+                                                                                        <div class="row gy-4">
+                                                                                            <div class="col-xxl-4 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="basiInput" class="form-label">RELACIÓN CON EL CLIENTE.  </label>
+                                                                                                    <br>
+                                                                                                    <label for="basiInput" class="form-label">Familiar </label>
+                                                                                                    <input class="form-check-input" type="radio" name="pjtu_relacion_cliente" id="formradioRight6" value="111BFF">
+                                                                                                    <label for="basiInput" class="form-label">Tercero </label>
+                                                                                                    <input class="form-check-input" type="radio" name="pjtu_transpaso_cliente_tercero" id="formradioRight6" value="110BFF">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!-- end col -->
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="basiInput" class="form-label">Primer Nombre</label>
+                                                                                                    <input type="text" class="form-control" id="primer_nombre" name="pjtu_primer_nombre">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="basiInput" class="form-label">Segundo Nombre</label>
+                                                                                                    <input type="text" class="form-control" id="segundo_nombre" name="pjtu_segundo_nomnbre">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="basiInput" class="form-label">Apellido Paterno</label>
+                                                                                                    <input type="text" class="form-control" id="apellido_paterno" name="pjtu_apellido_parterno">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="basiInput" class="form-label">Apellido Materno</label>
+                                                                                                    <input type="text" class="form-control" id="apellido_materno" name="pjtu_apellido_materno">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="basiInput" class="form-label">Apellido de Casada</label>
+                                                                                                    <input type="text" class="form-control" id="apellido_casada" name="pjtu_apellido_casada">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="basiInput" class="form-label">País de Naciemiento</label>
+                                                                                                    <select class="form-control" data-choices
+                                                                                                        id="choices-single-default" name="pjtu_pais_nacimiento">
+                                                                                                        <option value="">Seleccione</option>
+                                                                                                        <?php foreach ($paises as $key => $value) { ?>
+                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
+                                                                                                        <?php } ?>
+                                                                                                    </select>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="basiInput" class="form-label">Fecha Nacimiento</label>
+                                                                                                    <input type="text" class="form-control" data-provider="flatpickr"
+                                                                                                    data-date-format="d M, Y" name="pjtu_fecha_nacimiento">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!-- end col --> 
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="disabledInput" class="form-label">Género</label>
+                                                                                                    <select class="form-control" data-choices
+                                                                                                        id="choices-single-default" name="pjtu_genero">
+                                                                                                        <option value="">Seleccione</option>
+                                                                                                        <?php foreach ($genero as $key => $value) { ?>
+                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
+                                                                                                        <?php } ?>
+                                                                                                    </select>
+                                                                                                </div>
+                                                                                            </div> 
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="disabledInput" class="form-label">Nacionalidad</label>
+                                                                                                    <select class="form-control" data-choices
+                                                                                                        id="choices-single-default" name="pjtu_nacionalidad">
+                                                                                                        <option value="">Seleccione</option>
+                                                                                                        <?php foreach ($paises as $key => $value) { ?>
+                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
+                                                                                                        <?php } ?>
+                                                                                                    </select>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="disabledInput" class="form-label">Estado Civil</label>
+                                                                                                    <select class="form-control" data-choices
+                                                                                                        id="choices-single-default" name="pjtu_estado_civil">
+                                                                                                        <option value="">Seleccione</option>
+                                                                                                        <?php foreach ($estado_civil as $key => $value) { ?>
+                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
+                                                                                                        <?php } ?>
+                                                                                                    </select>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="basiInput" class="form-label">Cédula/N# Pasaporte</label>
+                                                                                                    <input type="text" class="form-control" id="basiInput" name="pjtu_cedula_pasaporte">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="disabledInput" class="form-label">País de Residencia</label>
+                                                                                                    <select class="form-control" data-choices
+                                                                                                        id="choices-single-default" name="pjtu_pais_residencia">
+                                                                                                        <option value="">Seleccione</option>
+                                                                                                        <?php foreach ($paises as $key => $value) { ?>
+                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
+                                                                                                        <?php } ?>
+                                                                                                    </select>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="exampleFormControlTextarea5" class="form-label">Dirección Residencial</label>
+                                                                                                    <textarea class="form-control" id="exampleFormControlTextarea5"
+                                                                                                        rows="3" name="pjtu_direccion_residencia"></textarea>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="disabledInput" class="form-label">País de Residencia Fiscal</label>
+                                                                                                    <select class="form-control" data-choices
+                                                                                                        id="choices-single-default" name="pjtu_pais_residencia_fiscal">
+                                                                                                        <option value="">Seleccione</option>
+                                                                                                        <?php foreach ($paises as $key => $value) { ?>
+                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
+                                                                                                        <?php } ?>
+                                                                                                    </select>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="iconInput" class="form-label">Correo Electrónico </label>
+                                                                                                    <div class="form-icon">
+                                                                                                        <input type="text" class="form-control form-control-icon"
+                                                                                                            id="iconInput" placeholder="example@gmail.com" name="pjtu_correo">
+                                                                                                        <i class="ri-mail-unread-line"></i>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="basiInput" class="form-label">Teléfono Residencial</label>
+                                                                                                    <input type="text" class="form-control" id="basiInput" name="pjtu_telefono_residencial">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="basiInput" class="form-label">Teléfono Móvil</label>
+                                                                                                    <input type="text" class="form-control" id="basiInput" name="pjtu_telefono_celular">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="basiInput" class="form-label">Profesión</label>
+                                                                                                    <select class="form-control" data-choices
+                                                                                                        id="choices-single-default" name="pjtu_profesion">
+                                                                                                        <option value="">Seleccione</option>
+                                                                                                        <?php foreach ($profesion as $key => $value) { ?>
+                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
+                                                                                                        <?php } ?>
+                                                                                                    </select>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="basiInput" class="form-label">Ocupación</label>
+                                                                                                    <select class="form-control" data-choices
+                                                                                                        id="choices-single-default" name="pjtu_ocupacion">
+                                                                                                        <option value="">Seleccione</option>
+                                                                                                        <?php foreach ($profesion as $key => $value) { ?>
+                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
+                                                                                                        <?php } ?>
+                                                                                                    </select>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="exampleFormControlTextarea5" class="form-label">Lugar de trabajo</label>
+                                                                                                    <textarea class="form-control" id="exampleFormControlTextarea5"
+                                                                                                        rows="3" name="pjtu_lugar_trabajo"></textarea>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="exampleFormControlTextarea5" class="form-label">Dirección de trabajo</label>
+                                                                                                    <textarea class="form-control" id="exampleFormControlTextarea5"
+                                                                                                        rows="3" name="pjtu_direccion_trabajo"></textarea>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                        </div>
+                                                                                        <!--end row-->
+                                                                                    </div>
+                                                                                    <div class="d-none code-view">
+                                                                                        <pre class="language-markup" style="height: 450px;">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!--end col-->
+                                                                    </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <!-- Personas expuestas politicamente -->
                                                             <div class="tab-pane fade" id="expuestas_politicamente" role="tabpanel" aria-labelledby="expuestas_politicamente-tab">
                                                                 <div class="d-flex mb-2">
 
@@ -1663,8 +1859,19 @@
                                                                         <div class="col-lg-12">
                                                                             <div class="card">
                                                                                 <div class="card-header align-items-center d-flex">
-                                                                                    <h4 class="card-title mb-0 flex-grow-1">DATOS OCUPACIONALES</h4>
+                                                                                    <h4 class="card-title mb-0 flex-grow-1">PERSONAS EXPUESTAS POLÍTICAMENTE.</h4>
                                                                                 </div><!-- end card header -->
+                                                                                <div class="card-body">
+                                                                                    <p>
+                                                                                    LAS PERSONAS EXPUESTAS POLÍTICAMENTE SON LAS PERSONAS NACIONALES O EXTRANJERAS QUE CUMPLEN FUNCIONES PÚBLICAS DESTACADAS 
+                                                                                    DE ALTO NIVEL O CON MANDO Y JURISDICCIÓN EN UN ESTADO, COMO (PERO SIN LIMITARSE) LOS JEFES DE ESTADO O DE UN GOBIERNO, 
+                                                                                    LOS POLÍTICOS DE ALTO PERFIL, LOS FUNCIONARIOS GUBERNAMENTALES, JUDICIALES O MILITARES DE ALTA JERARQUÍA, LOS EJECUTIVOS 
+                                                                                    DE EMPRESAS O CORPORACIONES ESTATALES LOS FUNCIONARIOS PÚBLICOS QUE OCUPEN POSICIONES DE ELECCIÓN POPULAR, ENTRE OTROS QUE 
+                                                                                    EJERZAN LA TOMA DE DECISIONES EN LAS ENTIDADES PÚBLICAS; PERSONAS QUE CUMPLEN  O A QUIÉNES SE LES HA CONFIADO FUNCIONES IMPORTANTES 
+                                                                                    POR UNA ORGANIZACIÓN INSTITUCIONAL, COMO LOS MIEMBROS DE LA ALTA GERENCIA, ES DECIR DIRECTORES, SUBDIRECTORES Y MIEMBROS DE LA JUNTA
+                                                                                     DIRECTIVA O FUNCIONES EQUIVALENTES.
+                                                                                    </p>
+                                                                                </div>
                                                                                 <div class="card-body">
                                                                                     <div class="live-preview">
                                                                                         <div class="row gy-4">

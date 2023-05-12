@@ -1286,7 +1286,7 @@
                                                                                                     <label for="basiInput" class="form-label">Cliente</label>
                                                                                                     <input class="form-check-input" type="radio" name="ft_cliete_tercero" id="formradioRight6" value="109BFF">
                                                                                                     <label for="basiInput" class="form-label">Tercero</label>
-                                                                                                    <input class="form-check-input" type="radio" name="ft_cliete_tercero" id="formradioRight6" value="111BFF">
+                                                                                                    <input class="form-check-input" type="radio" name="ft_cliete_tercero" id="formradioRight6" value="110BFF">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
