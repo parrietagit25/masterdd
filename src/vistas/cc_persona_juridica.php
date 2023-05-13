@@ -2001,117 +2001,8 @@
 
                                                                 </div>
                                                             </div>
-
+                                                            <!-- Referencias -->
                                                             <div class="tab-pane fade" id="referencias" role="tabpanel" aria-labelledby="referencias-tab">
-                                                                <div class="d-flex mb-2">
-                                                                    
-                                                                    <div class="row">
-                                                                        <div class="col-lg-12">
-                                                                            <div class="card">
-                                                                                <div class="card-header align-items-center d-flex">
-                                                                                    <h4 class="card-title mb-0 flex-grow-1">DECLARACIÓN DE FUENTE Y ORIGEN DE LOS FONDOS</h4>
-                                                                                </div><!-- end card header -->
-                                                                                <div class="card-body">
-                                                                                    <p>DECLARO QUE LOS FONDOS PARA EFECTUAR LA TRANSACCIÓN DE COMPRAVENTA PROVIENEN DE FUENTES LÍCITAS Y PROPIAS DETALLADAS A CONTINUACIÓN Y QUE NO REALIZARÉ O ADMITIRÉ QUE SE 
-                                                                                    EFECTÚEN PAGOS A NOMBRE MÍO O DE LA PERSONA QUE REPRESENTO CON FONDOS PROVENIENTES DE ACTIVIDADES ILÍCITAS, NI EFECTUARÉ TRANSACCIONES DESTINADAS A TALES ACTIVIDADES O A FAVOR DE PERSONAS RELACIONADAS A LAS MISMAS.</p>
-                                                                                </div>
-                                                                                    <div class="card-body">
-                                                                                    <div class="live-preview">
-                                                                                        <div class="row gy-4">
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="disabledInput" class="form-label">Actividad Principal</label>
-                                                                                                    <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="fd_actividad_principal">
-                                                                                                        <option value="">Seleccione</option>
-                                                                                                        <?php foreach ($actividad_principal as $key => $value) { ?>
-                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
-                                                                                                        <?php } ?>
-                                                                                                    </select>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="disabledInput" class="form-label">Otras Fuentes</label>
-                                                                                                    <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="fd_otras_fuentes">
-                                                                                                        <option value="">Seleccione</option>
-                                                                                                        <?php foreach ($actividad_otras as $key => $value) { ?>
-                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
-                                                                                                        <?php } ?>
-                                                                                                    </select>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="disabledInput" class="form-label">Límite de Compra</label>
-                                                                                                    <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="fd_limite_compra">
-                                                                                                        <option value="">Seleccione</option>
-                                                                                                        <?php foreach ($limite as $key => $value) { ?>
-                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
-                                                                                                        <?php } ?>
-                                                                                                    </select>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="disabledInput" class="form-label">Forma de Pago</label>
-                                                                                                    <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="fd_forma_pago_1">
-                                                                                                        <option value="">Seleccione</option>
-                                                                                                        <?php foreach ($forma_pago as $key => $value) { ?>
-                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
-                                                                                                        <?php } ?>
-                                                                                                    </select>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="disabledInput" class="form-label">Método de Pago</label>
-                                                                                                    <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="fd_metodo_pago_1">
-                                                                                                        <option value="">Seleccione</option>
-                                                                                                        <?php foreach ($motodo_pago as $key => $value) { ?>
-                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
-                                                                                                        <?php } ?>
-                                                                                                    </select>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="disabledInput" class="form-label">Método de Pago 2</label>
-                                                                                                    <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="fd_metodo_pago_2">
-                                                                                                        <option value="">Seleccione</option>
-                                                                                                        <?php foreach ($motodo_pago as $key => $value) { ?>
-                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
-                                                                                                        <?php } ?>
-                                                                                                    </select>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                        </div>
-                                                                                        <!--end row-->
-                                                                                    </div>
-                                                                                    <div class="d-none code-view">
-                                                                                        <pre class="language-markup" style="height: 450px;">
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <!--end col-->
-                                                                    </div>
-
-                                                                </div>
-                                                            </div>
-
-                                                            <div class="tab-pane fade" id="jurada" role="tabpanel" aria-labelledby="jurada-tab">
                                                                 <div class="d-flex mb-2">
                                                                     
                                                                     <div class="row">
@@ -2120,82 +2011,88 @@
                                                                                 <div class="card-header align-items-center d-flex">
                                                                                     <h4 class="card-title mb-0 flex-grow-1">REFERENCIAS</h4>
                                                                                 </div><!-- end card header -->
-                                                                                <div class="card-body">Referencias Bancarias</div>
+                                                                                <div class="card-body">
+                                                                                    <p>REFERENCIAS BANCARIAS.</p>
+                                                                                </div>
                                                                                     <div class="card-body">
                                                                                     <div class="live-preview">
                                                                                         <div class="row gy-4">
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Nombre o Razón Social</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="fr_razon_social_1">
+                                                                                                    <label for="basiInput" class="form-label">Nombre o razón social</label>
+                                                                                                    <input type="text" class="form-control" id="basiInput" name="pjrf_nombre_razon_social[]">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Actividad</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="fr_actividad_1">
+                                                                                                    <input type="text" class="form-control" id="basiInput" name="pjrf_actividad[]">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Relación con cliente</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="fr_relacion_cliente_1">
+                                                                                                    <label for="basiInput" class="form-label">Relacón</label>
+                                                                                                    <input type="text" class="form-control" id="basiInput" name="pjrf_relacion[]">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Teléfono</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="fr_telefono_1">
+                                                                                                    <input type="text" class="form-control" id="basiInput" name="pjrf_telefono[]">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="iconInput" class="form-label">Correo Electrónico </label>
+                                                                                                    <label for="iconInput" class="form-label">Correo Electrónico</label>
                                                                                                     <div class="form-icon">
                                                                                                         <input type="text" class="form-control form-control-icon"
-                                                                                                            id="iconInput" placeholder="example@gmail.com" name="fr_correo_electronico_1">
+                                                                                                            id="iconInput" placeholder="example@gmail.com" name="pjrf_correo_electronico[]">
                                                                                                         <i class="ri-mail-unread-line"></i>
                                                                                                     </div>
                                                                                                 </div>
                                                                                             </div>
-                                                                                            <div class="card-header align-items-center d-flex">
-                                                                                                <h4 class="card-title mb-0 flex-grow-1">Rerefencias personales o comerciales( clientes o proveedores)</h4>
+                                                                                            
+                                                                                            <div class="card-body">
                                                                                             </div>
-                                                                                                <!--end col-->
+                                                                                        
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Nombre o Razón social</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="fr_razon_social_2">
+                                                                                                    <label for="basiInput" class="form-label">Nombre o razón social</label>
+                                                                                                    <input type="text" class="form-control" id="basiInput" name="pjrf_nombre_razon_social[]">
                                                                                                 </div>
                                                                                             </div>
+                                                                                            <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Actividad</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="fr_actividad_2">
+                                                                                                    <input type="text" class="form-control" id="basiInput" name="pjrf_actividad[]">
                                                                                                 </div>
                                                                                             </div>
+                                                                                            <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Relación con cliente</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="fr_relacion_cliente_2">
+                                                                                                    <label for="basiInput" class="form-label">Relacón</label>
+                                                                                                    <input type="text" class="form-control" id="basiInput" name="pjrf_relacion[]">
                                                                                                 </div>
                                                                                             </div>
+                                                                                            <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Teléfono</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="fr_telefono_2">
+                                                                                                    <input type="text" class="form-control" id="basiInput" name="pjrf_telefono[]">
                                                                                                 </div>
                                                                                             </div>
+                                                                                            <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="iconInput" class="form-label">Correo Electrónico </label>
+                                                                                                    <label for="iconInput" class="form-label">Correo Electrónico</label>
                                                                                                     <div class="form-icon">
                                                                                                         <input type="text" class="form-control form-control-icon"
-                                                                                                            id="iconInput" placeholder="example@gmail.com" name="fr_correo_electronico_2">
+                                                                                                            id="iconInput" placeholder="example@gmail.com" name="pjrf_correo_electronico[]">
                                                                                                         <i class="ri-mail-unread-line"></i>
                                                                                                     </div>
                                                                                                 </div>
@@ -2215,7 +2112,63 @@
 
                                                                 </div>
                                                             </div>
+                                                            <!-- jurada -->
+                                                            <div class="tab-pane fade" id="jurada" role="tabpanel" aria-labelledby="jurada-tab">
+                                                                <div class="d-flex mb-2">
+                                                                    
+                                                                    <div class="row">
+                                                                        <div class="col-lg-12">
+                                                                            <div class="card">
+                                                                                <div class="card-header align-items-center d-flex">
+                                                                                    <h4 class="card-title mb-0 flex-grow-1">DECLARACIÓN JURADA</h4>
+                                                                                </div><!-- end card header -->
+                                                                                <div class="card-body">
+                                                                                    DECLARO QUE LA INFORMACIÓN ANTERIOR ES VERAZ Y HA SIDO PROPORCIONADA EN CUMPLIMIENTO DE LO ESTABLECIDO POR LAS LEYES 
+                                                                                    Y REGULACIONES RELACIONADAS CON LA PREVENCIÓN DEL BLANQUEO DE CAPITALES, FINANCIAMIENTO DEL TERRORISMO Y FINANCIAMIENTO
+                                                                                    DE LA PROLIFERACIÓN DE ARMAS DE DESTRUCCIÓN MASIVA DE LA REPÚBLICA DE PANAMÁ. ACEPTO PROPORCIONAR CUALQUIER INFORMACIÓN 
+                                                                                    Y/O DOCUMENTACIÓN ADICIONAL A LA DESCRITA EN EL PRESENTE FORMULARIO, QUE PANAMA CAR RENTAL, S.A. REQUIERA PARA LA APLICACIÓN 
+                                                                                    DE LAS MEDIDAS DE DEBIDA DILIGENCIA.
+                                                                                </div>
+                                                                                    <div class="card-body">
+                                                                                    <div class="live-preview">
+                                                                                        <div class="row gy-4">
+                                                                                            <div class="col-xxl-6 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="basiInput" class="form-label">Nombre completo</label>
+                                                                                                    <input type="text" class="form-control" id="basiInput" name="pjdj_nombre_completo">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-6 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="basiInput" class="form-label">Fecha</label>
+                                                                                                    <input type="text" class="form-control" data-provider="flatpickr"
+                                                                                                    data-date-format="d M, Y" name="pjdj_fecha">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-6 col-md-6">
+                                                                                                <div>
+                                                                                                    <label for="basiInput" class="form-label">Firma</label>
+                                                                                                    <input type="file" class="form-control" id="basiInput" name="pjdj_firma">
+                                                                                                </div>
+                                                                                            </div>
+                                                                                            <!--end col-->
+                                                                                        </div>
+                                                                                        <!--end row-->
+                                                                                    </div>
+                                                                                    <div class="d-none code-view">
+                                                                                        <pre class="language-markup" style="height: 450px;">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <!--end col-->
+                                                                    </div>
 
+                                                                </div>
+                                                            </div>
+                                                            <!-- Adjuntar -->
                                                             <div class="tab-pane fade" id="adjuntar" role="tabpanel" aria-labelledby="adjuntar-tab">
                                                                 <div class="d-flex mb-2">
 
@@ -2223,243 +2176,39 @@
                                                                         <div class="col-lg-12">
                                                                             <div class="card">
                                                                                 <div class="card-header align-items-center d-flex">
-                                                                                    <h4 class="card-title mb-0 flex-grow-1">BENEFICIARIO FINAL</h4>
+                                                                                    <h4 class="card-title mb-0 flex-grow-1">ADJUNTAR LOS SIGUIENTES DOCUMENTOS E INFORMACIÓN DE SOPORTE.</h4>
                                                                                 </div><!-- end card header -->
                                                                                 <div class="card-body">
-                                                                                    <p>EN ESTE ÚLTIMO CASO, COMPLETE CON LOS DATOS DEL BENEFICIARIO FINAL DE LA TRANSACCIÓN. DE SER PERSONA JURÍDICA,
-                                                                                    UTILIZAR EL FORMULARIO DE DEBIDA DILIGENCIA PERSONA JURÍDICA PCR-CUMP-FORM02 Y LA DECLARACIÓN JURADA DE BENEFICIARIOS
-                                                                                    FINALES DE LAS PERSONAS JURÍDICAS.</p>
                                                                                 </div>
                                                                                 <div class="card-body">
                                                                                     <div class="live-preview">
                                                                                         <div class="row gy-4">
-                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-6 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">¿EL AUTO SERÁ TRASPASADO A NOMBRE DEL CLIENTE O DE UN TERCERO?</label>
-                                                                                                    <label for="basiInput" class="form-label">Cliente</label>
-                                                                                                    <input class="form-check-input" type="radio" name="fb_cliete_tercero" id="formradioRight6" value="109BFF">
-                                                                                                    <label for="basiInput" class="form-label">Tercero</label>
-                                                                                                    <input class="form-check-input" type="radio" name="fb_cliete_tercero" id="formradioRight6" value="110BFF">
+                                                                                                    <label for="basiInput" class="form-label">COPIA DE CÉDULA O PASAPORTE DEL REPRESENTANTE LEGAL, APODERADOS, DIRECTORES, DIGNATARIOS, TERCEROS AUTORIZADOS Y BENEFICIARIOS FINALES.</label>
+                                                                                                    <input type="file" class="form-control" id="basiInput" name="pjdj_documento_identidad">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                            <div class="col-xxl-6 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Relación con el cliente</label>
-                                                                                                    <label for="basiInput" class="form-label">Familiar</label>
-                                                                                                    <input class="form-check-input" type="radio" name="fb_relacion_familiar_tercero" id="formradioRight6" value="111BFF">
-                                                                                                    <label for="basiInput" class="form-label">Tercero</label>
-                                                                                                    <input class="form-check-input" type="radio" name="fb_relacion_familiar_tercero" id="formradioRight6" value="110BFF">
+                                                                                                    <label for="basiInput" class="form-label">COPIA DE PACTO SOCIAL, CERTIFICADO DE REGISTRO PÚBLICO O SU EQUIVALENTE, CON UNA VIGENCIA NO MENOR DE 90 DÍAS CALENDARIO</label>
+                                                                                                    <input type="file" class="form-control" id="basiInput" name="pjdj_recibo">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                            <div class="col-xxl-6 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Detalle relacion</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="fb_relacion_detalle">
+                                                                                                    <label for="basiInput" class="form-label">AVISO DE OPERACIONES O LICENCIA COMERCIAL</label>
+                                                                                                    <input type="file" class="form-control" id="basiInput" name="pjdj_aviso_operaciones">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                            <div class="col-xxl-6 col-md-6">                                                           
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Primer Nombre</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="fb_primer_nombre">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Segundo Nombre</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="fb_segundo_nombre">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Apellido Paterno</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="fb_apellido_paterno">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Apellido Materno</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="fb_apellido_materno">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Apellido de casada</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="fb_apellido_casada">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="disabledInput" class="form-label">País de Nacimiento</label>
-                                                                                                    <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="fb_pais_nacimiento">
-                                                                                                        <option value="">Seleccione</option>
-                                                                                                        <?php foreach ($paises as $key => $value) { ?>
-                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
-                                                                                                        <?php } ?>
-                                                                                                    </select>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Fecha Nacimiento</label>
-                                                                                                    <input type="text" class="form-control" data-provider="flatpickr"
-                                                                                                    data-date-format="d M, Y" name="fb_fecha_nacimiento">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="disabledInput" class="form-label">Nacionalidad</label>
-                                                                                                    <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="fb_nacionaidad">
-                                                                                                        <option value="">Seleccione</option>
-                                                                                                        <?php foreach ($paises as $key => $value) { ?>
-                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
-                                                                                                        <?php } ?>
-                                                                                                    </select>
-                                                                                                </div>
-                                                                                            </div> 
-                                                                                            <!--end col-->  
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="disabledInput" class="form-label">Género</label>
-                                                                                                    <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="fb_genero">
-                                                                                                        <option value="">Seleccione</option>
-                                                                                                        <?php foreach ($genero as $key => $value) { ?>
-                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
-                                                                                                        <?php } ?>
-                                                                                                    </select>
-                                                                                                </div>
-                                                                                            </div> 
-                                                                                            <!--end col-->  
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="disabledInput" class="form-label">Estado Civil</label>
-                                                                                                    <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="fb_estado_civil">
-                                                                                                        <option value="">Seleccione</option>
-                                                                                                        <?php foreach ($estado_civil as $key => $value) { ?>
-                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
-                                                                                                        <?php } ?>
-                                                                                                    </select>
-                                                                                                </div>
-                                                                                            </div> 
-                                                                                            <!--end col-->       
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Cédula / N# Pasaporte</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="fb_identificacion">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->      
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="disabledInput" class="form-label">País de Residencia</label>
-                                                                                                    <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="fb_pais_residencia">
-                                                                                                        <option value="">Seleccione</option>
-                                                                                                        <?php foreach ($paises as $key => $value) { ?>
-                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
-                                                                                                        <?php } ?>
-                                                                                                    </select>
-                                                                                                </div>
-                                                                                            </div> 
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="exampleFormControlTextarea5" class="form-label">Dirección residencial</label>
-                                                                                                    <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                                                        rows="3" name="fb_direccion_residencial"></textarea>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col--> 
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="disabledInput" class="form-label">País de Residencia Fiscal</label>
-                                                                                                    <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="fb_pais_residencia_fiscal">
-                                                                                                        <option value="">Seleccione</option>
-                                                                                                        <?php foreach ($paises as $key => $value) { ?>
-                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
-                                                                                                        <?php } ?>
-                                                                                                    </select>
-                                                                                                </div>
-                                                                                            </div> 
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="iconInput" class="form-label">Correo Electrónico </label>
-                                                                                                    <div class="form-icon">
-                                                                                                        <input type="text" class="form-control form-control-icon"
-                                                                                                            id="iconInput" placeholder="example@gmail.com" name="fb_email">
-                                                                                                        <i class="ri-mail-unread-line"></i>
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->   
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Teléfono Residencial</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="fb_telefono_residencia">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->     
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Telefono Movil</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="fb_telefono_movil">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->    
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="disabledInput" class="form-label">Profesión</label>
-                                                                                                    <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="fb_profesion">
-                                                                                                        <option value="">Seleccione</option>
-                                                                                                        <?php foreach ($profesion as $key => $value) { ?>
-                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
-                                                                                                        <?php } ?>
-                                                                                                    </select>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->   
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="disabledInput" class="form-label">Ocupación</label>
-                                                                                                    <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="fb_ocupacion">
-                                                                                                        <option value="">Seleccione</option>
-                                                                                                        <?php foreach ($profesion as $key => $value) { ?>
-                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
-                                                                                                        <?php } ?>
-                                                                                                    </select>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col--> 
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="exampleFormControlTextarea5" class="form-label">Lugar de trabajo</label>
-                                                                                                    <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                                                        rows="3" name="fb_lugar_trabajo"></textarea>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->   
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="exampleFormControlTextarea5" class="form-label">Direccion de trabajo</label>
-                                                                                                    <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                                                        rows="3" name="fb_direccion_trabajo"></textarea>
+                                                                                                    <label for="basiInput" class="form-label">EVIDENCIA DE INGRESO (DE ACUERDO CON PERFIL FINANCIERO)</label>
+                                                                                                    <input type="file" class="form-control" id="basiInput" name="pjdj_evidencia_ingresos">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
@@ -2477,7 +2226,7 @@
 
                                                                 </div>
                                                             </div>
-
+                                                            <!-- uso interno -->
                                                             <div class="tab-pane fade" id="interno" role="tabpanel" aria-labelledby="interno-tab">
                                                                 <div class="d-flex mb-2">
 
@@ -2485,238 +2234,98 @@
                                                                         <div class="col-lg-12">
                                                                             <div class="card">
                                                                                 <div class="card-header align-items-center d-flex">
-                                                                                    <h4 class="card-title mb-0 flex-grow-1">TERCEROS AUTORIZADOS</h4>
+                                                                                    <h4 class="card-title mb-0 flex-grow-1">PARA USO INTERNO DE PANAMA CAR RENTAL, S.A.</h4>
                                                                                 </div><!-- end card header -->
                                                                                 <div class="card-body">
                                                                                     <div class="live-preview">
                                                                                         <div class="row gy-4">
-                                                                                        <p>EN ESTE ÚLTIMO CASO, COMPLETE CON LOS DATOS DEL BENEFICIARIO FINAL DE LA TRANSACCIÓN. DE SER PERSONA JURÍDICA,
-                                                                                            UTILIZAR EL FORMULARIO DE DEBIDA DILIGENCIA PERSONA JURÍDICA PCR-CUMP-FORM02 Y LA DECLARACIÓN JURADA DE BENEFICIARIOS
-                                                                                            FINALES DE LAS PERSONAS JURÍDICAS</p>
-                                                                                            <div class="col-xxl-6 col-md-6">
+                                                                                            
+                                                                                            <div class="col-xxl-4 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">¿EL AUTO SERÁ TRASPASADO A NOMBRE DEL CLIENTE O DE UN TERCERO?</label>
-                                                                                                    <label for="basiInput" class="form-label">Cliente</label>
-                                                                                                    <input class="form-check-input" type="radio" name="ft_cliete_tercero" id="formradioRight6" value="109BFF">
-                                                                                                    <label for="basiInput" class="form-label">Tercero</label>
-                                                                                                    <input class="form-check-input" type="radio" name="ft_cliete_tercero" id="formradioRight6" value="111BFF">
+                                                                                                    <label for="basiInput" class="form-label">Nombre y apellidos del vendedor</label>
+                                                                                                    <input class="form-control" id="basiInput" name="pjui_nombre_completo_1">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-6 col-md-6">
+                                                                                            <div class="col-xxl-4 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Relacion con el cliente</label>
-                                                                                                    <label for="basiInput" class="form-label">Familiar</label>
-                                                                                                    <input class="form-check-input" type="radio" name="ft_relacion_familiar_tercero" id="formradioRight6" value="111BFF">
-                                                                                                    <label for="basiInput" class="form-label">Tercero</label>
-                                                                                                    <input class="form-check-input" type="radio" name="ft_relacion_familiar_tercero" id="formradioRight6" value="110BFF">
+                                                                                                    <label for="basiInput" class="form-label">Aprobación</label>
+                                                                                                    <input class="form-control" id="basiInput" name="pjui_aprobacion_1">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                            <div class="col-xxl-4 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Detalle Relación</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="ft_relacion_detalle">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Primer Nombre</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="ft_primer_nombre">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Segundo Nombre</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="ft_segundo_nombre">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Apellido Paterno</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="ft_apellido_paterno">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Apellido Materno</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="ft_apellido_materno">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Apellido de casada</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="ft_apellido_casada">
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="disabledInput" class="form-label">País de Nacimiento</label>
-                                                                                                    <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="ft_pais_nacimiento">
-                                                                                                        <option value="">Seleccione</option>
-                                                                                                        <?php foreach ($paises as $key => $value) { ?>
-                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
-                                                                                                        <?php } ?>
-                                                                                                    </select>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Fecha Nacimiento</label>
+                                                                                                    <label for="basiInput" class="form-label">Fecha</label>
                                                                                                     <input type="text" class="form-control" data-provider="flatpickr"
-                                                                                                    data-date-format="d M, Y" name="ft_fecha_nacimiento">
+                                                                                                    data-date-format="d M, Y" name="pjui_fecha_1">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                            <div class="col-xxl-4 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Nacionalidad</label>
-                                                                                                    <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="ft_nacionaidad">
-                                                                                                        <option value="">Seleccione</option>
-                                                                                                        <?php foreach ($paises as $key => $value) { ?>
-                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
-                                                                                                        <?php } ?>
-                                                                                                    </select>
-                                                                                                </div>
-                                                                                            </div>   
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="disabledInput" class="form-label">Género</label>
-                                                                                                    <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="ft_genero">
-                                                                                                        <option value="">Seleccione</option>
-                                                                                                        <?php foreach ($genero as $key => $value) { ?>
-                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
-                                                                                                        <?php } ?>
-                                                                                                    </select>
-                                                                                                </div>
-                                                                                            </div> 
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="disabledInput" class="form-label">Estado Civil</label>
-                                                                                                    <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="ft_estado_civil">
-                                                                                                        <option value="">Seleccione</option>
-                                                                                                        <?php foreach ($estado_civil as $key => $value) { ?>
-                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
-                                                                                                        <?php } ?>
-                                                                                                    </select>
-                                                                                                </div>
-                                                                                            </div>      
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="basiInput" class="form-label">Cédula / N# Pasaporte</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="ft_identificacion">
+                                                                                                    <label for="basiInput" class="form-label">Nombre y apellidos del encargado de sucursal</label>
+                                                                                                    <input class="form-control" id="basiInput" name="pjui_nombre_completo_2">
                                                                                                 </div>
                                                                                             </div>
-                                                                                            <!--end col-->      
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="disabledInput" class="form-label">País de Residencia</label>
-                                                                                                    <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="ft_pais_residencia">
-                                                                                                        <option value="">Seleccione</option>
-                                                                                                        <?php foreach ($paises as $key => $value) { ?>
-                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
-                                                                                                        <?php } ?>
-                                                                                                    </select>
-                                                                                                </div>
-                                                                                            </div> 
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                            <div class="col-xxl-4 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="exampleFormControlTextarea5" class="form-label">Dirección residencial</label>
-                                                                                                    <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                                                        rows="3" name="ft_direccion_residencial"></textarea>
+                                                                                                    <label for="basiInput" class="form-label">Aprobación</label>
+                                                                                                    <input class="form-control" id="basiInput" name="pjui_aprobacion_2">
                                                                                                 </div>
                                                                                             </div>
-                                                                                            <!--end col--> 
-                                                                                            <div class="col-xxl-3 col-md-6">
-                                                                                                <div>
-                                                                                                    <label for="disabledInput" class="form-label">País de Residencia Fiscal</label>
-                                                                                                    <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="ft_pais_residencia_fiscal">
-                                                                                                        <option value="">Seleccione</option>
-                                                                                                        <?php foreach ($paises as $key => $value) { ?>
-                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
-                                                                                                        <?php } ?>
-                                                                                                    </select>
-                                                                                                </div>
-                                                                                            </div> 
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                            <div class="col-xxl-4 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="iconInput" class="form-label">Correo Electrónico </label>
-                                                                                                    <div class="form-icon">
-                                                                                                        <input type="text" class="form-control form-control-icon"
-                                                                                                            id="iconInput" placeholder="example@gmail.com" name="ft_email">
-                                                                                                        <i class="ri-mail-unread-line"></i>
-                                                                                                    </div>
+                                                                                                    <label for="basiInput" class="form-label">Fecha</label>
+                                                                                                    <input type="text" class="form-control" data-provider="flatpickr"
+                                                                                                    data-date-format="d M, Y" name="pjui_fecha_2">
                                                                                                 </div>
                                                                                             </div>
-                                                                                            <!--end col-->   
-                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-4 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Teléfono Residencial</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="ft_telefono_residencia">
+                                                                                                    <label for="basiInput" class="form-label">Nombre y apellidos del analista de cumplimiento</label>
+                                                                                                    <input class="form-control" id="basiInput" name="pjui_nombre_completo_3">
                                                                                                 </div>
                                                                                             </div>
-                                                                                            <!--end col-->     
-                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-4 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Teléfono Movil</label>
-                                                                                                    <input type="text" class="form-control" id="basiInput" name="ft_telefono_movil">
+                                                                                                    <label for="basiInput" class="form-label">Aprobación</label>
+                                                                                                    <input class="form-control" id="basiInput" name="pjui_aprobacion_3">
                                                                                                 </div>
                                                                                             </div>
-                                                                                            <!--end col-->    
-                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-4 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Profesión</label>
-                                                                                                    <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="ft_profesion">
-                                                                                                        <option value="">Seleccione</option>
-                                                                                                        <?php foreach ($profesion as $key => $value) { ?>
-                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
-                                                                                                        <?php } ?>
-                                                                                                    </select>
+                                                                                                    <label for="basiInput" class="form-label">Fecha</label>
+                                                                                                    <input type="text" class="form-control" data-provider="flatpickr"
+                                                                                                    data-date-format="d M, Y" name="pjui_fecha_3">
                                                                                                 </div>
                                                                                             </div>
-                                                                                            <!--end col-->   
-                                                                                            <div class="col-xxl-3 col-md-6">
+
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-4 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="disabledInput" class="form-label">Ocupación</label>
-                                                                                                    <select class="form-control" data-choices
-                                                                                                        id="choices-single-default" name="ft_ocupacion">
-                                                                                                        <option value="">Seleccione</option>
-                                                                                                        <?php foreach ($profesion as $key => $value) { ?>
-                                                                                                        <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
-                                                                                                        <?php } ?>
-                                                                                                    </select>
+                                                                                                    <label for="basiInput" class="form-label">Nombre y apellidos del gerente de venta de autos (solo para PEPs)</label>
+                                                                                                    <input class="form-control" id="basiInput" name="pjui_nombre_completo_4">
                                                                                                 </div>
                                                                                             </div>
-                                                                                            <!--end col--> 
-                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-4 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="exampleFormControlTextarea5" class="form-label">Lugar de trabajo</label>
-                                                                                                    <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                                                        rows="3" name="ft_lugar_trabajo"></textarea>
+                                                                                                    <label for="basiInput" class="form-label">Aprobación</label>
+                                                                                                    <input class="form-control" id="basiInput" name="pjui_aprobacion_4">
                                                                                                 </div>
                                                                                             </div>
-                                                                                            <!--end col-->   
-                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                            <!--end col-->
+                                                                                            <div class="col-xxl-4 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="exampleFormControlTextarea5" class="form-label">Dirección de trabajo</label>
-                                                                                                    <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                                                        rows="3" name="ft_direccion_trabajo"></textarea>
+                                                                                                    <label for="basiInput" class="form-label">Fecha</label>
+                                                                                                    <input type="text" class="form-control" data-provider="flatpickr"
+                                                                                                    data-date-format="d M, Y" name="pjui_fecha_4">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
@@ -3064,7 +2673,7 @@
 
                                                                 </div>
                                                             </div>
-
+                                                            <!-- aviso legal -->
                                                             <div class="tab-pane fade" id="aviso_legal" role="tabpanel" aria-labelledby="aviso_legal-tab">
                                                                 <div class="d-flex mb-2">
 
