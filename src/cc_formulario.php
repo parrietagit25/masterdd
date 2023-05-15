@@ -10,9 +10,9 @@ if (!isset($_SESSION["usuario"])) {
 require_once("controladores/CcclientePjController.php");
 $cCclienteController = new CcclienteController();
 
-if (isset($_POST['registro_cc_cliente'])) {
+if (isset($_POST['registro_cc_pj'])) {
   $datos = $_POST;  
-  unset($datos['registro_cc_cliente']);
+  unset($datos['registro_cc_pj']);
   $id_general = $cCclienteController->agregar_cc_cliente($datos);
   $cCclienteController->subir_archivos($_FILES, $id_general);
   $alerta = 1;
@@ -40,9 +40,9 @@ if (isset($_GET["view"])) {
     $view = $_GET["view"];
   
     switch ($view) {
-      case "ver_clientes":
+      case "ver_cc_persona_juridicas":
         $todos_registros_cc = $cCclienteController->obtenerRegistroClientes();
-        require_once("vistas/ver_cc_form.php");
+        require_once("vistas/ver_cc_form_juridicas.php");
         break;
       case "editar":
         require_once("vistas/editar_usuario.php");
@@ -64,6 +64,7 @@ if (isset($_GET["view"])) {
     $motodo_pago = $cCclienteController->obtener_motodo_pago();
     $profesion_personas_expuestas = $cCclienteController->obtener_profesion_personas_expuestas();
     $tipo_persona = $cCclienteController->obtener_tipo_persona();
+    $sector_economico = $cCclienteController->obtener_sector_economico();
     require_once("vistas/cc_persona_juridica.php");
   }
   

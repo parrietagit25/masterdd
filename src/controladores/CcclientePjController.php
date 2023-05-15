@@ -7,35 +7,42 @@ if (isset($modalDocu) && $modalDocu == 1) {
 
 class CcclienteController {
 
-  private $tabla_cc_generales;
-  private $tabla_cc_ocupacionales;
-  private $tabla_ccc_declaracion;
-  private $tabla_cc_referencias;
+  private $tabla_cc_expediente;
+  private $tabla_cc_pj_generales;
+  private $tabla_cc_pj_declaracion_fuentes;
+  private $tabla_cc_pj_representante_legal;
+  private $tabla_cc_pj_propietarios;
+  private $tabla_cc_declaracion_accionistas;
+  private $tabla_cc_pj_beneficiario_final;
+  private $tabla_cc_pj_terceros_autorizados;
+  private $tabla_cc_pj_referencias;
+  private $tabla_cc_pj_adjuntos;
+  private $tabla_cc_pj_declaracion_jurada;
+  private $tabla_cc_pj_uso_interno;
+  private $tabla_cc_pj_personas_expuestas;
+  
   private $tabla_cc_beneficiario;
-  private $tabla_cc_terceros_autorizados;
-  private $tabla_cc_personas_expuestas;
-  private $tabla_cc_declaracion_jurada;
-  private $tabla_cc_adjuntos;
-  private $tabla_cc_uso_interno;
   private $tabla_paises;
   private $tabla_codigo;
-  private $tabla_cc_expediente;
 
     public function __construct() {
         $this->ModelGlobal = new ModelGlobal();
-        $this->tabla_cc_generales = "cc_generales";
-        $this->tabla_cc_ocupacionales = "cc_ocupacionales";
-        $this->tabla_ccc_declaracion = "cc_declaracion";
-        $this->tabla_cc_referencias = "cc_referencias";
-        $this->tabla_cc_beneficiario = "cc_beneficiario";
-        $this->tabla_cc_terceros_autorizados = "cc_terceros_autorizados";
-        $this->tabla_cc_personas_expuestas = "cc_personas_expuestas";
-        $this->tabla_cc_declaracion_jurada = "cc_declaracion_jurada";
-        $this->tabla_cc_adjuntos = "cc_adjuntos";
-        $this->tabla_cc_uso_interno = "cc_uso_interno";
+        $this->tabla_cc_expediente = "cc_pj_expediente";
+        $this->tabla_cc_pj_generales = "cc_pj_generales";
+        $this->tabla_cc_pj_declaracion_fuentes = "cc_pj_declaracion_fuentes";
+        $this->tabla_cc_pj_representante_legal = "cc_pj_representante_legal";
+        $this->tabla_cc_pj_propietarios = "cc_pj_propietarios";
+        $this->tabla_cc_declaracion_accionistas = "cc_pj_declaracion_accionista";
+        $this->tabla_cc_pj_beneficiario_final = "cc_pj_beneficiario_final";
+        $this->tabla_cc_pj_terceros_autorizados = "cc_pj_terceros_autorizados";
+        $this->tabla_cc_pj_referencias = "cc_pj_referencias";
+        $this->tabla_cc_pj_declaracion_jurada = "cc_pj_declaracion_jurada";
+        $this->tabla_cc_pj_adjuntos = "cc_pj_adjuntos";
+        $this->tabla_cc_pj_uso_interno = "cc_pj_uso_interno";
+        $this->tabla_cc_pj_personas_expuestas = "cc_pj_perosnas_expuestas";
+
         $this->tabla_paises = "paises";
         $this->tabla_codigo = "codigos";
-        $this->tabla_cc_expediente = "cc_expediente";
     }
 
     public function obtener_pais(){
@@ -82,28 +89,32 @@ class CcclienteController {
         return $this->ModelGlobal->obtener_codigo($this->tabla_codigo, "like '%TDPJ'");
     }
 
+    public function obtener_sector_economico(){
+        return $this->ModelGlobal->obtener_codigo($this->tabla_codigo, "like '%GBPJ'");
+    }
+
     public function agregar_cc_cliente($datos){
 
         // principal
 
-        $datos["fg_stat"]= 1;
-        $datos["fg_id_user"] = $_SESSION["usuario"][0]["id"];
+        $datos["stat"]= 1;
+        $datos["id_user"] = $_SESSION["usuario"][0]["id"];
         $datos_generales = [];
         foreach ($datos as $key => $value) {
-            if (strpos($key, 'fg_') === 0) {
+            if (strpos($key, 'pjgn_') === 0) {
                 $datos_generales[$key] = $value; 
             }
         }
 
-        $ultimo_id = $this->ModelGlobal->agregar($this->tabla_cc_generales, $datos_generales);
+        $ultimo_id = $this->ModelGlobal->agregar($this->tabla_cc_pj_generales, $datos_generales);
         
         $datos["id_general"]= $ultimo_id;
 
-        // Portada
+        // expediente - portada
 
         $datos_expediente = [];
         foreach ($datos as $key => $value) {
-            if (strpos($key, 'exp_') === 0) {
+            if (strpos($key, 'pjexp_') === 0) {
                 $datos_expediente[$key] = $value; 
             }
         }
@@ -112,122 +123,162 @@ class CcclienteController {
 
         $this->ModelGlobal->sub_agregar($this->tabla_cc_expediente, $datos_expediente);
 
-        // ocupacion
-
-        $datos_ocupacionales = [];
-        foreach ($datos as $key => $value) {
-            if (strpos($key, 'fo_') === 0) {
-                $datos_ocupacionales[$key] = $value; 
-            }
-        }
-
-        $datos_ocupacionales["id_general"] = $ultimo_id;
-
-        $this->ModelGlobal->sub_agregar($this->tabla_cc_ocupacionales, $datos_ocupacionales);
-
-        // declaracion 
+        // declaracion de fuentes
 
         $datos_declaracion = [];
         foreach ($datos as $key => $value) {
-            if (strpos($key, 'fd_') === 0) {
+            if (strpos($key, 'pjdf_') === 0) {
                 $datos_declaracion[$key] = $value; 
             }
         }
 
         $datos_declaracion["id_general"] = $ultimo_id;
 
-        $this->ModelGlobal->sub_agregar($this->tabla_ccc_declaracion, $datos_declaracion);
+        $this->ModelGlobal->sub_agregar($this->tabla_cc_pj_declaracion_fuentes, $datos_declaracion);
 
-        // referencias 
+        // Representante legal
 
-        $datos_referencias = [];
+        $datos_representante_legal = [];
         foreach ($datos as $key => $value) {
-            if (strpos($key, 'fr_') === 0) {
-                $datos_referencias[$key] = $value; 
+            if (strpos($key, 'pjrl_') === 0) {
+                $datos_representante_legal[$key] = $value; 
             }
         }
 
-        $datos_referencias["id_general"] = $ultimo_id;
+        $datos_representante_legal["id_general"] = $ultimo_id;
 
-        $this->ModelGlobal->sub_agregar($this->tabla_cc_referencias, $datos_referencias);
+        $this->ModelGlobal->sub_agregar($this->tabla_cc_pj_representante_legal, $datos_representante_legal);  
 
-        // Beneficiario final 
+        // Propietarios
 
-        $datos_beneficiario = [];
+        $datos_cc_pj_propietarios = [];
         foreach ($datos as $key => $value) {
-            if (strpos($key, 'fb_') === 0) {
-                $datos_beneficiario[$key] = $value; 
+            if (strpos($key, 'pjpr_') === 0) {
+                $datos_cc_pj_propietarios[$key] = $value; 
             }
         }
 
-        $datos_beneficiario["id_general"] = $ultimo_id;
+        $datos_cc_pj_propietarios["id_general"] = $ultimo_id;
 
-        $this->ModelGlobal->sub_agregar($this->tabla_cc_beneficiario, $datos_beneficiario);
+        $this->ModelGlobal->sub_agregar($this->tabla_cc_pj_propietarios, $datos_cc_pj_propietarios);
+
+        // Declaracion de accionista
+
+        $datos_cc_pj_declaracion_accionista = [];
+        foreach ($datos as $key => $value) {
+            if (strpos($key, 'pjda_') === 0) {
+                $datos_cc_pj_declaracion_accionista[$key] = $value; 
+            }
+        }
+
+        $datos_cc_pj_declaracion_accionista["id_general"] = $ultimo_id;
+
+        $this->ModelGlobal->sub_agregar($this->tabla_cc_declaracion_accionistas, $datos_cc_pj_declaracion_accionista);
+
+        // Beneficiario final
+
+        $datos_beneficiario_final = [];
+        foreach ($datos as $key => $value) {
+            if (strpos($key, 'pjbf_') === 0) {
+                $datos_beneficiario_final[$key] = $value; 
+            }
+        }
+
+        $datos_beneficiario_final["id_general"] = $ultimo_id;
+
+        $this->ModelGlobal->sub_agregar($this->tabla_cc_pj_beneficiario_final, $datos_beneficiario_final);
 
         // Terceros autorizados
 
-        $datos_terceros_autorizados = [];
+        $datos_pj_terceros_autorizados = [];
         foreach ($datos as $key => $value) {
-            if (strpos($key, 'ft_') === 0) {
-                $datos_terceros_autorizados[$key] = $value; 
+            if (strpos($key, 'pjtu_') === 0) {
+                $datos_pj_terceros_autorizados[$key] = $value; 
             }
         }
 
-        $datos_terceros_autorizados["id_general"] = $ultimo_id;
+        $datos_pj_terceros_autorizados["id_general"] = $ultimo_id;
 
-        $this->ModelGlobal->sub_agregar($this->tabla_cc_terceros_autorizados, $datos_terceros_autorizados);
-
-        // Personas expuestas
+        $this->ModelGlobal->sub_agregar($this->tabla_cc_pj_terceros_autorizados, $datos_pj_terceros_autorizados);
+        
+        // Personas expuestas politicamente
 
         $datos_personas_expuestas = [];
         foreach ($datos as $key => $value) {
-            if (strpos($key, 'fp_') === 0) {
+            if (strpos($key, 'pjpx_') === 0) {
                 $datos_personas_expuestas[$key] = $value; 
             }
         }
 
         $datos_personas_expuestas["id_general"] = $ultimo_id;
 
-        $this->ModelGlobal->sub_agregar($this->tabla_cc_personas_expuestas, $datos_personas_expuestas);
+        $this->ModelGlobal->sub_agregar($this->tabla_cc_pj_personas_expuestas, $datos_personas_expuestas);
+        
+        // referencias 
+
+        $datos_referencias = [];
+        foreach ($datos as $key => $value) {
+            if (strpos($key, 'pjrf_') === 0) {
+                $datos_referencias[$key] = $value; 
+            }
+        }
+        echo count($datos_referencias);
+        foreach($datos_referencias as $key => $subArray) {
+            echo $key.' | '.$subArray[1].'<br>';
+        }
+
+        /*for($i = 0; $i < count($datos_referencias["pjrf_nombre_razon_social"]); $i++) {
+           
+                $datos_referencias["pjrf_nombre_razon_social"][$i];
+                $datos_referencias["pjrf_actividad"][$i];
+                $datos_referencias["pjrf_relacion"][$i];
+                $datos_referencias["pjrf_telefono"][$i];
+                $datos_referencias["pjrf_correo_electronico"][$i];
+            
+        }*/
+
+        $datos_referencias["id_general"] = $ultimo_id;
+
+        $this->ModelGlobal->sub_agregar($this->tabla_cc_pj_referencias, $datos_referencias);
 
         // Declaracion jurada
 
         $datos_cc_declaracion_jurada = [];
         foreach ($datos as $key => $value) {
-            if (strpos($key, 'fdc_') === 0) {
+            if (strpos($key, 'pjdj_') === 0) {
                 $datos_cc_declaracion_jurada[$key] = $value; 
             }
         }
 
         $datos_cc_declaracion_jurada["id_general"] = $ultimo_id;
 
-        $this->ModelGlobal->sub_agregar($this->tabla_cc_declaracion_jurada, $datos_cc_declaracion_jurada);
+        $this->ModelGlobal->sub_agregar($this->tabla_cc_pj_declaracion_jurada, $datos_cc_declaracion_jurada);
 
         // Adjuntos
 
         $datos_cc_adjuntos = [];
         foreach ($datos as $key => $value) {
-            if (strpos($key, 'fdcad_') === 0) {
+            if (strpos($key, 'pjad_') === 0) {
                 $datos_cc_adjuntos[$key] = $value; 
             }
         }
 
         $datos_cc_adjuntos["id_general"] = $ultimo_id;
 
-        $this->ModelGlobal->sub_agregar($this->tabla_cc_adjuntos, $datos_cc_adjuntos);
+        $this->ModelGlobal->sub_agregar($this->tabla_cc_pj_adjuntos, $datos_cc_adjuntos);
 
         // uso interno
 
         $datos_cc_uso_interno = [];
         foreach ($datos as $key => $value) {
-            if (strpos($key, 'fui_') === 0) {
+            if (strpos($key, 'pjui_') === 0) {
                 $datos_cc_uso_interno[$key] = $value; 
             }
         }
 
         $datos_cc_uso_interno["id_general"] = $ultimo_id;
 
-        $this->ModelGlobal->sub_agregar($this->tabla_cc_uso_interno, $datos_cc_uso_interno);
+        $this->ModelGlobal->sub_agregar($this->tabla_cc_pj_uso_interno, $datos_cc_uso_interno);
 
         return $ultimo_id;
 
@@ -441,7 +492,7 @@ class CcclienteController {
             }
         }
 
-        $this->ModelGlobal->actualizar($this->tabla_cc_terceros_autorizados, "id_general = $id", $datos_terceros_autorizados);
+        $this->ModelGlobal->actualizar($this->tabla_cc_pj_terceros_autorizados, "id_general = $id", $datos_terceros_autorizados);
 
         // Personas expuestas
 

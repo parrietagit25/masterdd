@@ -1043,11 +1043,15 @@
                                 <a href="index.php" class="nav-link">CC. Persona Natural</a>
                             </li>
                             <li class="nav-item">
+                                <a href="index.php?view=ver_clientes" class="nav-link">Ver Persona Natural</a>
+                            </li>
+                            <li class="nav-item">
                                 <a href="cc_formulario.php" class="nav-link">CC. Persona Juridica</a>
                             </li>
                             <li class="nav-item">
-                                <a href="index.php?view=ver_clientes" class="nav-link">Ver clientes</a>
+                                <a href="index.php?view=ver_cc_persona_juridicas" class="nav-link">Ver Persona Juridica</a>
                             </li>
+                            
                             <!--
                             <li class="nav-item">
                                 <a href="forms-elements.php" class="nav-link"><?=$lang['t-basic-elements']?></a>
