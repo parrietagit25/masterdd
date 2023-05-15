@@ -171,9 +171,18 @@ class CcclienteController {
             }
         }
 
-        $datos_cc_pj_declaracion_accionista["id_general"] = $ultimo_id;
+        $finalArrayda = [];
 
-        $this->ModelGlobal->sub_agregar($this->tabla_cc_declaracion_accionistas, $datos_cc_pj_declaracion_accionista);
+        foreach($datos_cc_pj_declaracion_accionista as $key => $subArray) {
+            foreach($subArray as $index => $value) {
+                $finalArrayda[$index][$key] = $value;
+            }
+        }
+
+        foreach ($finalArrayda as $key => $value) {
+            $finalArrayda[$key]["id_general"] = $ultimo_id;
+            $this->ModelGlobal->sub_agregar($this->tabla_cc_declaracion_accionistas, $finalArrayda[$key]);
+        }
 
         // Beneficiario final
 
@@ -222,24 +231,18 @@ class CcclienteController {
                 $datos_referencias[$key] = $value; 
             }
         }
-        echo count($datos_referencias);
+
+        $finalArray = [];
+
         foreach($datos_referencias as $key => $subArray) {
-            echo $key.' | '.$subArray[1].'<br>';
+            foreach($subArray as $index => $value) {
+                $finalArray[$index][$key] = $value;
+            }
         }
-
-        /*for($i = 0; $i < count($datos_referencias["pjrf_nombre_razon_social"]); $i++) {
-           
-                $datos_referencias["pjrf_nombre_razon_social"][$i];
-                $datos_referencias["pjrf_actividad"][$i];
-                $datos_referencias["pjrf_relacion"][$i];
-                $datos_referencias["pjrf_telefono"][$i];
-                $datos_referencias["pjrf_correo_electronico"][$i];
-            
-        }*/
-
-        $datos_referencias["id_general"] = $ultimo_id;
-
-        $this->ModelGlobal->sub_agregar($this->tabla_cc_pj_referencias, $datos_referencias);
+        foreach ($finalArray as $key => $value) {
+            $finalArray[$key]["id_general"] = $ultimo_id;
+            $this->ModelGlobal->sub_agregar($this->tabla_cc_pj_referencias, $finalArray[$key]);
+        }
 
         // Declaracion jurada
 

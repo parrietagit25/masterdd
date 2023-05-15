@@ -1011,7 +1011,7 @@
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Cliente</label>
-                                                                                                    <input type="text" class="form-control" id="nombre_completo_inp" name="pjexp_cliente" readonly>
+                                                                                                    <input type="text" class="form-control" id="nombre_completo_inp" name="pjexp_cliente">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
