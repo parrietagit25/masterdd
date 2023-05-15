@@ -96,6 +96,141 @@
 
         }
 
+        function guardar_temp_jdd(){
+            
+            var temp_nombre_completo = document.querySelector("#jd_temp_nombre_completo").value;
+            var temp_cargo = document.querySelector("#jd_temp_cargo").value;
+            var temp_nacionalidad = document.querySelector("#jd_temp_nacionalidad").value;
+            var temp_id = document.querySelector("#jd_temp_id").value;
+            var temp_correo = document.querySelector("#jd_temp_correo").value;
+            var temp_telefono = document.querySelector("#jd_temp_telefono").value;
+            var temp_direccion = document.querySelector("#jd_temp_direccion").value;
+
+            const data = new URLSearchParams({
+            
+                jd_temp_nombre_completo :temp_nombre_completo, 
+                jd_temp_cargo :temp_cargo,
+                jd_temp_nacionalidad :temp_nacionalidad,
+                jd_temp_id :temp_id,
+                jd_temp_correo :temp_correo,
+                jd_temp_telefono :temp_telefono,
+                jd_temp_direccion :temp_direccion
+            
+            });
+
+            fetch('vistas/modal/modalContenidosTablas.php?guardar_temp_jdd=1', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                    },
+                    body: data
+                })
+                .then(function(response) {
+                return response.text();
+                })
+                .then(function(data) {
+                    $('.junta_directiva').modal('hide');
+                document.querySelector('#contenido_junta_directiva').innerHTML = data;
+                })
+                .catch(function(error) {
+                console.log('Error al obtener los detalles:', error);
+                });
+            
+        }
+
+        function eliminar_dd_temp(id_eliminar){
+
+            var id = id_eliminar;
+            fetch('vistas/modal/modalContenidosTablas.php?eliminar_jdd=1&id=' + id)
+                .then(function(response) {
+                return response.text();
+                })
+                .then(function(data) {
+                    $('.junta_directiva_eliminar').modal('show');
+                document.querySelector('#contenido_modal_jdd_eliminar').innerHTML = data;
+                })
+                .catch(function(error) {
+                console.log('Error al obtener los detalles:', error);
+                });
+        }
+
+        function eliminar_dd_temp_final(id_eliminar){
+
+            var id = id_eliminar;
+            fetch('vistas/modal/modalContenidosTablas.php?eliminar_jdd_final=1&id=' + id)
+                .then(function(response) {
+                return response.text();
+                })
+                .then(function(data) {
+                    $('.junta_directiva_eliminar').modal('hide');
+                document.querySelector('#contenido_junta_directiva').innerHTML = data;
+                })
+                .catch(function(error) {
+                console.log('Error al obtener los detalles:', error);
+                });
+        }
+
+        function guardar_temp_apoderados(){
+
+            console.log('pimba');
+            
+            var temp_nombre_completo = document.querySelector("#a_temp_nombre_completo").value;
+            var temp_cargo = document.querySelector("#a_temp_cargo").value;
+            var temp_nacionalidad = document.querySelector("#a_temp_nacionalidad").value;
+            var temp_id = document.querySelector("#a_temp_id").value;
+            var temp_correo = document.querySelector("#a_temp_correo").value;
+            var temp_telefono = document.querySelector("#a_temp_telefono").value;
+            var temp_direccion = document.querySelector("#a_temp_direccion").value;
+
+            const data = new URLSearchParams({
+            
+                a_temp_nombre_completo :temp_nombre_completo, 
+                a_temp_cargo :temp_cargo,
+                a_temp_nacionalidad :temp_nacionalidad,
+                a_temp_id :temp_id,
+                a_temp_correo :temp_correo,
+                a_temp_telefono :temp_telefono,
+                a_temp_direccion :temp_direccion
+            
+            });
+
+            fetch('vistas/modal/modalContenidosTablas.php?guardar_temp_apoderados=1', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                    },
+                    body: data
+                })
+                .then(function(response) {
+                return response.text();
+                })
+                .then(function(data) {
+                    $('.apoderados').modal('hide');
+                document.querySelector('#apoderados_tabla').innerHTML = data;
+                })
+                .catch(function(error) {
+                console.log('Error al obtener los detalles:', error);
+                });
+            
+        }
+
+        function eliminar_a_temp(id_eliminar){
+
+            var id = id_eliminar;
+            fetch('vistas/modal/modalContenidosTablas.php?eliminar_a_temp=1&id=' + id)
+                .then(function(response) {
+                return response.text();
+                })
+                .then(function(data) {
+                    $('.junta_directiva_eliminar').modal('show');
+                document.querySelector('#contenido_modal_jdd_eliminar').innerHTML = data;
+                })
+                .catch(function(error) {
+                console.log('Error al obtener los detalles:', error);
+                });
+
+        }
+
     </script>
         
         <!-- END layout-wrapper  incluido por el tema -->

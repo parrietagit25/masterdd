@@ -12,6 +12,32 @@
                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Pages</a></li>
                                 <li class="breadcrumb-item active">Starter</li>
                             </ol>-->
+
+                             <!-- Modal Eliminar JUNTA DIRECTIVA Y DIGNATARIOS. -->
+
+                            <div class="modal fade junta_directiva_eliminar" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-xl">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleMocClienteFormulario"></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h6 class="fs-15" style="color:red;">
+                                                Eliminar el registro de la junta directiva y dignatarios ?.
+                                            </h6>
+                                            <h6 style="color:red;">Esta seguro que desea eliminarlo ?</h6>
+                                            <div id="contenido_modal_jdd_eliminar">
+
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
+                                        </div>
+                                    </div><!-- /.modal-content -->
+                                </div><!-- /.modal-dialog -->
+                            </div><!-- /.modal -->
+
                             <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">REQUISITOS DEBIDA DILIGENCIA</button>
                             <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl-delitos">DELITOS</button>
                             <!-- Full screen modal content debida deligencia -->
@@ -353,14 +379,14 @@
                                                     <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">Nombre completo.</label>
-                                                            <input type="text" class="form-control" id="basiInput jd_temp_nombre_completo" name="">
+                                                            <input type="text" class="form-control" id="jd_temp_nombre_completo" name="">
                                                         </div>
                                                     </div>
                                                     <!--end col-->
                                                     <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">Cargo</label>
-                                                            <input type="text" class="form-control" id="basiInput jd_temp_cargo" name="">
+                                                            <input type="text" class="form-control" id="jd_temp_cargo" name="">
                                                         </div>
                                                     </div>
                                                     <!--end col-->
@@ -368,7 +394,7 @@
                                                         <div>
                                                             <label for="disabledInput" class="form-label">Nacionalidad</label>
                                                             <select class="form-control" data-choices
-                                                                id="choices-single-default jd_temp_nacionalidad" name="">
+                                                                id="jd_temp_nacionalidad" class="" name="">
                                                                 <option value="">Seleccione</option>
                                                                 <?php foreach ($paises as $key => $value) { ?>
                                                                 <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
@@ -380,7 +406,7 @@
                                                     <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">I.D.</label>
-                                                            <input type="text" class="form-control" id="basiInput jd_temp_id" name="">
+                                                            <input type="text" class="form-control" id="jd_temp_id" name="">
                                                         </div>
                                                     </div>
                                                     <!--end col-->
@@ -389,7 +415,7 @@
                                                             <label for="iconInput" class="form-label">Correo Electrónico </label>
                                                             <div class="form-icon">
                                                                 <input type="text" class="form-control form-control-icon"
-                                                                    id="iconInput jd_temp_correo" placeholder="example@gmail.com" name="">
+                                                                    id="jd_temp_correo" placeholder="example@gmail.com" name="">
                                                                 <i class="ri-mail-unread-line"></i>
                                                             </div>
                                                         </div>
@@ -398,13 +424,13 @@
                                                     <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">Teléfono</label>
-                                                            <input type="text" class="form-control" id="basiInput jd_temp_telefono" name="">
+                                                            <input type="text" class="form-control" id="jd_temp_telefono" name="">
                                                         </div>
                                                     </div>
                                                     <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">Dirección</label>
-                                                            <input type="text" class="form-control" id="basiInput jd_temp_direccion" name="">
+                                                            <input type="text" class="form-control" id="jd_temp_direccion" name="">
                                                         </div>
                                                     </div>
                                                     <!--end col-->
@@ -414,7 +440,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
-                                            <a href="#" class="btn btn-success">Guardar</a>
+                                            <a href="#" class="btn btn-success" onclick="guardar_temp_jdd()">Guardar</a>
                                         </div>
                                     </div><!-- /.modal-content -->
                                 </div><!-- /.modal-dialog -->
@@ -439,14 +465,14 @@
                                                     <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">Nombre completo.</label>
-                                                            <input type="text" class="form-control" id="basiInput a_temp_nombre_completo" name="">
+                                                            <input type="text" class="form-control" id="a_temp_nombre_completo" name="">
                                                         </div>
                                                     </div>
                                                     <!--end col-->
                                                     <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">Cargo</label>
-                                                            <input type="text" class="form-control" id="basiInput a_temp_cargo" name="">
+                                                            <input type="text" class="form-control" id="a_temp_cargo" name="">
                                                         </div>
                                                     </div>
                                                     <!--end col-->
@@ -454,7 +480,7 @@
                                                         <div>
                                                             <label for="disabledInput" class="form-label">Nacionalidad</label>
                                                             <select class="form-control" data-choices
-                                                                id="choices-single-default a_temp_nacionalidad" name="">
+                                                                id="a_temp_nacionalidad" name="">
                                                                 <option value="">Seleccione</option>
                                                                 <?php foreach ($paises as $key => $value) { ?>
                                                                 <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
@@ -466,7 +492,7 @@
                                                     <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">I.D.</label>
-                                                            <input type="text" class="form-control" id="basiInput a_temp_id" name="">
+                                                            <input type="text" class="form-control" id="a_temp_id" name="">
                                                         </div>
                                                     </div>
                                                     <!--end col-->
@@ -475,7 +501,7 @@
                                                             <label for="iconInput" class="form-label">Correo Electrónico </label>
                                                             <div class="form-icon">
                                                                 <input type="text" class="form-control form-control-icon"
-                                                                    id="iconInput a_temp_correo" placeholder="example@gmail.com" name="fr_correo_electronico_1">
+                                                                    id="a_temp_correo" placeholder="example@gmail.com" name="fr_correo_electronico_1">
                                                                 <i class="ri-mail-unread-line"></i>
                                                             </div>
                                                         </div>
@@ -484,13 +510,13 @@
                                                     <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">Teléfono</label>
-                                                            <input type="text" class="form-control" id="basiInput a_temp_telefono" name="fr_razon_social_2">
+                                                            <input type="text" class="form-control" id="a_temp_telefono" name="fr_razon_social_2">
                                                         </div>
                                                     </div>
                                                     <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">Dirección</label>
-                                                            <input type="text" class="form-control" id="basiInput a_temp_direccion" name="fr_actividad_2">
+                                                            <input type="text" class="form-control" id="a_temp_direccion" name="fr_actividad_2">
                                                         </div>
                                                     </div>
                                                     <!--end col-->
@@ -500,7 +526,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
-                                            <a href="#" class="btn btn-success">Guardar</a>
+                                            <a href="#" class="btn btn-success" onclick="guardar_temp_apoderados()">Guardar</a>
                                         </div>
                                     </div><!-- /.modal-content -->
                                 </div><!-- /.modal-dialog -->
@@ -1530,17 +1556,25 @@
                                                                                                         <th>I.D.</th>
                                                                                                         <th>Correo</th>
                                                                                                         <th>Dirección</th>
+                                                                                                        <th>Acciones</th>
                                                                                                     </tr>
                                                                                                 </thead>
-                                                                                                <tbody>
-                                                                                                    <tr>
-                                                                                                        <td></td>
-                                                                                                        <td></td>
-                                                                                                        <td></td>
-                                                                                                        <td></td>
-                                                                                                        <td></td>
-                                                                                                        <td></td>
-                                                                                                    </tr>
+                                                                                                <tbody id="contenido_junta_directiva">
+                                                                                                    <?php 
+                                                                                                    $obtener_registros_temp = $cCclienteController->obtener_pj_directiva_dignatarios_temp(session_id()); 
+
+                                                                                                    foreach ($obtener_registros_temp as $key => $value) { ?>
+                                                                                                            <tr>
+                                                                                                                <td><input value="<?php echo $value['jd_temp_nombre_completo']; ?>" name="pjdd_nombre_completo[]" class="form-control"> </td>
+                                                                                                                <td><input value="<?php echo $value['jd_temp_cargo']; ?>" name="pjdd_cargo[]" class="form-control"></td>
+                                                                                                                <td><input value="<?php echo $value['jd_temp_nacionalidad']; ?>" name="pjdd_nacionalidad[]" class="form-control"></td>
+                                                                                                                <td><input value="<?php echo $value['jd_temp_id']; ?>" name="pjdd_id[]" class="form-control"></td>
+                                                                                                                <td><input value="<?php echo $value['jd_temp_correo']; ?>" name="pjdd_correo[]" class="form-control"></td>
+                                                                                                                <td><input value="<?php echo $value['jd_temp_direccion']; ?>" name="pjdd_direccion[]" class="form-control"></td>
+                                                                                                                <td><a href="#" onclick="eliminar_dd_temp(<?php echo $value['id']; ?>)" class="btn btn-danger">Eliminar</a></td>
+                                                                                                                <input type="hidden" name="pjdd_telefono[]" value="<?php echo $value['jd_temp_telefono']; ?>">
+                                                                                                            </tr>
+                                                                                                    <?php } ?>
                                                                                                 </tbody>
                                                                                             </table> 
                                                                                             <!--end row-->
@@ -1583,15 +1617,22 @@
                                                                                                     <th>Dirección</th>
                                                                                                 </tr>
                                                                                             </thead>
-                                                                                            <tbody>
-                                                                                                <tr>
-                                                                                                    <td scope="row"></td>
-                                                                                                    <td></td>
-                                                                                                    <td></td>
-                                                                                                    <td></td>
-                                                                                                    <td></td>
-                                                                                                    <td></td>
-                                                                                                </tr>
+                                                                                            <tbody id="apoderados_tabla">
+                                                                                                <?php 
+                                                                                                    $obtener_registros_temp = $cCclienteController->obtener_pj_apoderados_temp(session_id()); 
+
+                                                                                                    foreach ($obtener_registros_temp as $key => $value) { ?>
+                                                                                                            <tr>
+                                                                                                                <td><input value="<?php echo $value['a_temp_nombre_completo']; ?>" name="a_nombre_completo[]" class="form-control"> </td>
+                                                                                                                <td><input value="<?php echo $value['a_temp_cargo']; ?>" name="a_cargo[]" class="form-control"></td>
+                                                                                                                <td><input value="<?php echo $value['a_temp_nacionalidad']; ?>" name="a_nacionalidad[]" class="form-control"></td>
+                                                                                                                <td><input value="<?php echo $value['a_temp_id']; ?>" name="a_id[]" class="form-control"></td>
+                                                                                                                <td><input value="<?php echo $value['a_temp_correo']; ?>" name="a_correo[]" class="form-control"></td>
+                                                                                                                <td><input value="<?php echo $value['a_temp_direccion']; ?>" name="a_direccion[]" class="form-control"></td>
+                                                                                                                <td><a href="#" onclick="eliminar_a_temp(<?php echo $value['id']; ?>)" class="btn btn-danger">Eliminar</a></td>
+                                                                                                                <input type="hidden" name="pjdd_telefono[]" value="<?php echo $value['a_telefono']; ?>">
+                                                                                                            </tr>
+                                                                                                    <?php } ?>
                                                                                             </tbody>
                                                                                         </table>
                                                                                         <!--end row-->

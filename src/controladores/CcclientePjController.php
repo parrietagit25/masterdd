@@ -20,6 +20,9 @@ class CcclienteController {
   private $tabla_cc_pj_declaracion_jurada;
   private $tabla_cc_pj_uso_interno;
   private $tabla_cc_pj_personas_expuestas;
+  private $tabla_cc_pj_directiva_dignatarios_temp;
+  private $tabla_cc_pj_directiva_dignatarios;
+  private $tabla_cc_pj_apoderados_temp;
   
   private $tabla_cc_beneficiario;
   private $tabla_paises;
@@ -40,6 +43,9 @@ class CcclienteController {
         $this->tabla_cc_pj_adjuntos = "cc_pj_adjuntos";
         $this->tabla_cc_pj_uso_interno = "cc_pj_uso_interno";
         $this->tabla_cc_pj_personas_expuestas = "cc_pj_perosnas_expuestas";
+        $this->tabla_cc_pj_directiva_dignatarios_temp = "cc_pj_directiva_dignatarios_temp";
+        $this->tabla_cc_pj_directiva_dignatarios = "cc_pj_directiva_dignatarios";
+        $this->tabla_cc_pj_apoderados_temp = "cc_pj_apoderados_temp";
 
         $this->tabla_paises = "paises";
         $this->tabla_codigo = "codigos";
@@ -148,6 +154,31 @@ class CcclienteController {
         $datos_representante_legal["id_general"] = $ultimo_id;
 
         $this->ModelGlobal->sub_agregar($this->tabla_cc_pj_representante_legal, $datos_representante_legal);  
+
+        // JUNTA DIRECTIVA Y DIGNATARIOS.
+
+        $datos_cc_pj_junta_directiva_dignatarios = [];
+        foreach ($datos as $key => $value) {
+            if (strpos($key, 'pjdd_') === 0) {
+                $datos_cc_pj_junta_directiva_dignatarios[$key] = $value; 
+            }
+        }
+
+        $finalArrayda = [];
+
+        foreach($datos_cc_pj_junta_directiva_dignatarios as $key => $subArray) {
+            foreach($subArray as $index => $value) {
+                $finalArrayda[$index][$key] = $value;
+            }
+        }
+
+        foreach ($finalArrayda as $key => $value) {
+            $finalArrayda[$key]["id_general"] = $ultimo_id;
+            $this->ModelGlobal->sub_agregar($this->tabla_cc_pj_directiva_dignatarios, $finalArrayda[$key]);
+        }
+
+        $id_sessiom = session_id();
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_directiva_dignatarios_temp, " jd_temp_id_session = '".$id_sessiom."' ");
 
         // Propietarios
 
@@ -285,6 +316,52 @@ class CcclienteController {
 
         return $ultimo_id;
 
+    }
+
+    public function agregar_temp($datos){
+
+        $datos_generales = [];
+        foreach ($datos as $key => $value) {
+            if (strpos($key, 'jd_temp') === 0) {
+                $datos_generales[$key] = $value; 
+            }
+        }
+
+        $ultimo_id = $this->ModelGlobal->agregar($this->tabla_cc_pj_directiva_dignatarios_temp, $datos_generales);
+
+    }
+
+    public function agregar_temp_apoderados($datos){
+        
+        $datos_generales = [];
+        foreach ($datos as $key => $value) {
+            if (strpos($key, 'a_temp_') === 0) {
+                $datos_generales[$key] = $value; 
+            }
+        }
+
+        $ultimo_id = $this->ModelGlobal->agregar($this->tabla_cc_pj_apoderados_temp, $datos_generales);
+
+    }
+
+    public function obtener_pj_directiva_dignatarios_temp($id_session){
+        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_pj_directiva_dignatarios_temp, " jd_temp_id_session = '".$id_session."' ");
+    }
+
+    public function obtener_pj_directiva_dignatarios_temp_id($id){
+        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_pj_directiva_dignatarios_temp, " id = $id ");
+    }
+
+    public function eliminar_directiva_dignatarios_temp_id($id){
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_directiva_dignatarios_temp, "id = $id");
+    }
+
+    public function obtener_pj_apoderados_temp($id_session){
+        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_pj_apoderados_temp, " a_temp_id_session = '".$id_session."' ");
+    }
+    
+    public function obtener_pj_apoderados_temp_id($id){
+        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_pj_apoderados_temp, " id = $id ");
     }
 
     public function subir_archivos($datos, $id_general){
