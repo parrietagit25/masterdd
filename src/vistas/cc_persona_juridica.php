@@ -38,6 +38,31 @@
                                 </div><!-- /.modal-dialog -->
                             </div><!-- /.modal -->
 
+                            <!-- Modal Eliminar APODERADOS. -->
+
+                            <div class="modal fade apoderados_eliminar" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-xl">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleMocClienteFormulario"></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h6 class="fs-15" style="color:red;">
+                                                Eliminar el registro de los apoderados ?.
+                                            </h6>
+                                            <h6 style="color:red;">Esta seguro que desea eliminarlo ?</h6>
+                                            <div id="contenido_modal_apoderados_eliminar">
+
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
+                                        </div>
+                                    </div><!-- /.modal-content -->
+                                </div><!-- /.modal-dialog -->
+                            </div><!-- /.modal -->
+
                             <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">REQUISITOS DEBIDA DILIGENCIA</button>
                             <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl-delitos">DELITOS</button>
                             <!-- Full screen modal content debida deligencia -->
@@ -532,7 +557,7 @@
                                 </div><!-- /.modal-dialog -->
                             </div><!-- /.modal --> 
 
-                            <!-- Generales Beneficiarios finales -->
+                            <!-- Modal Generales Beneficiarios finales -->
 
                             <div class="modal fade generales_beneficiarios" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-lg">
@@ -551,15 +576,15 @@
                                                     <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">Nombre completo.</label>
-                                                            <input type="text" class="form-control" id="basiInput gbf_temp_nombre_completo" name="">
+                                                            <input type="text" class="form-control" id="gbf_temp_nombre_completo" name="">
                                                         </div>
                                                     </div>
                                                     <!--end col-->
-                                                    <div class="col-xxl-3 col-md-6">
+                                                    <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="disabledInput" class="form-label">Sexo</label>
                                                             <select class="form-control" data-choices
-                                                                id="choices-single-default" name="gbf_genero">
+                                                                id="gbf_temp_genero" name="">
                                                                 <option value="">Seleccione</option>
                                                                 <?php foreach ($genero as $key => $value) { ?>
                                                                 <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
@@ -571,15 +596,15 @@
                                                     <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">Cedula - Pasaporte</label>
-                                                            <input type="text" class="form-control" id="basiInput gbf_temp_identificacion" name="">
+                                                            <input type="text" class="form-control" id="gbf_temp_identificacion" name="">
                                                         </div>
                                                     </div>
                                                     <!--end col-->
-                                                    <div class="col-xxl-3 col-md-6">
+                                                    <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">Nacionalidad</label>
                                                             <select class="form-control" data-choices
-                                                                id="choices-single-default" name="gbf_temp_nacionalidad">
+                                                                id="gbf_temp_nacionalidad" name="">
                                                                 <option value="">Seleccione</option>
                                                                 <?php foreach ($paises as $key => $value) { ?>
                                                                 <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
@@ -588,11 +613,11 @@
                                                         </div>
                                                     </div>
                                                     <!-- end col -->
-                                                    <div class="col-xxl-3 col-md-6">
+                                                    <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">País de nacimiento</label>
                                                             <select class="form-control" data-choices
-                                                                id="choices-single-default" name="gbf_temp_nacionalidad">
+                                                                id="gbf_temp_pais_nacimiento" name="">
                                                                 <option value="">Seleccione</option>
                                                                 <?php foreach ($paises as $key => $value) { ?>
                                                                 <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
@@ -601,19 +626,19 @@
                                                         </div>
                                                     </div>
                                                     <!-- end col -->
-                                                    <div class="col-xxl-3 col-md-6">
+                                                    <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">Fecha de nacimineto</label>
                                                             <input type="text" class="form-control" data-provider="flatpickr"
-                                                            data-date-format="d M, Y" name="pjexp_fecha">
+                                                            data-date-format="d M, Y" id="gbf_temp_fecha_nacimiento">
                                                         </div>
                                                     </div>
                                                     <!-- end col -->
-                                                    <div class="col-xxl-3 col-md-6">
+                                                    <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">País de residencia</label>
                                                             <select class="form-control" data-choices
-                                                                id="choices-single-default" name="gbf_temp_nacionalidad">
+                                                                id="gbf_temp_pais_residencia" name="">
                                                                 <option value="">Seleccione</option>
                                                                 <?php foreach ($paises as $key => $value) { ?>
                                                                 <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
@@ -622,11 +647,11 @@
                                                         </div>
                                                     </div>
                                                     <!-- end col -->
-                                                    <div class="col-xxl-3 col-md-6">
+                                                    <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">País de residencia fiscal</label>
                                                             <select class="form-control" data-choices
-                                                                id="choices-single-default" name="gbf_temp_nacionalidad">
+                                                                id="gbf_temp_pais_residencia_fiscal" name="">
                                                                 <option value="">Seleccione</option>
                                                                 <?php foreach ($paises as $key => $value) { ?>
                                                                 <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
@@ -635,11 +660,11 @@
                                                         </div>
                                                     </div>
                                                     <!-- end col -->
-                                                    <div class="col-xxl-3 col-md-6">
+                                                    <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="disabledInput" class="form-label">Profesión u oficio</label>
                                                             <select class="form-control" data-choices
-                                                                id="choices-single-default" name="gbf_temp_profesion">
+                                                                id="gbf_temp_profesion" name="">
                                                                 <option value="">Seleccione</option>
                                                                 <?php foreach ($profesion as $key => $value) { ?>
                                                                 <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
@@ -648,18 +673,18 @@
                                                         </div>
                                                     </div>
                                                     <!--end col-->
-                                                    <div class="col-xxl-3 col-md-6">
+                                                    <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="exampleFormControlTextarea5" class="form-label">Lugar de trabajo</label>
-                                                            <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                rows="3" name="gbf_temp_lugar_trabajo"></textarea>
+                                                            <textarea class="form-control" id="gbf_temp_lugar_trabajo"
+                                                                rows="3" name=""></textarea>
                                                         </div>
                                                     </div>
                                                     <!--end col-->
                                                     <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">Teléfono</label>
-                                                            <input type="text" class="form-control" id="basiInput gbf_temp_telefono" name="gbf_temp_telefono">
+                                                            <input type="text" class="form-control" id="gbf_temp_telefono" name="">
                                                         </div>
                                                     </div>
                                                     <!--end col-->
@@ -668,24 +693,24 @@
                                                             <label for="iconInput" class="form-label">Correo Electrónico </label>
                                                             <div class="form-icon">
                                                                 <input type="text" class="form-control form-control-icon"
-                                                                    id="iconInput gbf_temp_correo_electronico" placeholder="example@gmail.com" name="gbf_temp_correo_electronico">
+                                                                    id="gbf_temp_correo_electronico" placeholder="example@gmail.com" name="">
                                                                 <i class="ri-mail-unread-line"></i>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <!--end col-->
-                                                    <div class="col-xxl-3 col-md-6">
+                                                    <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="exampleFormControlTextarea5" class="form-label">Domicilio Personal</label>
-                                                            <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                rows="3" name="gbf_temp_lugar_trabajo"></textarea>
+                                                            <textarea class="form-control" id="gbf_temp_domicilio_personal"
+                                                                rows="3" name=""></textarea>
                                                         </div>
                                                     </div>
                                                     <!--end col-->
                                                     <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">Porcentaje de participación</label>
-                                                            <input type="text" class="form-control" id="basiInput a_temp_direccion" name="fr_actividad_2">
+                                                            <input type="text" class="form-control" id="gbf_temp_participacion" name="">
                                                         </div>
                                                     </div>
                                                     <!--end col-->
@@ -695,13 +720,13 @@
                                         </div>
                                         <div class="modal-footer">
                                             <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
-                                            <a href="#" class="btn btn-success">Guardar</a>
+                                            <a href="#" class="btn btn-success" onclick="guardar_temp_generaless_bf()">Guardar</a>
                                         </div>
                                     </div><!-- /.modal-content -->
                                 </div><!-- /.modal-dialog -->
                             </div><!-- /.modal -->
 
-                            <!-- GENERALES DE LOS BENEFICIARIOS FINALES- PERSONA JURÍDICA --> 
+                            <!-- Modal GENERALES DE LOS BENEFICIARIOS FINALES- PERSONA JURÍDICA --> 
 
                             <div class="modal fade generales_beneficiarios_juridicos" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-lg">
@@ -724,7 +749,7 @@
                                                         </div>
                                                     </div>
                                                     <!--end col-->
-                                                    <div class="col-xxl-3 col-md-6">
+                                                    <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">PAÍS Y FECHA  DE CONSTITUCIÓN ( ACCIONISTA JURÍDICO)</label>
                                                             <select class="form-control" data-choices
@@ -1561,6 +1586,7 @@
                                                                                                 </thead>
                                                                                                 <tbody id="contenido_junta_directiva">
                                                                                                     <?php 
+
                                                                                                     $obtener_registros_temp = $cCclienteController->obtener_pj_directiva_dignatarios_temp(session_id()); 
 
                                                                                                     foreach ($obtener_registros_temp as $key => $value) { ?>
@@ -1623,16 +1649,16 @@
 
                                                                                                     foreach ($obtener_registros_temp as $key => $value) { ?>
                                                                                                             <tr>
-                                                                                                                <td><input value="<?php echo $value['a_temp_nombre_completo']; ?>" name="a_nombre_completo[]" class="form-control"> </td>
-                                                                                                                <td><input value="<?php echo $value['a_temp_cargo']; ?>" name="a_cargo[]" class="form-control"></td>
-                                                                                                                <td><input value="<?php echo $value['a_temp_nacionalidad']; ?>" name="a_nacionalidad[]" class="form-control"></td>
-                                                                                                                <td><input value="<?php echo $value['a_temp_id']; ?>" name="a_id[]" class="form-control"></td>
-                                                                                                                <td><input value="<?php echo $value['a_temp_correo']; ?>" name="a_correo[]" class="form-control"></td>
-                                                                                                                <td><input value="<?php echo $value['a_temp_direccion']; ?>" name="a_direccion[]" class="form-control"></td>
+                                                                                                                <td><input value="<?php echo $value['a_temp_nombre_completo']; ?>" name="pja_nombre_completo[]" class="form-control"> </td>
+                                                                                                                <td><input value="<?php echo $value['a_temp_cargo']; ?>" name="pja_cargo[]" class="form-control"></td>
+                                                                                                                <td><input value="<?php echo $value['a_temp_nacionalidad']; ?>" name="pja_nacionalidad[]" class="form-control"></td>
+                                                                                                                <td><input value="<?php echo $value['a_temp_id']; ?>" name="pja_id[]" class="form-control"></td>
+                                                                                                                <td><input value="<?php echo $value['a_temp_correo']; ?>" name="pja_correo[]" class="form-control"></td>
+                                                                                                                <td><input value="<?php echo $value['a_temp_direccion']; ?>" name="pja_direccion[]" class="form-control"></td>
                                                                                                                 <td><a href="#" onclick="eliminar_a_temp(<?php echo $value['id']; ?>)" class="btn btn-danger">Eliminar</a></td>
-                                                                                                                <input type="hidden" name="pjdd_telefono[]" value="<?php echo $value['a_telefono']; ?>">
+                                                                                                                <input type="hidden" name="pja_telefono[]" value="<?php echo $value['a_temp_telefono']; ?>">
                                                                                                             </tr>
-                                                                                                    <?php } ?>
+                                                                                                    <?php }  ?>
                                                                                             </tbody>
                                                                                         </table>
                                                                                         <!--end row-->
@@ -2869,14 +2895,14 @@
                                                                                                 <thead>
                                                                                                     <tr>
                                                                                                         <th>Nombre Completo</th>
-                                                                                                        <th>Porcentaje</th>
-                                                                                                        <th>Nacionalidad</th>
+                                                                                                        <th>Participación</th>
+                                                                                                        <th>Nacionalidad</th>ó
                                                                                                         <th>Profesión</th>
                                                                                                         <th>Correo</th>
                                                                                                         <th>Acciones</th>
                                                                                                     </tr>
                                                                                                 </thead>
-                                                                                                <tbody>
+                                                                                                <tbody id="generales_bf">
                                                                                                     <tr>
                                                                                                         <td></td>
                                                                                                         <td></td>

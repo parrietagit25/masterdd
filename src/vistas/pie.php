@@ -135,6 +135,14 @@
                 .catch(function(error) {
                 console.log('Error al obtener los detalles:', error);
                 });
+
+                temp_nombre_completo.value = '';
+                temp_cargo.value = '';
+                temp_nacionalidad.value = '';
+                temp_id.value = '';
+                temp_correo.value = '';
+                temp_telefono.value = '';
+                temp_direccion.value = '';
             
         }
 
@@ -154,25 +162,20 @@
                 });
         }
 
-        function eliminar_dd_temp_final(id_eliminar){
-
-            var id = id_eliminar;
-            fetch('vistas/modal/modalContenidosTablas.php?eliminar_jdd_final=1&id=' + id)
-                .then(function(response) {
-                return response.text();
-                })
-                .then(function(data) {
-                    $('.junta_directiva_eliminar').modal('hide');
+        async function eliminar_dd_temp_final(id_eliminar) {
+            try {
+                var id = id_eliminar;
+                const response = await fetch('vistas/modal/modalContenidosTablas.php?eliminar_jdd_final=1&id=' + id);
+                const data = await response.text();
+                $('.junta_directiva_eliminar').modal('hide');
                 document.querySelector('#contenido_junta_directiva').innerHTML = data;
-                })
-                .catch(function(error) {
+            } catch (error) {
                 console.log('Error al obtener los detalles:', error);
-                });
+            }
         }
 
-        function guardar_temp_apoderados(){
 
-            console.log('pimba');
+        function guardar_temp_apoderados(){
             
             var temp_nombre_completo = document.querySelector("#a_temp_nombre_completo").value;
             var temp_cargo = document.querySelector("#a_temp_cargo").value;
@@ -211,6 +214,14 @@
                 .catch(function(error) {
                 console.log('Error al obtener los detalles:', error);
                 });
+
+                temp_nombre_completo.value = '';
+                temp_cargo.value = '';
+                temp_nacionalidad.value = '';
+                temp_id.value = '';
+                temp_correo.value = '';
+                temp_telefono.value = '';
+                temp_direccion.value = '';
             
         }
 
@@ -222,13 +233,99 @@
                 return response.text();
                 })
                 .then(function(data) {
-                    $('.junta_directiva_eliminar').modal('show');
-                document.querySelector('#contenido_modal_jdd_eliminar').innerHTML = data;
+                    $('.apoderados_eliminar').modal('show');
+                document.querySelector('#contenido_modal_apoderados_eliminar').innerHTML = data;
                 })
                 .catch(function(error) {
                 console.log('Error al obtener los detalles:', error);
                 });
 
+        }
+
+        function eliminar_a_temp_final(id_eliminar){
+
+            var id = id_eliminar;
+            fetch('vistas/modal/modalContenidosTablas.php?eliminar_a_temp_final=1&id=' + id)
+                .then(function(response) {
+                return response.text();
+                })
+                .then(function(data) {
+                    $('.apoderados_eliminar').modal('hide');
+                document.querySelector('#apoderados_tabla').innerHTML = data;
+                })
+                .catch(function(error) {
+                console.log('Error al obtener los detalles:', error);
+                });
+        }
+
+        function guardar_temp_generaless_bf(){
+
+            var temp_nombre_completo = document.querySelector("#gbf_temp_nombre_completo").value;
+            var temp_genero = document.querySelector("#gbf_temp_genero").value;
+            var temp_identificacion = document.querySelector("#gbf_temp_identificacion").value;
+            var temp_nacionalidad = document.querySelector("#gbf_temp_nacionalidad").value;
+            var temp_pais_nacimiento = document.querySelector("#gbf_temp_pais_nacimiento").value;
+            var temp_fecha_nacimiento = document.querySelector("#gbf_temp_fecha_nacimiento").value;
+            var temp_pais_residencia = document.querySelector("#gbf_temp_pais_residencia").value;
+            var temp_pais_residencia_fiscal = document.querySelector("#gbf_temp_pais_residencia_fiscal").value;
+            var temp_profesion = document.querySelector("#gbf_temp_profesion").value;
+            var temp_lugar_trabajo = document.querySelector("#gbf_temp_lugar_trabajo").value;
+            var temp_telefono = document.querySelector("#gbf_temp_telefono").value;
+            var temp_correo_electronico = document.querySelector("#gbf_temp_correo_electronico").value;
+            var temp_domicilio_personal = document.querySelector("#gbf_temp_domicilio_personal").value;
+            var temp_participacion = document.querySelector("#gbf_temp_participacion").value;
+
+            const data = new URLSearchParams({
+
+                gbf_temp_nombre_completo : temp_nombre_completo,
+                gbf_temp_genero : temp_genero,
+                gbf_temp_identificacion : temp_identificacion,
+                gbf_temp_nacionalidad : temp_nacionalidad,
+                gbf_temp_pais_nacimiento : temp_pais_nacimiento,
+                gbf_temp_fecha_nacimiento : temp_fecha_nacimiento,
+                gbf_temp_pais_residencia : temp_pais_residencia,
+                gbf_temp_pais_residencia_fiscal : temp_pais_residencia_fiscal,
+                gbf_temp_profesion : temp_profesion,
+                gbf_temp_lugar_trabajo : temp_lugar_trabajo,
+                gbf_temp_telefono : temp_telefono,
+                gbf_temp_correo_electronico : temp_correo_electronico,
+                gbf_temp_domicilio_personal : temp_domicilio_personal,
+                gbf_temp_participacion : temp_participacion
+
+            });
+
+            fetch('vistas/modal/modalContenidosTablas.php?guardar_temp_generales_bf=1', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                    },
+                    body: data
+                })
+                .then(function(response) {
+                return response.text();
+                })
+                .then(function(data) {
+                    $('.generales_beneficiarios').modal('hide');
+                document.querySelector('#generales_bf').innerHTML = data;
+                })
+                .catch(function(error) {
+                console.log('Error al obtener los detalles:', error);
+                });
+
+                temp_nombre_completo.value = '';
+                temp_genero.value = '';
+                temp_identificacion.value = '';
+                temp_nacionalidad.value = '';
+                temp_pais_nacimiento.value = '';
+                temp_fecha_nacimiento.value = '';
+                temp_pais_residencia.value = '';
+                temp_pais_residencia_fiscal.value = '';
+                temp_profesion.value = '';
+                temp_lugar_trabajo.value = '';
+                temp_telefono.value = '';
+                temp_correo_electronico.value = '';
+                temp_domicilio_personal.value = '';
+                temp_participacion.value = '';
         }
 
     </script>

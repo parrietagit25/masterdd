@@ -23,6 +23,8 @@ class CcclienteController {
   private $tabla_cc_pj_directiva_dignatarios_temp;
   private $tabla_cc_pj_directiva_dignatarios;
   private $tabla_cc_pj_apoderados_temp;
+  private $tabla_cc_pj_apoderados;
+  private $tabla_cc_pj_general_bf_temp;
   
   private $tabla_cc_beneficiario;
   private $tabla_paises;
@@ -46,6 +48,8 @@ class CcclienteController {
         $this->tabla_cc_pj_directiva_dignatarios_temp = "cc_pj_directiva_dignatarios_temp";
         $this->tabla_cc_pj_directiva_dignatarios = "cc_pj_directiva_dignatarios";
         $this->tabla_cc_pj_apoderados_temp = "cc_pj_apoderados_temp";
+        $this->tabla_cc_pj_apoderados = "cc_pj_apoderados";
+        $this->tabla_cc_pj_general_bf_temp = "cc_pj_generales_bf_temp";
 
         $this->tabla_paises = "paises";
         $this->tabla_codigo = "codigos";
@@ -275,6 +279,27 @@ class CcclienteController {
             $this->ModelGlobal->sub_agregar($this->tabla_cc_pj_referencias, $finalArray[$key]);
         }
 
+        // Apoderados 
+
+        $datos_apoderados = [];
+        foreach ($datos as $key => $value) {
+            if (strpos($key, 'pja_') === 0) {
+                $datos_apoderados[$key] = $value; 
+            }
+        }
+
+        $finalArray = [];
+
+        foreach($datos_apoderados as $key => $subArray) {
+            foreach($subArray as $index => $value) {
+                $finalArray[$index][$key] = $value;
+            }
+        }
+        foreach ($finalArray as $key => $value) {
+            $finalArray[$key]["id_general"] = $ultimo_id;
+            $this->ModelGlobal->sub_agregar($this->tabla_cc_pj_apoderados, $finalArray[$key]);
+        }
+
         // Declaracion jurada
 
         $datos_cc_declaracion_jurada = [];
@@ -344,6 +369,19 @@ class CcclienteController {
 
     }
 
+    public function agregar_temp_general_bf($datos){
+        
+        $datos_generales = [];
+        foreach ($datos as $key => $value) {
+            if (strpos($key, 'gbf_temp_') === 0) {
+                $datos_generales[$key] = $value; 
+            }
+        }
+
+        $ultimo_id = $this->ModelGlobal->agregar($this->tabla_cc_pj_general_bf_temp, $datos_generales);
+
+    }
+
     public function obtener_pj_directiva_dignatarios_temp($id_session){
         return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_pj_directiva_dignatarios_temp, " jd_temp_id_session = '".$id_session."' ");
     }
@@ -362,6 +400,14 @@ class CcclienteController {
     
     public function obtener_pj_apoderados_temp_id($id){
         return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_pj_apoderados_temp, " id = $id ");
+    }
+
+    public function eliminar_apoderados_temp_id($id){
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_apoderados_temp, "id = $id");
+    }
+
+    public function obtener_pj_generales_bf_temp($id_session){
+        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_pj_general_bf_temp, " gbf_temp_id_session = '".$id_session."' ");
     }
 
     public function subir_archivos($datos, $id_general){
