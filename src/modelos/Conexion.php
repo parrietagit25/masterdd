@@ -16,7 +16,7 @@ class Conexion {
     $conn = "";
 
     try {
-        $connectionString = "odbc:Driver={SQL Server};Server=PEDRO\SQLEXPRESS;Database=masterdd;Trusted_Connection=yes;";
+        $connectionString = "odbc:Driver={SQL Server};Server=PCRID239\SQLEXPRESS;Database=masterdd;Trusted_Connection=yes;";
         $conn = new PDO($connectionString);
     } catch (PDOException $e) {
         echo "Error de conexión: " . $e->getMessage();

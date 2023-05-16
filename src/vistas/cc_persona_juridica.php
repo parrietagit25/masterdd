@@ -63,6 +63,81 @@
                                 </div><!-- /.modal-dialog -->
                             </div><!-- /.modal -->
 
+                            <!-- Modal Eliminar Beneficiarios finales temp. -->
+
+                            <div class="modal fade generales_beneficiarios_finales" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-xl">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleMocClienteFormulario"></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h6 class="fs-15" style="color:red;">
+                                                Eliminar el registro de los beneficiarios finales ?.
+                                            </h6>
+                                            <h6 style="color:red;">Esta seguro que desea eliminarlo ?</h6>
+                                            <div id="contenido_modal_beneficiarios_finales">
+
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
+                                        </div>
+                                    </div><!-- /.modal-content -->
+                                </div><!-- /.modal-dialog -->
+                            </div><!-- /.modal -->
+
+                            <!-- Modal Eliminar Beneficiarios finales temp. -->
+
+                            <div class="modal fade generales_beneficiarios_finales_pj" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-xl">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleMocClienteFormulario"></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h6 class="fs-15" style="color:red;">
+                                                Eliminar el registro general de los beneficiarios finales - persona juridica?.
+                                            </h6>
+                                            <h6 style="color:red;">Esta seguro que desea eliminarlo ?</h6>
+                                            <div id="contenido_modal_beneficiarios_finales_pj">
+
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
+                                        </div>
+                                    </div><!-- /.modal-content -->
+                                </div><!-- /.modal-dialog -->
+                            </div><!-- /.modal -->
+
+                            <!-- Modal Eliminar Beneficiarios finales temp. -->
+
+                            <div class="modal fade propietarios_beneficiarios_finales_pj" tabindex="-1" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-xl">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleMocClienteFormulario"></h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h6 class="fs-15" style="color:red;">
+                                                Eliminar el registro de los propietarios beneficiarios finales - persona juridica?.
+                                            </h6>
+                                            <h6 style="color:red;">Esta seguro que desea eliminarlo ?</h6>
+                                            <div id="contenido_modal_propietarios_bf_pj">
+
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
+                                        </div>
+                                    </div><!-- /.modal-content -->
+                                </div><!-- /.modal-dialog -->
+                            </div><!-- /.modal -->
+
                             <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">REQUISITOS DEBIDA DILIGENCIA</button>
                             <button type="button" class="btn btn-primary " data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl-delitos">DELITOS</button>
                             <!-- Full screen modal content debida deligencia -->
@@ -739,21 +814,21 @@
                                             <h6 class="fs-15">
                                                 GENERALES DE LOS BENEFICIARIOS FINALES- PERSONA JURÍDICA. 
                                             </h6>
-                                            <div id="contenido_modal_documentos">
+                                            <div id="contenido_modal_documentos"> 
 
                                                 <div class="row gy-4">
                                                     <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">NOMBRE DEL ACCIONISTA (JURÍDICO)</label>
-                                                            <input type="text" class="form-control" id="basiInput gbf_temp_nombre_completo" name="">
+                                                            <input type="text" class="form-control" id="gbfpj_temp_nombre_completo_accionista" name="">
                                                         </div>
                                                     </div>
                                                     <!--end col-->
                                                     <div class="col-xxl-4 col-md-6">
                                                         <div>
-                                                            <label for="basiInput" class="form-label">PAÍS Y FECHA  DE CONSTITUCIÓN ( ACCIONISTA JURÍDICO)</label>
+                                                            <label for="basiInput" class="form-label">PAÍS DE CONSTITUCIÓN ( ACCIONISTA JURÍDICO)</label>
                                                             <select class="form-control" data-choices
-                                                                id="choices-single-default" name="gbf_temp_nacionalidad">
+                                                                id="gbfpj_temp_pais_constitucion" name="">
                                                                 <option value="">Seleccione</option>
                                                                 <?php foreach ($paises as $key => $value) { ?>
                                                                 <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
@@ -762,11 +837,19 @@
                                                         </div>
                                                     </div>
                                                     <!-- end col -->
-                                                    <div class="col-xxl-3 col-md-6">
+                                                    <div class="col-xxl-4 col-md-6">
                                                         <div>
-                                                            <label for="disabledInput" class="form-label">DIRECCIÓN (ACCIONISTA JURÍDICO)</label>
+                                                            <label for="basiInput" class="form-label">FECHA  DE CONSTITUCIÓN</label>
+                                                            <input type="text" class="form-control" data-provider="flatpickr"
+                                                            data-date-format="d M, Y" name="" id="gbfpj_temp_fecha_constitucion">
+                                                        </div>
+                                                    </div>
+                                                    <!-- end col -->
+                                                    <div class="col-xxl-4 col-md-6">
+                                                        <div>
+                                                            <label for="disabledInput" class="form-label">DIRECCIÓN <br> (ACCIONISTA JURÍDICO)</label>
                                                             <select class="form-control" data-choices
-                                                                id="choices-single-default" name="gbf_genero">
+                                                                id="gbfpj_temp_direccion" name="">
                                                                 <option value="">Seleccione</option>
                                                                 <?php foreach ($tipo_persona as $key => $value) { ?>
                                                                 <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
@@ -777,12 +860,19 @@
                                                     <!--end col-->
                                                     <div class="col-xxl-4 col-md-6">
                                                         <div>
+                                                            <label for="basiInput" class="form-label">RUC</label>
+                                                            <input type="text" class="form-control" id="gbfpj_temp_ruc" name="">
+                                                        </div>
+                                                    </div>
+                                                    <!-- end col -->
+                                                    <div class="col-xxl-4 col-md-6">
+                                                        <div>
                                                             <label for="basiInput" class="form-label">SECTOR ECONÓMICO</label>
                                                             <select class="form-control" data-choices
-                                                                id="choices-single-default" name="gbf_temp_nacionalidad">
+                                                                id="gbfpj_temp_sector_economico" name="">
                                                                 <option value="">Seleccione</option>
                                                                 <?php foreach ($sector_economico as $key => $value) { ?>
-                                                                <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
+                                                                <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
                                                                 <?php } ?>
                                                             </select>
                                                         </div>
@@ -791,14 +881,14 @@
                                                     <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">TELÉFONO</label>
-                                                            <input type="text" class="form-control" id="basiInput gbf_temp_nombre_completo" name="">
+                                                            <input type="text" class="form-control" id="gbfpj_temp_telefono" name="">
                                                         </div>
                                                     </div>
                                                     <!--end col-->
                                                     <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">Porcentaje de la participacion</label>
-                                                            <input type="text" class="form-control" id="basiInput gbf_temp_nombre_completo" name="">
+                                                            <input type="text" class="form-control" id="gbfpj_temp_porcentaje_participacion" name="">
                                                         </div>
                                                     </div>
                                                     <!--end col-->
@@ -808,7 +898,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
-                                            <a href="#" class="btn btn-success">Guardar</a>
+                                            <a href="#" class="btn btn-success" onclick="guardar_temp_bf_persona_juridica()">Guardar</a>
                                         </div>
                                     </div><!-- /.modal-content -->
                                 </div><!-- /.modal-dialog -->
@@ -833,15 +923,15 @@
                                                     <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">Nombre completo.</label>
-                                                            <input type="text" class="form-control" id="basiInput pbfj_temp_nombre_completo" name="">
+                                                            <input type="text" class="form-control" id="pjpbj_temp_nombre_completo" name="">
                                                         </div>
                                                     </div>
                                                     <!--end col-->
-                                                    <div class="col-xxl-3 col-md-6">
+                                                    <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="disabledInput" class="form-label">Sexo</label>
                                                             <select class="form-control" data-choices
-                                                                id="choices-single-default" name="pbfj_genero">
+                                                                id="pjpbj_temp_genero" name="">
                                                                 <option value="">Seleccione</option>
                                                                 <?php foreach ($genero as $key => $value) { ?>
                                                                 <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
@@ -853,15 +943,15 @@
                                                     <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">Cedula - Pasaporte</label>
-                                                            <input type="text" class="form-control" id="basiInput pbfj_temp_identificacion" name="">
+                                                            <input type="text" class="form-control" id="pjpbj_temp_cedula_pasaporte" name="">
                                                         </div>
                                                     </div>
                                                     <!--end col-->
-                                                    <div class="col-xxl-3 col-md-6">
+                                                    <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">Nacionalidad</label>
                                                             <select class="form-control" data-choices
-                                                                id="choices-single-default" name="pbfj_temp_nacionalidad">
+                                                                id="pjpbj_temp_nacionalidad" name="">
                                                                 <option value="">Seleccione</option>
                                                                 <?php foreach ($paises as $key => $value) { ?>
                                                                 <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
@@ -870,11 +960,11 @@
                                                         </div>
                                                     </div>
                                                     <!-- end col -->
-                                                    <div class="col-xxl-3 col-md-6">
+                                                    <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">País de nacimiento</label>
                                                             <select class="form-control" data-choices
-                                                                id="choices-single-default" name="pbfj_temp_nacionalidad">
+                                                                id="pjpbj_temp_pais_nacimiento" name="">
                                                                 <option value="">Seleccione</option>
                                                                 <?php foreach ($paises as $key => $value) { ?>
                                                                 <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
@@ -883,19 +973,19 @@
                                                         </div>
                                                     </div>
                                                     <!-- end col -->
-                                                    <div class="col-xxl-3 col-md-6">
+                                                    <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">Fecha de nacimineto</label>
                                                             <input type="text" class="form-control" data-provider="flatpickr"
-                                                            data-date-format="d M, Y" name="pbfj_fecha">
+                                                            data-date-format="d M, Y" name="" id="pjpbj_temp_fecha_nacimiento">
                                                         </div>
                                                     </div>
                                                     <!-- end col -->
-                                                    <div class="col-xxl-3 col-md-6">
+                                                    <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">País de residencia</label>
                                                             <select class="form-control" data-choices
-                                                                id="choices-single-default" name="pbfj_temp_nacionalidad">
+                                                                id="pjpbj_temp_pais_residencia" name="">
                                                                 <option value="">Seleccione</option>
                                                                 <?php foreach ($paises as $key => $value) { ?>
                                                                 <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
@@ -904,11 +994,11 @@
                                                         </div>
                                                     </div>
                                                     <!-- end col -->
-                                                    <div class="col-xxl-3 col-md-6">
+                                                    <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">País de residencia fiscal</label>
                                                             <select class="form-control" data-choices
-                                                                id="choices-single-default" name="pbfj_temp_nacionalidad">
+                                                                id="pjpbj_temp_pais_residencia_fiscal" name="">
                                                                 <option value="">Seleccione</option>
                                                                 <?php foreach ($paises as $key => $value) { ?>
                                                                 <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['nombre']); ?></option>
@@ -917,11 +1007,11 @@
                                                         </div>
                                                     </div>
                                                     <!-- end col -->
-                                                    <div class="col-xxl-3 col-md-6">
+                                                    <div class="col-xxl-4 col-md-6">
                                                         <div>
-                                                            <label for="disabledInput" class="form-label">Profesión u oficio</label>
+                                                            <label for="disabledInput" class="form-label ">Profesión u oficio</label>
                                                             <select class="form-control" data-choices
-                                                                id="choices-single-default" name="pbfj_temp_profesion">
+                                                                id="pjpbj_temp_profesion_oficio" name="">
                                                                 <option value="">Seleccione</option>
                                                                 <?php foreach ($profesion as $key => $value) { ?>
                                                                 <option value="<?php echo $value['codigo']; ?>"><?php echo utf8_encode($value['descripcion']); ?></option>
@@ -930,18 +1020,18 @@
                                                         </div>
                                                     </div>
                                                     <!--end col-->
-                                                    <div class="col-xxl-3 col-md-6">
+                                                    <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="exampleFormControlTextarea5" class="form-label">Lugar de trabajo</label>
-                                                            <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                rows="3" name="pbfj_temp_lugar_trabajo"></textarea>
+                                                            <textarea class="form-control" id="pjpbj_temp_lugar_trabajo"
+                                                                rows="3" name=""></textarea>
                                                         </div>
                                                     </div>
                                                     <!--end col-->
                                                     <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">Teléfono</label>
-                                                            <input type="text" class="form-control" id="basiInput pbfj_temp_telefono" name="pbfj_temp_telefono">
+                                                            <input type="text" class="form-control" id="pjpbj_temp_telefono" name="">
                                                         </div>
                                                     </div>
                                                     <!--end col-->
@@ -950,39 +1040,39 @@
                                                             <label for="iconInput" class="form-label">Correo Electrónico </label>
                                                             <div class="form-icon">
                                                                 <input type="text" class="form-control form-control-icon"
-                                                                    id="iconInput gbf_temp_correo_electronico" placeholder="example@gmail.com" name="gbf_temp_correo_electronico">
+                                                                    id="pjpbj_temp_correo" placeholder="example@gmail.com" name="">
                                                                 <i class="ri-mail-unread-line"></i>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <!--end col-->
-                                                    <div class="col-xxl-3 col-md-6">
+                                                    <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="exampleFormControlTextarea5" class="form-label">Domicilio Personal</label>
-                                                            <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                rows="3" name="pbfj_temp_lugar_trabajo"></textarea>
+                                                            <textarea class="form-control" id="pjpbj_temp_domicilio_personal"
+                                                                rows="3" name=""></textarea>
                                                         </div>
                                                     </div>
                                                     <!--end col-->
-                                                    <div class="col-xxl-3 col-md-6">
+                                                    <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="exampleFormControlTextarea5" class="form-label">Domicilio Laboral</label>
-                                                            <textarea class="form-control" id="exampleFormControlTextarea5"
-                                                                rows="3" name="pbfj_temp_domicilio_trabajo"></textarea>
+                                                            <textarea class="form-control" id="pjpbj_temp_domicilio_laboral"
+                                                                rows="3" name=""></textarea>
                                                         </div>
                                                     </div>
                                                     <!--end col-->
                                                     <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">Entidad juridica en la que participa</label>
-                                                            <input type="text" class="form-control" id="basiInput pbfj_temp_direccion" name="fr_actividad_2">
+                                                            <input type="text" class="form-control" id="pjpbj_temp_entidad_participa" name="fr_actividad_2">
                                                         </div>
                                                     </div>
                                                     <!--end col-->
                                                     <div class="col-xxl-4 col-md-6">
                                                         <div>
                                                             <label for="basiInput" class="form-label">Porcentaje de participación</label>
-                                                            <input type="text" class="form-control" id="basiInput pbfj_temp_direccion" name="fr_actividad_2">
+                                                            <input type="text" class="form-control" id="pjpbj_temp_porcentaje_participacion" name="fr_actividad_2">
                                                         </div>
                                                     </div>
                                                     <!--end col-->
@@ -992,7 +1082,7 @@
                                         </div>
                                         <div class="modal-footer">
                                             <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
-                                            <a href="#" class="btn btn-success">Guardar</a>
+                                            <a href="#" class="btn btn-success" onclick="guardar_propietarios_beneficiarios_finales()">Guardar</a>
                                         </div>
                                     </div><!-- /.modal-content -->
                                 </div><!-- /.modal-dialog -->
@@ -2903,14 +2993,28 @@
                                                                                                     </tr>
                                                                                                 </thead>
                                                                                                 <tbody id="generales_bf">
-                                                                                                    <tr>
-                                                                                                        <td></td>
-                                                                                                        <td></td>
-                                                                                                        <td></td>
-                                                                                                        <td></td>
-                                                                                                        <td></td>
-                                                                                                        <td></td>
-                                                                                                    </tr>
+                                                                                                <?php    
+                                                                                                $obtener_registros_temp = $cCclienteController->obtener_pj_generales_bf_temp(session_id()); 
+                                                                                                foreach ($obtener_registros_temp as $key => $value) { ?>
+                                                                                                <tr>
+                                                                                                    <td><input value="<?php echo $value['gbf_temp_nombre_completo']; ?>" name="gbf_nombre_completo[]" class="form-control"> </td>
+                                                                                                    <td><input value="<?php echo $value['gbf_temp_participacion']; ?>" name="gbf_participacion[]" class="form-control"></td>
+                                                                                                    <td><input value="<?php echo $value['gbf_temp_nacionalidad']; ?>" name="gbf_nacionalidad[]" class="form-control"></td>
+                                                                                                    <td><input value="<?php echo $value['gbf_temp_profesion']; ?>" name="gbf_profesion[]" class="form-control"></td>
+                                                                                                    <td><input value="<?php echo $value['gbf_temp_correo_electronico']; ?>" name="gbf_correo_electronico[]" class="form-control"></td>
+                                                                                                    <td><a href="#" onclick="eliminar_generales_bf_temp(<?php echo $value['id']; ?>)" class="btn btn-danger">Eliminar</a></td>
+                                                                                                    <input type="hidden" name="gbf_telefono[]" value="<?php echo $value['gbf_temp_telefono']; ?>">
+
+                                                                                                    <input type="hidden" name="gbf_genero[]" value="<?php echo $value['gbf_temp_genero']; ?>">
+                                                                                                    <input type="hidden" name="gbf_identificacion[]" value="<?php echo $value['gbf_temp_identificacion']; ?>">
+                                                                                                    <input type="hidden" name="gbf_pais_nacimiento[]" value="<?php echo $value['gbf_temp_pais_nacimiento']; ?>">
+                                                                                                    <input type="hidden" name="gbf_fecha_nacimiento[]" value="<?php echo $value['gbf_temp_fecha_nacimiento']; ?>">
+                                                                                                    <input type="hidden" name="gbf_pais_residencia[]" value="<?php echo $value['gbf_temp_pais_residencia']; ?>">
+                                                                                                    <input type="hidden" name="gbf_pais_residencia_fiscal[]" value="<?php echo $value['gbf_temp_pais_residencia_fiscal']; ?>">
+                                                                                                    <input type="hidden" name="gbf_lugar_trabajo[]" value="<?php echo $value['gbf_temp_lugar_trabajo']; ?>">
+                                                                                                    <input type="hidden" name="gbf_domicilio_personal[]" value="<?php echo $value['gbf_temp_domicilio_personal']; ?>">
+                                                                                                </tr>
+                                                                                                <?php } ?>
                                                                                                 </tbody>
                                                                                             </table> 
                                                                                             <!--end row-->
@@ -2952,16 +3056,23 @@
                                                                                                     <th>RUC</th>
                                                                                                     <th>Acciones</th>
                                                                                                 </tr>
-                                                                                            </thead>
-                                                                                            <tbody>
-                                                                                                <tr>
-                                                                                                    <td></td>
-                                                                                                    <td></td>
-                                                                                                    <td></td>
-                                                                                                    <td></td>
-                                                                                                    <td></td>
-                                                                                                    <td></td>
-                                                                                                </tr>
+                                                                                            </thead> 
+                                                                                            <tbody id="generales_beneficiarios_persona_juridica">
+                                                                                            <?php $obtener_registros_temp = $cCclienteController->obtener_pj_beneficiarios_finales(session_id());
+                                                                                                foreach ($obtener_registros_temp as $key => $value) { ?>
+                                                                                                    <tr>
+                                                                                                        <td><input value="<?php echo $value['gbfpj_temp_nombre_completo_accionista']; ?>" name="gbfpj_nombre_completo_accionista[]" class="form-control"> </td>
+                                                                                                        <td><input value="<?php echo $value['gbfpj_temp_fecha_constitucion']; ?>" name="gbfpj_fecha_constitucion[]" class="form-control"></td>
+                                                                                                        <td><input value="<?php echo $value['gbfpj_temp_pais_constitucion']; ?>" name="gbfpj_pais_constitucion[]" class="form-control"></td>
+                                                                                                        <td><input value="<?php echo $value['gbfpj_temp_telefono']; ?>" name="gbfpj_telefono[]" class="form-control"></td>
+                                                                                                        <td><input value="<?php echo $value['gbfpj_temp_ruc']; ?>" name="gbfpj_ruc[]" class="form-control"></td>
+                                                                                                        <td><a href="#" onclick="eliminar_pj_beneficiario_generales_temp(<?php echo $value['id']; ?>)" class="btn btn-danger">Eliminar</a></td>
+                                                                                                        <input type="hidden" name="gbfpj_porcentaje_participacion[]" value="<?php echo $value['gbfpj_temp_porcentaje_participacion']; ?>">
+                                                                                                        <input type="hidden" name="gbfpj_sector_economico[]" value="<?php echo $value['gbfpj_temp_sector_economico']; ?>">
+                                                                                                        <input type="hidden" name="gbfpj_direccion[]" value="<?php echo $value['gbfpj_temp_direccion']; ?>">
+                                                                                                        <input type="hidden" name="gbfpj_tipo_pj[]" value="<?php echo $value['gbfpj_temp_tipo_pj']; ?>">
+                                                                                                    </tr>
+                                                                                                <?php } ?>
                                                                                             </tbody>
                                                                                         </table> 
                                                                                         <!--end row-->
@@ -3001,15 +3112,31 @@
                                                                                                     <th>Acciones</th>
                                                                                                 </tr>
                                                                                             </thead>
-                                                                                            <tbody>
+                                                                                            <tbody id="propietarios_beneficiarios_persona_juridica">
+
+                                                                                                <?php $obtener_registros_temp = $cCclienteController->obtener_propietarios_beneficiarios_finales(session_id()); 
+                                                                                                foreach ($obtener_registros_temp as $key => $value) { ?>
                                                                                                 <tr>
-                                                                                                    <td></td>
-                                                                                                    <td></td>
-                                                                                                    <td></td>
-                                                                                                    <td></td>
-                                                                                                    <td></td>
-                                                                                                    <td></td>
+                                                                                                    <td><input value="<?php echo $value['pjpbj_temp_nombre_completo']; ?>" name="pjpbj_nombre_completo[]" class="form-control"> </td>
+                                                                                                    <td><input value="<?php echo $value['pjpbj_temp_nacionalidad']; ?>" name="pjpbj_nacionalidad[]" class="form-control"></td>
+                                                                                                    <td><input value="<?php echo $value['pjpbj_temp_profesion_oficio']; ?>" name="pjpbj_profesion_oficio[]" class="form-control"></td>
+                                                                                                    <td><input value="<?php echo $value['pjpbj_temp_correo']; ?>" name="pjpbj_correo[]" class="form-control"></td>
+                                                                                                    <td><input value="<?php echo $value['pjpbj_temp_porcentaje_participacion']; ?>" name="pjpbj_porcentaje_participacion[]" class="form-control"></td>
+                                                                                                    <td><a href="#" onclick="eliminar_pj_propietario_bf_temp(<?php echo $value['id']; ?>)" class="btn btn-danger">Eliminar</a></td>
+                                                                                                    <input type="hidden" name="pjpbj_genero[]" value="<?php echo $value['pjpbj_temp_genero']; ?>">
+                                                                                                    <input type="hidden" name="pjpbj_cedula_pasaporte[]" value="<?php echo $value['pjpbj_temp_cedula_pasaporte']; ?>">
+                                                                                                    <input type="hidden" name="pjpbj_pais_nacimineto[]" value="<?php echo $value['pjpbj_temp_pais_nacimiento']; ?>">
+                                                                                                    <input type="hidden" name="pjpbj_fecha_nacimiento[]" value="<?php echo $value['pjpbj_temp_fecha_nacimiento']; ?>">
+                                                                                                    <input type="hidden" name="pjpbj_pais_residencia[]" value="<?php echo $value['pjpbj_temp_pais_residencia']; ?>">
+                                                                                                    <input type="hidden" name="pjpbj_pais_residencia_fiscal[]" value="<?php echo $value['pjpbj_temp_pais_residencia_fiscal']; ?>">
+                                                                                                    <input type="hidden" name="pjpbj_lugar_trabajo[]" value="<?php echo $value['pjpbj_temp_lugar_trabajo']; ?>">
+                                                                                                    <input type="hidden" name="pjpbj_telefono[]" value="<?php echo $value['pjpbj_temp_telefono']; ?>">
+                                                                                                    <input type="hidden" name="pjpbj_domicilio_laboral[]" value="<?php echo $value['pjpbj_temp_domicilio_laboral']; ?>">
+                                                                                                    <input type="hidden" name="pjpbj_domicilio_personal[]" value="<?php echo $value['pjpbj_temp_domicilio_personal']; ?>">
+                                                                                                    <input type="hidden" name="pjpbj_entidad_participa[]" value="<?php echo $value['pjpbj_temp_entidad_participa']; ?>">
                                                                                                 </tr>
+
+                                                                                                <?php } ?>
                                                                                             </tbody>
                                                                                         </table> 
                                                                                         <!--end row-->
