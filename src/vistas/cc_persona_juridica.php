@@ -1675,11 +1675,7 @@
                                                                                                     </tr>
                                                                                                 </thead>
                                                                                                 <tbody id="contenido_junta_directiva">
-                                                                                                    <?php 
-
-                                                                                                    $obtener_registros_temp = $cCclienteController->obtener_pj_directiva_dignatarios_temp(session_id()); 
-
-                                                                                                    foreach ($obtener_registros_temp as $key => $value) { ?>
+                                                                                                    <?php foreach ($obtener_registros_temp_ddt as $key => $value) { ?>
                                                                                                             <tr>
                                                                                                                 <td><input value="<?php echo $value['jd_temp_nombre_completo']; ?>" name="pjdd_nombre_completo[]" class="form-control"> </td>
                                                                                                                 <td><input value="<?php echo $value['jd_temp_cargo']; ?>" name="pjdd_cargo[]" class="form-control"></td>
@@ -1734,10 +1730,7 @@
                                                                                                 </tr>
                                                                                             </thead>
                                                                                             <tbody id="apoderados_tabla">
-                                                                                                <?php 
-                                                                                                    $obtener_registros_temp = $cCclienteController->obtener_pj_apoderados_temp(session_id()); 
-
-                                                                                                    foreach ($obtener_registros_temp as $key => $value) { ?>
+                                                                                                <?php foreach ($obtener_registros_temp_apot as $key => $value) { ?>
                                                                                                             <tr>
                                                                                                                 <td><input value="<?php echo $value['a_temp_nombre_completo']; ?>" name="pja_nombre_completo[]" class="form-control"> </td>
                                                                                                                 <td><input value="<?php echo $value['a_temp_cargo']; ?>" name="pja_cargo[]" class="form-control"></td>
@@ -2220,7 +2213,7 @@
                                                                                 </div>
                                                                                 <div class="card-body">
                                                                                     <div class="live-preview">
-                                                                                        <div class="row gy-4">
+                                                                                        <div class="row gy-3">
                                                                                             <div class="col-xxl-4 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">RELACIÓN CON EL CLIENTE.  </label>
@@ -2504,7 +2497,7 @@
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                            <div class="col-xxl-4 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Fecha</label>
                                                                                                     <input type="text" class="form-control" data-provider="flatpickr"
@@ -2512,7 +2505,7 @@
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!-- end col --> 
-                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                            <div class="col-xxl-4 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="disabledInput" class="form-label">Cargo Anterior</label>
                                                                                                     <select class="form-control" data-choices
@@ -2525,7 +2518,7 @@
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                            <div class="col-xxl-4 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Fecha anterior</label>
                                                                                                     <input type="text" class="form-control" data-provider="flatpickr"
@@ -2533,7 +2526,7 @@
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!-- end col --> 
-                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                            <div class="col-xxl-4 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="exampleFormControlTextarea5" class="form-label">Comentarios</label>
                                                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
@@ -2572,7 +2565,7 @@
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                            <div class="col-xxl-4 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Fecha</label>
                                                                                                     <input type="text" class="form-control" data-provider="flatpickr"
@@ -2580,7 +2573,7 @@
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!-- end col --> 
-                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                            <div class="col-xxl-4 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="disabledInput" class="form-label">Cargo Anterior</label>
                                                                                                     <select class="form-control" data-choices
@@ -2593,7 +2586,7 @@
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
-                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                            <div class="col-xxl-4 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Fecha anterior</label>
                                                                                                     <input type="text" class="form-control" data-provider="flatpickr"
@@ -2601,7 +2594,7 @@
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!-- end col --> 
-                                                                                            <div class="col-xxl-3 col-md-6">
+                                                                                            <div class="col-xxl-4 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="exampleFormControlTextarea5" class="form-label">Comentarios</label>
                                                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
@@ -2993,26 +2986,24 @@
                                                                                                     </tr>
                                                                                                 </thead>
                                                                                                 <tbody id="generales_bf">
-                                                                                                <?php    
-                                                                                                $obtener_registros_temp = $cCclienteController->obtener_pj_generales_bf_temp(session_id()); 
+                                                                                                <?php 
                                                                                                 foreach ($obtener_registros_temp as $key => $value) { ?>
                                                                                                 <tr>
-                                                                                                    <td><input value="<?php echo $value['gbf_temp_nombre_completo']; ?>" name="gbf_nombre_completo[]" class="form-control"> </td>
-                                                                                                    <td><input value="<?php echo $value['gbf_temp_participacion']; ?>" name="gbf_participacion[]" class="form-control"></td>
-                                                                                                    <td><input value="<?php echo $value['gbf_temp_nacionalidad']; ?>" name="gbf_nacionalidad[]" class="form-control"></td>
-                                                                                                    <td><input value="<?php echo $value['gbf_temp_profesion']; ?>" name="gbf_profesion[]" class="form-control"></td>
-                                                                                                    <td><input value="<?php echo $value['gbf_temp_correo_electronico']; ?>" name="gbf_correo_electronico[]" class="form-control"></td>
+                                                                                                    <td><input value="<?php echo $value['gbf_temp_nombre_completo']; ?>" name="pjgbf_nombre_completo[]" class="form-control"> </td>
+                                                                                                    <td><input value="<?php echo $value['gbf_temp_participacion']; ?>" name="pjgbf_porcentaje_participacion[]" class="form-control"></td>
+                                                                                                    <td><input value="<?php echo $value['gbf_temp_nacionalidad']; ?>" name="pjgbf_nacionalidad[]" class="form-control"></td>
+                                                                                                    <td><input value="<?php echo $value['gbf_temp_profesion']; ?>" name="pjgbf_profesion_oficio[]" class="form-control"></td>
+                                                                                                    <td><input value="<?php echo $value['gbf_temp_correo_electronico']; ?>" name="pjgbf_correo[]" class="form-control"></td>
                                                                                                     <td><a href="#" onclick="eliminar_generales_bf_temp(<?php echo $value['id']; ?>)" class="btn btn-danger">Eliminar</a></td>
-                                                                                                    <input type="hidden" name="gbf_telefono[]" value="<?php echo $value['gbf_temp_telefono']; ?>">
-
-                                                                                                    <input type="hidden" name="gbf_genero[]" value="<?php echo $value['gbf_temp_genero']; ?>">
-                                                                                                    <input type="hidden" name="gbf_identificacion[]" value="<?php echo $value['gbf_temp_identificacion']; ?>">
-                                                                                                    <input type="hidden" name="gbf_pais_nacimiento[]" value="<?php echo $value['gbf_temp_pais_nacimiento']; ?>">
-                                                                                                    <input type="hidden" name="gbf_fecha_nacimiento[]" value="<?php echo $value['gbf_temp_fecha_nacimiento']; ?>">
-                                                                                                    <input type="hidden" name="gbf_pais_residencia[]" value="<?php echo $value['gbf_temp_pais_residencia']; ?>">
-                                                                                                    <input type="hidden" name="gbf_pais_residencia_fiscal[]" value="<?php echo $value['gbf_temp_pais_residencia_fiscal']; ?>">
-                                                                                                    <input type="hidden" name="gbf_lugar_trabajo[]" value="<?php echo $value['gbf_temp_lugar_trabajo']; ?>">
-                                                                                                    <input type="hidden" name="gbf_domicilio_personal[]" value="<?php echo $value['gbf_temp_domicilio_personal']; ?>">
+                                                                                                    <input type="hidden" name="pjgbf_telefono[]" value="<?php echo $value['gbf_temp_telefono']; ?>">
+                                                                                                    <input type="hidden" name="pjgbf_genero[]" value="<?php echo $value['gbf_temp_genero']; ?>">
+                                                                                                    <input type="hidden" name="pjgbf_identificacion[]" value="<?php echo $value['gbf_temp_identificacion']; ?>">
+                                                                                                    <input type="hidden" name="pjgbf_pais_nacimiento[]" value="<?php echo $value['gbf_temp_pais_nacimiento']; ?>">
+                                                                                                    <input type="hidden" name="pjgbf_fecha_nacimiento[]" value="<?php echo $value['gbf_temp_fecha_nacimiento']; ?>">
+                                                                                                    <input type="hidden" name="pjgbf_pais_residencia[]" value="<?php echo $value['gbf_temp_pais_residencia']; ?>">
+                                                                                                    <input type="hidden" name="pjgbf_pais_residencia_fiscal[]" value="<?php echo $value['gbf_temp_pais_residencia_fiscal']; ?>">
+                                                                                                    <input type="hidden" name="pjgbf_lugar_trabajo[]" value="<?php echo $value['gbf_temp_lugar_trabajo']; ?>">
+                                                                                                    <input type="hidden" name="pjgbf_domicilio_personal[]" value="<?php echo $value['gbf_temp_domicilio_personal']; ?>">
                                                                                                 </tr>
                                                                                                 <?php } ?>
                                                                                                 </tbody>
@@ -3058,8 +3049,8 @@
                                                                                                 </tr>
                                                                                             </thead> 
                                                                                             <tbody id="generales_beneficiarios_persona_juridica">
-                                                                                            <?php $obtener_registros_temp = $cCclienteController->obtener_pj_beneficiarios_finales(session_id());
-                                                                                                foreach ($obtener_registros_temp as $key => $value) { ?>
+                                                                                            <?php 
+                                                                                                foreach ($obtener_registros_temp_bf as $key => $value) { ?>
                                                                                                     <tr>
                                                                                                         <td><input value="<?php echo $value['gbfpj_temp_nombre_completo_accionista']; ?>" name="gbfpj_nombre_completo_accionista[]" class="form-control"> </td>
                                                                                                         <td><input value="<?php echo $value['gbfpj_temp_fecha_constitucion']; ?>" name="gbfpj_fecha_constitucion[]" class="form-control"></td>
@@ -3113,9 +3104,7 @@
                                                                                                 </tr>
                                                                                             </thead>
                                                                                             <tbody id="propietarios_beneficiarios_persona_juridica">
-
-                                                                                                <?php $obtener_registros_temp = $cCclienteController->obtener_propietarios_beneficiarios_finales(session_id()); 
-                                                                                                foreach ($obtener_registros_temp as $key => $value) { ?>
+                                                                                            <?php foreach ($obtener_registros_temp_propietario as $key => $value) { ?>
                                                                                                 <tr>
                                                                                                     <td><input value="<?php echo $value['pjpbj_temp_nombre_completo']; ?>" name="pjpbj_nombre_completo[]" class="form-control"> </td>
                                                                                                     <td><input value="<?php echo $value['pjpbj_temp_nacionalidad']; ?>" name="pjpbj_nacionalidad[]" class="form-control"></td>
@@ -3153,6 +3142,7 @@
                                                                 </div>
                                                             </div>
                                                              <!--DECLARACIÓN JURADA -->
+                                                             
                                                             <div class="tab-pane fade" id="declaracion_jurada" role="tabpanel" aria-labelledby="declaracion_jurada-tab">
                                                                 <div class="d-flex mb-2">
 
@@ -3175,14 +3165,14 @@
                                                                                             <div class="col-xxl-6 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Nombre completo</label>
-                                                                                                    <input class="form-control" id="basiInput" name="pjdj_nombre_completo">
+                                                                                                    <input class="form-control" id="basiInput" name="p_jdj_nombre_completo_2">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-6 col-md-6">
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Firma</label>
-                                                                                                    <input type="file" class="form-control" id="basiInput" name="pjdj_fecha">
+                                                                                                    <input type="file" class="form-control" id="basiInput" name="p_jdj_firma_2">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
@@ -3190,7 +3180,7 @@
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">Fecha</label>
                                                                                                     <input type="text" class="form-control" data-provider="flatpickr"
-                                                                                                    data-date-format="d M, Y" name="pjdj_fecha">
+                                                                                                    data-date-format="d M, Y" name="p_jdj_fecha_2">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
@@ -3207,7 +3197,7 @@
                                                                     </div>
 
                                                                 </div>
-                                                            </div>
+                                                            </div> 
                                                             <!-- aviso legal -->
                                                             <div class="tab-pane fade" id="aviso_legal" role="tabpanel" aria-labelledby="aviso_legal-tab">
                                                                 <div class="d-flex mb-2">

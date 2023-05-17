@@ -25,9 +25,12 @@ class CcclienteController {
   private $tabla_cc_pj_apoderados_temp;
   private $tabla_cc_pj_apoderados;
   private $tabla_cc_pj_general_bf_temp;
+  private $tabla_cc_pj_general_bf_natural;
   private $tabla_cc_pj_general_bf_pj_temp;
+  private $tabla_cc_pj_general_bf_pj;
   private $tabla_cc_propietarios_bf_temp;
   private $tabla_cc_propietarios_bf;
+  private $tabla_cc_declaracion_jurada;
   
   private $tabla_paises;
   private $tabla_codigo;
@@ -52,9 +55,12 @@ class CcclienteController {
         $this->tabla_cc_pj_apoderados_temp = "cc_pj_apoderados_temp";
         $this->tabla_cc_pj_apoderados = "cc_pj_apoderados";
         $this->tabla_cc_pj_general_bf_temp = "cc_pj_generales_bf_temp";
+        $this->tabla_cc_pj_general_bf_natural = "cc_pj_generales_beneficiarios_natural";
         $this->tabla_cc_pj_general_bf_pj_temp = "cc_pj_generales_beneficiarios_juridica_temp";
+        $this->tabla_cc_pj_general_bf_pj = "cc_pj_generales_beneficiarios_juridica";
         $this->tabla_cc_propietarios_bf_temp = "cc_pj_propietarios_beneficiarios_juridica_temp";
         $this->tabla_cc_propietarios_bf = "cc_pj_propietarios_beneficiarios_juridica";
+        $this->tabla_cc_declaracion_jurada = "cc_pj_declaracion_jurada_2";
 
         $this->tabla_paises = "paises";
         $this->tabla_codigo = "codigos";
@@ -112,8 +118,8 @@ class CcclienteController {
 
         // principal
 
-        $datos["stat"]= 1;
-        $datos["id_user"] = $_SESSION["usuario"][0]["id"];
+        $datos["pjgn_stat"]= 1;
+        $datos["pjgn_id_user"] = $_SESSION["usuario"][0]["id"];
         $datos_generales = [];
         foreach ($datos as $key => $value) {
             if (strpos($key, 'pjgn_') === 0) {
@@ -305,6 +311,70 @@ class CcclienteController {
             $this->ModelGlobal->sub_agregar($this->tabla_cc_pj_apoderados, $finalArray[$key]);
         }
 
+        // generales beneficiario final persona natural 
+
+        $datos_generales_bfpn = [];
+        foreach ($datos as $key => $value) {
+            if (strpos($key, 'pjgbf_') === 0) {
+                $datos_generales_bfpn[$key] = $value; 
+            }
+        }
+
+        $finalArray = [];
+
+        foreach($datos_generales_bfpn as $key => $subArray) {
+            foreach($subArray as $index => $value) {
+                $finalArray[$index][$key] = $value;
+            }
+        }
+        foreach ($finalArray as $key => $value) {
+            $finalArray[$key]["id_general"] = $ultimo_id;
+            $this->ModelGlobal->sub_agregar($this->tabla_cc_pj_general_bf_natural, $finalArray[$key]);
+        }
+
+        // generales beneficiario final persona juridica 
+
+        $datos_generales_bfpju = [];
+        foreach ($datos as $key => $value) {
+            if (strpos($key, 'gbfpj_') === 0) {
+                $datos_generales_bfpju[$key] = $value; 
+            }
+        }
+
+        $finalArray = [];
+
+        foreach($datos_generales_bfpju as $key => $subArray) {
+            foreach($subArray as $index => $value) {
+                $finalArray[$index][$key] = $value;
+            }
+        }
+        foreach ($finalArray as $key => $value) {
+            $finalArray[$key]["id_general"] = $ultimo_id;
+            $this->ModelGlobal->sub_agregar($this->tabla_cc_pj_general_bf_pj, $finalArray[$key]);
+        }
+
+
+        // PROPIETARIOS DE LOS BENEFICIARIOS FINALES- PERSONA JURÍDICA.
+
+        $datos_generales_pjpbj = [];
+        foreach ($datos as $key => $value) {
+            if (strpos($key, 'pjpbj_') === 0) {
+                $datos_generales_pjpbj[$key] = $value; 
+            }
+        }
+
+        $finalArray = [];
+
+        foreach($datos_generales_pjpbj as $key => $subArray) {
+            foreach($subArray as $index => $value) {
+                $finalArray[$index][$key] = $value;
+            }
+        }
+        foreach ($finalArray as $key => $value) {
+            $finalArray[$key]["id_general"] = $ultimo_id;
+            $this->ModelGlobal->sub_agregar($this->tabla_cc_propietarios_bf, $finalArray[$key]);
+        }
+
         // Declaracion jurada
 
         $datos_cc_declaracion_jurada = [];
@@ -330,6 +400,19 @@ class CcclienteController {
         $datos_cc_adjuntos["id_general"] = $ultimo_id;
 
         $this->ModelGlobal->sub_agregar($this->tabla_cc_pj_adjuntos, $datos_cc_adjuntos);
+
+        // Declaracion jurada 2
+
+        $datos_cc_declaracion_jurada = [];
+        foreach ($datos as $key => $value) {
+            if (strpos($key, 'p_jdj_') === 0) {
+                $datos_cc_declaracion_jurada[$key] = $value; 
+            }
+        }
+
+        $datos_cc_declaracion_jurada["id_general"] = $ultimo_id;
+
+        $this->ModelGlobal->sub_agregar($this->tabla_cc_declaracion_jurada, $datos_cc_declaracion_jurada);
 
         // uso interno
 
@@ -473,14 +556,23 @@ class CcclienteController {
         $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_propietarios_bf_temp, "id = $id");
     }
 
+    public function eliminar_tablas_temp($id_session){
+
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_propietarios_bf_temp, " pjpbj_temp_id_session = '".$id_session."' ");
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_general_bf_pj_temp, " gbfpj_temp_id_session = '".$id_session."' ");
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_general_bf_temp, " gbf_temp_id_session = '".$id_session."' ");
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_apoderados_temp, " a_temp_id_session = '".$id_session."' ");
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_directiva_dignatarios_temp, " jd_temp_id_session = '".$id_session."' ");
+
+    }
 
     public function subir_archivos($datos, $id_general){
 
-        if (!empty($_FILES["fdc_firma"]) && $_FILES["fdc_firma"]["error"] == 0) {
-            if (isset($_FILES["fdc_firma"])) {
+        if (!empty($_FILES["pjdj_firma"]) && $_FILES["pjdj_firma"]["error"] == 0) {
+            if (isset($_FILES["pjdj_firma"])) {
 
-                $ruta = "vistas/adjuntos/firma/";
-                $file_name = basename($_FILES["fdc_firma"]["name"]);
+                $ruta = "vistas/adjuntos/firma_pj/";
+                $file_name = basename($_FILES["pjdj_firma"]["name"]);
                 $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
                 $new_file_name = $id_general.'_'.uniqid() . "." . $file_ext;
                 $target_file = $ruta . $new_file_name;
@@ -494,10 +586,40 @@ class CcclienteController {
         
                 // Intenta mover el archivo a la carpeta de destino
 
-                if ($uploadOk == 1 && move_uploaded_file($_FILES["fdc_firma"]["tmp_name"], $target_file)) {
+                if ($uploadOk == 1 && move_uploaded_file($_FILES["pjdj_firma"]["tmp_name"], $target_file)) {
 
                     $where = "id_general = $id_general";
-                    $datos = array('fdc_firma'=>$target_file);
+                    $datos = array('pjdj_firma'=>$target_file);
+                    $this->ModelGlobal->actualizar($this->tabla_cc_pj_declaracion_jurada, $where, $datos);
+
+                } else {
+                    echo "Error al subir el archivo.";
+                }
+            }
+        }
+
+        if (!empty($_FILES["p_jdj_firma_2"]) && $_FILES["p_jdj_firma_2"]["error"] == 0) {
+            if (isset($_FILES["p_jdj_firma_2"])) {
+
+                $ruta = "vistas/adjuntos/firma_pj/";
+                $file_name = basename($_FILES["p_jdj_firma_2"]["name"]);
+                $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
+                $new_file_name = $id_general.'_'.uniqid() . "." . $file_ext;
+                $target_file = $ruta . $new_file_name;
+                $uploadOk = 1;
+                
+                // Verifica si el archivo ya existe
+                if (file_exists($target_file)) {
+                    echo "El archivo ya existe.";
+                    $uploadOk = 0;
+                }
+        
+                // Intenta mover el archivo a la carpeta de destino
+
+                if ($uploadOk == 1 && move_uploaded_file($_FILES["p_jdj_firma_2"]["tmp_name"], $target_file)) {
+
+                    $where = "id_general = $id_general";
+                    $datos = array('p_jdj_firma_2'=>$target_file);
                     $this->ModelGlobal->actualizar($this->tabla_cc_declaracion_jurada, $where, $datos);
 
                 } else {
@@ -509,24 +631,24 @@ class CcclienteController {
         foreach ($_FILES as $key => $file) {
             if (!empty($file) && $file["error"] == 0) {
                 $file_name = basename($file["name"]);
-                if ($key == 'fdcad_documento_identidad') {
+                if ($key == 'pjad_identificacion') {
 
-                    $ruta = "vistas/adjuntos/cedula/";
+                    $ruta = "vistas/adjuntos/cedula_pj/";
 
-                }elseif($key == 'fdcad_recibo'){
+                }elseif($key == 'pjad_pacto_social'){
 
-                    $ruta = "vistas/adjuntos/recibo_contrato/";
+                    $ruta = "vistas/adjuntos/pacto_social_pj/";
 
-                }elseif($key == 'fdcad_aviso_operaciones'){
+                }elseif($key == 'pjad_aviso_operaciones'){
 
-                    $ruta = "vistas/adjuntos/aviso_licencia/";
+                    $ruta = "vistas/adjuntos/aviso_licencia_pj/";
 
-                }elseif($key == 'fdcad_evidencia_ingresos'){
+                }elseif($key == 'pjad_evidencia_ingreso'){
 
-                    $ruta = "vistas/adjuntos/evidencia_ingreso/";
+                    $ruta = "vistas/adjuntos/evidencia_ingreso_pj/";
                 }
 
-                if (strpos($key, 'fdcad_') === 0) { 
+                if (strpos($key, 'pjad_') === 0) { 
                     $ruta = $ruta;
                     $file_name = basename($_FILES[$key]["name"]);
                     $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
@@ -544,7 +666,7 @@ class CcclienteController {
                     if ($uploadOk == 1 && move_uploaded_file($_FILES[$key]["tmp_name"], $target_file)) {
                         $where = "id_general = $id_general";
                         $datos = array($key=>$target_file);
-                        $this->ModelGlobal->actualizar($this->tabla_cc_adjuntos, $where, $datos);
+                        $this->ModelGlobal->actualizar($this->tabla_cc_pj_adjuntos, $where, $datos);
                     } else {
                         //echo "Error al subir el archivo.";
                     }

@@ -15,6 +15,7 @@ if (isset($_POST['registro_cc_pj'])) {
   unset($datos['registro_cc_pj']);
   $id_general = $cCclienteController->agregar_cc_cliente($datos);
   $cCclienteController->subir_archivos($_FILES, $id_general);
+  $cCclienteController->eliminar_tablas_temp(session_id());
   $alerta = 1;
 }
 
@@ -65,6 +66,11 @@ if (isset($_GET["view"])) {
     $profesion_personas_expuestas = $cCclienteController->obtener_profesion_personas_expuestas();
     $tipo_persona = $cCclienteController->obtener_tipo_persona();
     $sector_economico = $cCclienteController->obtener_sector_economico();
+    $obtener_registros_temp = $cCclienteController->obtener_pj_generales_bf_temp(session_id()); 
+    $obtener_registros_temp_bf = $cCclienteController->obtener_pj_beneficiarios_finales(session_id());
+    $obtener_registros_temp_propietario = $cCclienteController->obtener_propietarios_beneficiarios_finales(session_id());
+    $obtener_registros_temp_ddt = $cCclienteController->obtener_pj_directiva_dignatarios_temp(session_id());  
+    $obtener_registros_temp_apot = $cCclienteController->obtener_pj_apoderados_temp(session_id()); 
     require_once("vistas/cc_persona_juridica.php");
   }
   
