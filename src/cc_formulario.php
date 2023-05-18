@@ -28,12 +28,9 @@ if (isset($_POST['actualizar_cc_cliente'])) {
   $alerta = 2;
 }
 
-if (isset($_POST['eliminar_cc_cliente'])) {
-  $datos = $_POST;  
-  unset($datos['eliminar_cc_cliente']);
+if (isset($_POST['eliminar_cc_cliente_pj'])) {
   $id_general = $_POST['id_eliminar'];
   $cCclienteController->eliminar_cc_cliente($id_general);
-  //$cCclienteController->subir_archivos($_FILES, $id_general);
   $alerta = 3;
 }
 
@@ -42,7 +39,7 @@ if (isset($_GET["view"])) {
   
     switch ($view) {
       case "ver_cc_persona_juridicas":
-        $todos_registros_cc = $cCclienteController->obtenerRegistroClientes();
+        $todos_registros_cc_pj = $cCclienteController->obtenerRegistroClientesJuridicos();
         require_once("vistas/ver_cc_form_juridicas.php");
         break;
       case "editar":

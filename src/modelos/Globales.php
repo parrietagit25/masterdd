@@ -156,6 +156,26 @@ class ModelGlobal extends Conexion {
 
   }
 
+  public function obtenerRegistroClientesJuridicos(){
+
+      $result = $this->conn->query("SELECT 
+                                    ge.id,
+                                    ex.pjexp_codigo_dollar, 
+                                    ex.pjexp_cliente, 
+                                    (ex.pjexp_marca  + ' | ' + ex.pjexp_modelo + ' | ' + ex.pjexp_color + ' | ' + ex.pjexp_placa) as vehiculo, 
+                                    ge.fecha_log, 
+                                    CASE
+                                    WHEN ge.pjgn_stat = 1 THEN 'Registrado'
+                                    WHEN ge.pjgn_stat = 2 THEN 'No activo'
+                                    ELSE 'Bajo'
+                                    END AS estado
+                                    FROM
+                                    cc_pj_expediente ex INNER JOIN cc_pj_generales ge on ge.id = ex.id_general");
+      $rows = $result->fetchAll(PDO::FETCH_ASSOC);
+      return $rows;
+
+  }
+
   public function obtenerRegistrosPorId($tabla, $where){
 
     $result = $this->conn->query("SELECT * FROM $tabla WHERE $where");

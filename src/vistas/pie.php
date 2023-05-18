@@ -17,9 +17,39 @@
                 });
         }
 
+        function id_modal_edit_rec_pj(id_edit){
+            var id = id_edit;
+            fetch('vistas/modal/modalVercClienteJuridico.php?editar_formulario_cc=1&id=' + id)
+                .then(function(response) {
+                return response.text();
+                })
+                .then(function(data) {
+                    $('.cClienteFormulario').modal('show');
+                document.querySelector('#contenido_modal_ccliente').innerHTML = data;
+                })
+                .catch(function(error) {
+                console.log('Error al obtener los detalles:', error);
+                });
+        }
+
         function id_modal_eliminar_rec(id_eli){
             var id = id_eli;
             fetch('vistas/modal/modalVercCliente.php?eliminar_formulario_cc=1&id=' + id)
+                .then(function(response) {
+                return response.text();
+                })
+                .then(function(data) {
+                    $('.cClienteFormulario_eliminar').modal('show');
+                document.querySelector('#contenido_modal_ccliente_eliminar').innerHTML = data;
+                })
+                .catch(function(error) {
+                console.log('Error al obtener los detalles:', error);
+                });
+        }
+
+        function id_modal_eliminar_rec_pj(id_eli){
+            var id = id_eli;
+            fetch('vistas/modal/modalVercClienteJuridico.php?eliminar_formulario_cc=1&id=' + id)
                 .then(function(response) {
                 return response.text();
                 })
@@ -565,6 +595,7 @@
             <?php }elseif(isset($alerta) && $alerta == 3){ ?> 
                 setTimeout(document.getElementById("sa-error").click(), 2000);
             <?php } ?> 
+            
         </script>
     </body>
 </html>

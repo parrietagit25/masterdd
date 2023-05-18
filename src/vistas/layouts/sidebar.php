@@ -1049,7 +1049,7 @@
                                 <a href="cc_formulario.php" class="nav-link">CC. Persona Juridica</a>
                             </li>
                             <li class="nav-item">
-                                <a href="index.php?view=ver_cc_persona_juridicas" class="nav-link">Ver Persona Juridica</a>
+                                <a href="cc_formulario.php?view=ver_cc_persona_juridicas" class="nav-link">Ver Persona Juridica</a>
                             </li>
                             
                             <!--

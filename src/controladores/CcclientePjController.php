@@ -504,6 +504,10 @@ class CcclienteController {
         return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_pj_directiva_dignatarios_temp, " id = $id ");
     }
 
+    public function obtener_pj_directiva_dignatarios_id($id){
+        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_pj_directiva_dignatarios, " id_general = $id ");
+    }
+
     public function eliminar_directiva_dignatarios_temp_id($id){
         $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_directiva_dignatarios_temp, "id = $id");
     }
@@ -679,52 +683,64 @@ class CcclienteController {
 
     }
 
-    public function obtenerRegistroClientes(){
-        return $this->ModelGlobal->obtenerRegistroClientes();
+    public function obtenerRegistroClientesJuridicos(){ /* - */
+        return $this->ModelGlobal->obtenerRegistroClientesJuridicos();
     }
 
-    public function obtenerGenerales($id){
-        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_generales, "id = $id");
+    public function obtenerGenerales($id){ /* - */
+        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_pj_generales, "id = $id");
     }
 
-    public function obtenerExpediente($id_expediente){
+    public function obtenerExpediente($id_expediente){ /* - */
         return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_expediente, "id_general = $id_expediente");
     }
 
-    public function obtenerOcupacionales($id_ocupacional){
-        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_ocupacionales, "id_general = $id_ocupacional");
+    public function obtenerRepresentanteLegal($id_representante){ /* - */
+        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_pj_representante_legal, "id_general = $id_representante");
     }
 
-    public function obtenerDeclaracion($id_declaracion){
-        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_ccc_declaracion, "id_general = $id_declaracion");
+    public function obtenerDeclaracionFuentes($id_declaracion){ /* - */
+        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_pj_declaracion_fuentes, "id_general = $id_declaracion");
     }
 
-    public function obtenerReferencias($id_referencia){
-        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_referencias, "id_general = $id_referencia");
+    public function obtenerPropietarios($id_propietario){ /* - */
+        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_pj_propietarios, "id_general = $id_propietario");
+    }
+
+    public function obtenerDeclaracionAccionista($id_propietario){ /* - */
+        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_declaracion_accionistas, "id_general = $id_propietario");
+    }
+
+    public function obntenerBeneficiarioFinal($id_beneficiario){ /* - */
+        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_pj_beneficiario_final, "id_general = $id_beneficiario");
     } 
 
-    public function obntenerBeneficiario($id_beneficiario){
-        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_beneficiario, "id_general = $id_beneficiario");
+    public function obtenerTercerosAutorizados($id_terceros){ /* - */
+        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_pj_terceros_autorizados, "id_general = $id_terceros");
     } 
 
-    public function obtenerTerceros($id_terceros){
-        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_terceros_autorizados, "id_general = $id_terceros");
+    public function obtenerExpuestas($id_expuestas){ /* - */
+        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_pj_personas_expuestas, "id_general = $id_expuestas");
     } 
 
-    public function obtenerExpuestas($id_expuestas){
-        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_personas_expuestas, "id_general = $id_expuestas");
+    public function obtenerDeclaracionJurada($id_declaracion){ /* - */
+        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_pj_declaracion_jurada, "id_general = $id_declaracion");
     } 
 
-    public function obtenerDeclaracionJurada($id_declaracion){
-        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_declaracion_jurada, "id_general = $id_declaracion");
+    public function obtenerReferencias($id_referencia){ /* - */
+        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_pj_referencias, "id_general = $id_referencia");
     } 
 
-    public function ontenerDocumentosAdjuntos($id_documentos_adjuntos){
-        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_adjuntos, "id_general = $id_documentos_adjuntos");
+    public function obntenerDocumentosAdjuntos($id_documentos_adjuntos){
+        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_pj_adjuntos, "id_general = $id_documentos_adjuntos");
     } 
 
-    public function obtenerUsoInterno($id_uso_intterno){
-        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_uso_interno, "id_general = $id_uso_intterno");
+    public function obtenerUsoInterno($id_uso_intterno){ /* - */
+        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_pj_uso_interno, "id_general = $id_uso_intterno");
+    } 
+
+    public function obtenerDeclaracionJurada_2($id_uso_intterno){ /* - */
+        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_declaracion_jurada, "id_general = $id_uso_intterno");
     } 
 
     public function actualizar_cc_cliente($datos, $id){
@@ -733,18 +749,18 @@ class CcclienteController {
 
         $datos_generales = [];
         foreach ($datos as $key => $value) {
-            if (strpos($key, 'fg_') === 0) {
+            if (strpos($key, 'pjgn_') === 0) {
                 $datos_generales[$key] = $value; 
             }
         }
 
-        $this->ModelGlobal->actualizar($this->tabla_cc_generales, "id = $id", $datos_generales);
+        $this->ModelGlobal->actualizar($this->tabla_cc_pj_generales, "id = $id", $datos_generales);
 
         // Portada
 
         $datos_expediente = [];
         foreach ($datos as $key => $value) {
-            if (strpos($key, 'exp_') === 0) {
+            if (strpos($key, 'pjexp_') === 0) {
                 $datos_expediente[$key] = $value; 
             }
         }
@@ -844,45 +860,77 @@ class CcclienteController {
     public function eliminar_cc_cliente($id){
 
         // principal
-        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_generales, "id = $id");
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_generales, "id = $id");
 
         // Portada
 
         $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_expediente, "id_general = $id");
 
-        // ocupacion
+        // declaracion de funetes de ingreso
 
-        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_ocupacionales, "id_general = $id");
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_declaracion_fuentes, "id_general = $id");
 
-        // declaracion 
+        // representante legal 
 
-        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_ccc_declaracion, "id_general = $id");
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_representante_legal, "id_general = $id");
 
-        // referencias 
+        // propietarios 
 
-        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_referencias, "id_general = $id");
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_propietarios, "id_general = $id");
 
-        // Beneficiario final 
+        // declaracion de accioonista
 
-        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_beneficiario, "id_general = $id");
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_declaracion_accionistas, "id_general = $id");
 
-        // Terceros autorizados
+        // beneficiario final
 
-        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_terceros_autorizados, "id_general = $id");
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_beneficiario_final, "id_general = $id");
 
-        // Personas expuestas
+        // terceros autorizados
 
-        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_personas_expuestas, "id_general = $id");
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_terceros_autorizados, "id_general = $id");
 
-        // Declaracion jurada
+        // referencias
 
-        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_declaracion_jurada, "id_general = $id");
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_referencias, "id_general = $id");
+
+        // declaracion jurada
+
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_declaracion_jurada, "id_general = $id");
+
+        // adjuntos 
+
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_adjuntos, "id_general = $id");
 
         // uso interno
 
-        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_uso_interno, "id_general = $id");
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_uso_interno, "id_general = $id");
 
-        // adjuntos 
+        // personas expuestas 
+
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_personas_expuestas, "id_general = $id");
+
+        // directiva dignatarios 
+
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_directiva_dignatarios, "id_general = $id");
+
+        // apoderados 
+
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_apoderados, "id_general = $id");
+
+        // beneficiario final natural 
+
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_general_bf_natural, "id_general = $id");
+
+        // beneficiario final juridica 
+
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_general_bf_pj, "id_general = $id");
+
+        // beneficiario final propietarios
+
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_propietarios_bf, "id_general = $id");
+
+        // declaracion jurada 2 
 
         $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_declaracion_jurada, "id_general = $id");
 
