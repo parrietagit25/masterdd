@@ -40,6 +40,11 @@ if (isset($_GET["view"])) {
     switch ($view) {
       case "ver_cc_persona_juridicas":
         $todos_registros_cc_pj = $cCclienteController->obtenerRegistroClientesJuridicos();
+        $paises = $cCclienteController->obtener_pais();
+        $genero = $cCclienteController->obtener_genero();
+        $profesion = $cCclienteController->obtener_profesion();
+        $tipo_persona = $cCclienteController->obtener_tipo_persona();
+        $sector_economico = $cCclienteController->obtener_sector_economico();
         require_once("vistas/ver_cc_form_juridicas.php");
         break;
       case "editar":

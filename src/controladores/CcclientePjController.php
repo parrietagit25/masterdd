@@ -114,6 +114,14 @@ class CcclienteController {
         return $this->ModelGlobal->obtener_codigo($this->tabla_codigo, "like '%GBPJ'");
     }
 
+    public function agregar_dignatarios_modal($datos){
+        $this->ModelGlobal->agregar($this->tabla_cc_pj_directiva_dignatarios, $datos);
+    }
+
+    public function agregar_apoderados_modal($datos){
+        $this->ModelGlobal->agregar($this->tabla_cc_pj_apoderados, $datos);
+    }
+
     public function agregar_cc_cliente($datos){
 
         // principal
@@ -512,6 +520,10 @@ class CcclienteController {
         $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_directiva_dignatarios_temp, "id = $id");
     }
 
+    public function eliminar_directiva_dignatarios_id($id){
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_directiva_dignatarios, "id = $id");
+    }
+
     public function obtener_pj_apoderados_temp($id_session){
         return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_pj_apoderados_temp, " a_temp_id_session = '".$id_session."' ");
     }
@@ -524,6 +536,14 @@ class CcclienteController {
         $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_apoderados_temp, "id = $id");
     }
 
+    public function obtener_registros_apot($id){
+        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_pj_apoderados, "id_general = $id");
+    }
+
+    public function eliminar_apoderados_id($id){
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_apoderados, "id = $id");
+    }
+
     public function obtener_pj_generales_bf_temp($id_session){
         return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_pj_general_bf_temp, " gbf_temp_id_session = '".$id_session."' ");
     }
@@ -534,7 +554,19 @@ class CcclienteController {
 
     public function eliminar_generales_bf_temp_final($id){
         $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_general_bf_temp, "id = $id");
+    } 
+
+    public function obtener_registros_bfn($id){
+        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_pj_general_bf_natural, "id_general = $id");
     }
+
+    public function agregar_bfn_modal($datos){
+        $this->ModelGlobal->agregar($this->tabla_cc_pj_general_bf_natural, $datos);
+    }
+
+    public function eliminar_generales_bfn($id){
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_general_bf_natural, "id = $id");
+    } 
 
     public function obtener_pj_beneficiarios_finales($id_sessiom){
         return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_pj_general_bf_pj_temp, " gbfpj_temp_id_session = '".$id_sessiom."' ");
@@ -546,7 +578,19 @@ class CcclienteController {
 
     public function eliminar_generales_bf_pj_temp_final($id){
         $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_general_bf_pj_temp, "id = $id");
+    } 
+
+    public function obtener_registros_bfpj($id){
+        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_pj_general_bf_pj, " id_general = '".$id."' ");
+    } 
+
+    public function agregar_bfnpj_modal($datos){
+        $this->ModelGlobal->agregar($this->tabla_cc_pj_general_bf_pj, $datos);
     }
+    
+    public function eliminar_generales_bfpj($id){
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_pj_general_bf_pj, "id = $id");
+    } 
 
     public function obtener_propietarios_beneficiarios_finales($id_sessiom){
         return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_propietarios_bf_temp, " pjpbj_temp_id_session = '".$id_sessiom."' ");
@@ -556,8 +600,20 @@ class CcclienteController {
         return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_propietarios_bf_temp, " id = '".$id."' ");
     }
 
+    public function obtener_registros_propietario($id){
+        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_propietarios_bf, " id_general = '".$id."' ");
+    }
+
+    public function agregar_probf_modal($datos){
+        $this->ModelGlobal->agregar($this->tabla_cc_propietarios_bf, $datos);
+    }
+
     public function eliminar_propietarios_beneficiarios_finales($id){
         $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_propietarios_bf_temp, "id = $id");
+    }
+
+    public function eliminar_probf($id){
+        $this->ModelGlobal->eliminarRegistrosPorId($this->tabla_cc_propietarios_bf, "id = $id");
     }
 
     public function eliminar_tablas_temp($id_session){

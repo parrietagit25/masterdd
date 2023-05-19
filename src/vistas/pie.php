@@ -32,6 +32,28 @@
                 });
         }
 
+        function mostrar_ocultar_modal(modal_mostrar, modal_ocultar, activarOption, desactivarOption, id_campo, id){
+            
+                $('.' + modal_mostrar).modal('show');
+                $('.' + modal_ocultar).modal('hide');
+           
+            if(activarOption == ''){
+
+                console.log('no esta desactivando y activando las opciones');
+            
+            }else{
+
+                $('.' + activarOption).addClass("active");
+                $('.' + desactivarOption).removeClass("active");
+            
+            }
+
+            if (id != '') {
+                document.querySelector("#" + id_campo).value = id;
+            }
+ 
+        }
+
         function id_modal_eliminar_rec(id_eli){
             var id = id_eli;
             fetch('vistas/modal/modalVercCliente.php?eliminar_formulario_cc=1&id=' + id)
@@ -176,6 +198,60 @@
             
         }
 
+        function guardar_jdd(){
+
+            mostrar_ocultar_modal('cClienteFormulario', 'junta_directiva', 'directiva-tab', 'portada-tab', '', '');
+            
+            var temp_nombre_completo = document.querySelector("#jd_temp_nombre_completo").value;
+            var temp_cargo = document.querySelector("#jd_temp_cargo").value;
+            var temp_nacionalidad = document.querySelector("#jd_temp_nacionalidad").value;
+            var temp_id = document.querySelector("#jd_temp_id").value;
+            var temp_correo = document.querySelector("#jd_temp_correo").value;
+            var temp_telefono = document.querySelector("#jd_temp_telefono").value;
+            var temp_direccion = document.querySelector("#jd_temp_direccion").value;
+            var jd_temp_id_general = document.querySelector("#jd_temp_id_general").value;
+
+            const data = new URLSearchParams({
+            
+                pjdd_nombre_completo :temp_nombre_completo, 
+                pjdd_cargo :temp_cargo,
+                pjdd_nacionalidad :temp_nacionalidad,
+                pjdd_id :temp_id,
+                pjdd_correo :temp_correo,
+                pjdd_telefono :temp_telefono,
+                pjdd_direccion :temp_direccion, 
+                id_general :jd_temp_id_general
+            
+            });
+
+            fetch('vistas/modal/modalContenidosTablas.php?guardar_jdd=1', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                    },
+                    body: data
+                })
+                .then(function(response) {
+                return response.text();
+                })
+                .then(function(data) {
+                    //$('.junta_directiva').modal('hide');
+                document.querySelector('#contenido_junta_directiva_modal').innerHTML = data;
+                })
+                .catch(function(error) {
+                console.log('Error al obtener los detalles:', error);
+                });
+
+                temp_nombre_completo.value = '';
+                temp_cargo.value = '';
+                temp_nacionalidad.value = '';
+                temp_id.value = '';
+                temp_correo.value = '';
+                temp_telefono.value = '';
+                temp_direccion.value = '';
+                
+        }
+
         function eliminar_dd_temp(id_eliminar){
 
             var id = id_eliminar;
@@ -204,6 +280,17 @@
             }
         }
 
+        async function eliminar_dd_final(id_eliminar, id_general) {
+            try {
+                var id = id_eliminar;
+                const response = await fetch('vistas/modal/modalContenidosTablas.php?eliminar_jdd_final_edit_modal=1&id=' + id + '&id_general=' + id_general);
+                const data = await response.text();
+                //$('.junta_directiva_eliminar').modal('hide');
+                document.querySelector('#contenido_junta_directiva_modal').innerHTML = data;
+            } catch (error) {
+                console.log('Error al obtener los detalles:', error);
+            }
+        }
 
         function guardar_temp_apoderados(){
             
@@ -253,6 +340,77 @@
                 temp_telefono.value = '';
                 temp_direccion.value = '';
             
+        }
+
+        function guardar_apoderados(){
+            
+            var temp_nombre_completo = document.querySelector("#pja_nombre_completo").value;
+            var temp_cargo = document.querySelector("#pja_cargo").value;
+            var temp_nacionalidad = document.querySelector("#pja_nacionalidad").value;
+            var temp_id = document.querySelector("#pja_id").value;
+            var temp_correo = document.querySelector("#pja_correo").value;
+            var temp_telefono = document.querySelector("#pja_telefono").value;
+            var temp_direccion = document.querySelector("#pja_direccion").value;
+            var temp_a_id_general = document.querySelector("#a_id_general").value;
+
+            mostrar_ocultar_modal('cClienteFormulario', 'apoderados', 'apoderados-tab', 'portada-tab', '', '');
+
+            const data = new URLSearchParams({
+            
+                pja_nombre_completo :temp_nombre_completo, 
+                pja_cargo :temp_cargo,
+                pja_nacionalidad :temp_nacionalidad,
+                pja_id :temp_id,
+                pja_correo :temp_correo,
+                pja_telefono :temp_telefono,
+                pja_direccion :temp_direccion, 
+                id_general :temp_a_id_general
+            
+            });
+
+            fetch('vistas/modal/modalContenidosTablas.php?guardar_apoderados=1&id_general='+ a_id_general +'', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                    },
+                    body: data
+                })
+                .then(function(response) {
+                return response.text();
+                })
+                .then(function(data) {
+                    //$('.apoderados').modal('hide');
+                document.querySelector('#apoderados_tabla_modal').innerHTML = data;
+                })
+                .catch(function(error) {
+                console.log('Error al obtener los detalles:', error);
+                });
+
+                temp_nombre_completo.value = '';
+                temp_cargo.value = '';
+                temp_nacionalidad.value = '';
+                temp_id.value = '';
+                temp_correo.value = '';
+                temp_telefono.value = '';
+                temp_direccion.value = '';
+        }
+
+        function eliminar_apoderados(id_eliminar, id_general){
+
+            var id = id_eliminar;
+            var id_general = id_general;
+            fetch('vistas/modal/modalContenidosTablas.php?eliminar_apoderados_modal=1&id=' + id +'&id_general='+ id_general)
+                .then(function(response) {
+                return response.text();
+                })
+                .then(function(data) {
+                    //$('.apoderados_eliminar').modal('hide');
+                document.querySelector('#apoderados_tabla_modal').innerHTML = data;
+                })
+                .catch(function(error) {
+                console.log('Error al obtener los detalles:', error);
+                });
+
         }
 
         function eliminar_a_temp(id_eliminar){
@@ -358,6 +516,95 @@
                 temp_participacion.value = '';
         }
 
+        function guardar_generaless_bf(){
+
+            var temp_nombre_completo = document.querySelector("#gbf_temp_nombre_completo").value;
+            var temp_genero = document.querySelector("#gbf_temp_genero").value;
+            var temp_identificacion = document.querySelector("#gbf_temp_identificacion").value;
+            var temp_nacionalidad = document.querySelector("#gbf_temp_nacionalidad").value;
+            var temp_pais_nacimiento = document.querySelector("#gbf_temp_pais_nacimiento").value;
+            var temp_fecha_nacimiento = document.querySelector("#gbf_temp_fecha_nacimiento").value;
+            var temp_pais_residencia = document.querySelector("#gbf_temp_pais_residencia").value;
+            var temp_pais_residencia_fiscal = document.querySelector("#gbf_temp_pais_residencia_fiscal").value;
+            var temp_profesion = document.querySelector("#gbf_temp_profesion").value;
+            var temp_lugar_trabajo = document.querySelector("#gbf_temp_lugar_trabajo").value;
+            var temp_telefono = document.querySelector("#gbf_temp_telefono").value;
+            var temp_correo_electronico = document.querySelector("#gbf_temp_correo_electronico").value;
+            var temp_domicilio_personal = document.querySelector("#gbf_temp_domicilio_personal").value;
+            var temp_participacion = document.querySelector("#gbf_temp_participacion").value;
+            var id_general = document.querySelector("#id_general_bfn").value;
+
+            mostrar_ocultar_modal('cClienteFormulario', 'generales_beneficiarios', 'generales_beneficiarios_natural-tab', 'portada-tab', '', '');
+
+            const data = new URLSearchParams({
+
+                pjgbf_nombre_completo : temp_nombre_completo,
+                pjgbf_genero : temp_genero,
+                pjgbf_identificacion : temp_identificacion,
+                pjgbf_nacionalidad : temp_nacionalidad,
+                pjgbf_pais_nacimiento : temp_pais_nacimiento,
+                pjgbf_fecha_nacimiento : temp_fecha_nacimiento,
+                pjgbf_pais_residencia : temp_pais_residencia,
+                pjgbf_pais_residencia_fiscal : temp_pais_residencia_fiscal,
+                pjgbf_profesion_oficio : temp_profesion,
+                pjgbf_lugar_trabajo : temp_lugar_trabajo,
+                pjgbf_telefono : temp_telefono,
+                pjgbf_correo : temp_correo_electronico,
+                pjgbf_domicilio_personal : temp_domicilio_personal,
+                pjgbf_porcentaje_participacion : temp_participacion, 
+                id_general : id_general
+
+            });
+
+            fetch('vistas/modal/modalContenidosTablas.php?guardar_generales_bf=1&id_general=' + id_general, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                    },
+                    body: data
+                })
+                .then(function(response) {
+                return response.text();
+                })
+                .then(function(data) {
+                    //$('.generales_beneficiarios_final_natural').modal('hide');
+                document.querySelector('#generales_beneficiarios_final_natural').innerHTML = data;
+                })
+                .catch(function(error) {
+                console.log('Error al obtener los detalles:', error);
+                });
+
+                temp_nombre_completo.value = '';
+                temp_genero.value = '';
+                temp_identificacion.value = '';
+                temp_nacionalidad.value = '';
+                temp_pais_nacimiento.value = '';
+                temp_fecha_nacimiento.value = '';
+                temp_pais_residencia.value = '';
+                temp_pais_residencia_fiscal.value = '';
+                temp_profesion.value = '';
+                temp_lugar_trabajo.value = '';
+                temp_telefono.value = '';
+                temp_correo_electronico.value = '';
+                temp_domicilio_personal.value = '';
+                temp_participacion.value = '';
+
+        } 
+
+        async function eliminar_generales_bfn(id_eliminar, id_general){
+            try {
+                var id = id_eliminar;
+                var id_general = id_general;
+                const response = await fetch('vistas/modal/modalContenidosTablas.php?eliminar_generales_bfn=1&id=' + id +'&id_general='+id_general);
+                const data = await response.text();
+                //$('.generales_beneficiarios_finales').modal('hide');
+                document.querySelector('#generales_beneficiarios_final_natural').innerHTML = data;
+            } catch (error) {
+                console.log('Error al obtener los detalles:', error);
+            }
+        }
+
+
         async function eliminar_generales_bf_temp(id_eliminar){
             try {
                 var id = id_eliminar;
@@ -432,6 +679,62 @@
             } catch (error) {
                 console.log('Error al obtener los detalles:', error);
             }
+        } 
+
+        async function guardar_bf_persona_juridica(){
+
+            var gbfpj_nombre_completo_accionista = document.querySelector("#gbfpj_temp_nombre_completo_accionista").value;
+            var gbfpj_pais_constitucion = document.querySelector("#gbfpj_temp_pais_constitucion").value;
+            var gbfpj_fecha_constitucion = document.querySelector("#gbfpj_temp_fecha_constitucion").value;
+            var gbfpj_direccion = document.querySelector("#gbfpj_temp_direccion").value;
+            var gbfpj_ruc = document.querySelector("#gbfpj_temp_ruc").value;
+            var gbfpj_sector_economico = document.querySelector("#gbfpj_temp_sector_economico").value;
+            var gbfpj_telefono = document.querySelector("#gbfpj_temp_telefono").value;
+            var gbfpj_porcentaje_participacion = document.querySelector("#gbfpj_temp_porcentaje_participacion").value;
+            var id_general_gbfpj = document.querySelector("#id_general_gbfpj").value;
+            
+            mostrar_ocultar_modal('cClienteFormulario', 'generales_beneficiarios_juridicos', 'generales_beneficiarios_juridica-tab', 'portada-tab', '', '');
+
+            const data = new URLSearchParams({
+
+                gbfpj_nombre_completo_accionista : gbfpj_nombre_completo_accionista,
+                gbfpj_pais_constitucion : gbfpj_pais_constitucion,
+                gbfpj_fecha_constitucion : gbfpj_fecha_constitucion,
+                gbfpj_direccion : gbfpj_direccion,
+                gbfpj_ruc : gbfpj_ruc,
+                gbfpj_sector_economico : gbfpj_sector_economico,
+                gbfpj_telefono : gbfpj_telefono,
+                gbfpj_porcentaje_participacion : gbfpj_porcentaje_participacion, 
+                id_general : id_general_gbfpj
+
+            });
+
+            try {
+
+                const response = await fetch('vistas/modal/modalContenidosTablas.php?guardar_bf_persona_juridica=1', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                    },
+                    body: data
+                });
+
+                const respuestaTexto = await response.text();
+                //$('.generales_beneficiarios_juridicos').modal('hide');
+                document.querySelector('#generales_beneficiarios_persona_juridica').innerHTML = respuestaTexto;
+
+                gbfpj_nombre_completo_accionista = '';
+                gbfpj_pais_constitucion = '';
+                gbfpj_fecha_constitucion = '';
+                gbfpj_direccion = '';
+                gbfpj_ruc = '';
+                gbfpj_sector_economico = '';
+                gbfpj_telefono = '';
+                gbfpj_porcentaje_participacion = '';
+
+            } catch (error) {
+                console.log('Error al obtener los detalles:', error);
+            }
         }
 
         async function eliminar_pj_beneficiario_generales_temp(id_eliminar){
@@ -453,6 +756,20 @@
                 const response = await fetch('vistas/modal/modalContenidosTablas.php?eliminar_generales_bf_pj_final=1&id=' + id);
                 const data = await response.text();
                 $('.generales_beneficiarios_finales_pj').modal('hide');
+                document.querySelector('#generales_beneficiarios_persona_juridica').innerHTML = data;
+            } catch (error) {
+                console.log('Error al obtener los detalles:', error);
+            }
+        } 
+
+        async function eliminar_pj_beneficiario_final_pj(id_eliminar, id_general){
+
+            try {
+                var id = id_eliminar;
+                var id_general = id_general;
+                const response = await fetch('vistas/modal/modalContenidosTablas.php?eliminar_bf_pj_final=1&id=' + id +'&id_general='+id_general);
+                const data = await response.text();
+                //$('.generales_beneficiarios_finales_pj').modal('hide');
                 document.querySelector('#generales_beneficiarios_persona_juridica').innerHTML = data;
             } catch (error) {
                 console.log('Error al obtener los detalles:', error);
@@ -530,6 +847,101 @@
                 pjpbj_entidad_juridica.value = '';
                 pjpbj_participacion.value = '';
 
+            } catch (error) {
+                console.log('Error al obtener los detalles:', error);
+            }
+        }
+
+        async function guardar_prbf(){
+
+            var pjpbj_nombre_completo = document.querySelector("#pjpbj_temp_nombre_completo").value;
+            var pjpbj_genero = document.querySelector("#pjpbj_temp_genero").value;
+            var pjpbj_cedula_pasaporte = document.querySelector("#pjpbj_temp_cedula_pasaporte").value;
+            var pjpbj_nacionalidad = document.querySelector("#pjpbj_temp_nacionalidad").value;
+            var pjpbj_pais_nacimiento = document.querySelector("#pjpbj_temp_pais_nacimiento").value;
+            var pjpbj_fecha_nacimiento = document.querySelector("#pjpbj_temp_fecha_nacimiento").value;
+            var pjpbj_pais_residencia = document.querySelector("#pjpbj_temp_pais_residencia").value;
+            var pjpbj_pais_residencia_fiscal = document.querySelector("#pjpbj_temp_pais_residencia_fiscal").value;
+            var pjpbj_profesion_oficio = document.querySelector("#pjpbj_temp_profesion_oficio").value;
+            var pjpbj_lugar_trabajo = document.querySelector("#pjpbj_temp_lugar_trabajo").value;
+            var pjpbj_telefono = document.querySelector("#pjpbj_temp_telefono").value;
+            var pjpbj_correo = document.querySelector("#pjpbj_temp_correo").value;
+            var pjpbj_domicilio_personal = document.querySelector("#pjpbj_temp_domicilio_personal").value;
+            var pjpbj_domicilio_laboral = document.querySelector("#pjpbj_temp_domicilio_laboral").value;
+            var pjpbj_entidad_participa = document.querySelector("#pjpbj_temp_entidad_participa").value;
+            var pjpbj_porcentaje_participacion = document.querySelector("#pjpbj_temp_porcentaje_participacion").value;
+            
+            var id_general_gprpj = document.querySelector("#id_general_gprpj").value;
+
+            mostrar_ocultar_modal('cClienteFormulario', 'propietarios_beneficiarios_juridicos', 'propietarios_juridica-tab', 'portada-tab', '', '');
+
+            const data = new URLSearchParams({
+
+                pjpbj_nombre_completo : pjpbj_nombre_completo,
+                pjpbj_genero : pjpbj_genero,
+                pjpbj_cedula_pasaporte : pjpbj_cedula_pasaporte,
+                pjpbj_nacionalidad : pjpbj_nacionalidad,
+                pjpbj_pais_nacimineto : pjpbj_pais_nacimiento,
+                pjpbj_fecha_nacimiento : pjpbj_fecha_nacimiento,
+                pjpbj_pais_residencia : pjpbj_pais_residencia,
+                pjpbj_pais_residencia_fiscal : pjpbj_pais_residencia_fiscal,
+                pjpbj_profesion_oficio : pjpbj_profesion_oficio,
+                pjpbj_lugar_trabajo : pjpbj_lugar_trabajo,
+                pjpbj_telefono : pjpbj_telefono,
+                pjpbj_correo : pjpbj_correo,
+                pjpbj_domicilio_personal : pjpbj_domicilio_personal,
+                pjpbj_domicilio_laboral : pjpbj_domicilio_laboral,
+                pjpbj_entidad_participa : pjpbj_entidad_participa,
+                pjpbj_porcentaje_participacion : pjpbj_porcentaje_participacion, 
+                id_general : id_general_gprpj
+
+            });
+
+            try {
+
+                const response = await fetch('vistas/modal/modalContenidosTablas.php?guardar_propietario_bf=1', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+                    },
+                    body: data
+                });
+
+                const respuestaTexto = await response.text();
+                //$('.propietarios_beneficiarios_juridicos').modal('hide');
+                document.querySelector('#propietarios_propietario_persona_juridica').innerHTML = respuestaTexto;
+
+                pjpbj_nombre_completo.value = '';
+                pjpbj_genero.value = '';
+                pjpbj_identificacion.value = '';
+                pjpbj_nacionalidad.value = '';
+                pjpbj_pais_nacimiento.value = '';
+                pjpbj_fecha.value = '';
+                pjpbj_residencia.value = '';
+                pjpbj_residencia_fiscal.value = '';
+                pjpbj_profesion.value = '';
+                pjpbj_lugar_trabajo.value = '';
+                pjpbj_telefono.value = '';
+                pjpbj_correo_electronico.value = '';
+                pjpbj_domicilio_personal.value = '';
+                pjpbj_domicilio_laboral
+                pjpbj_entidad_juridica.value = '';
+                pjpbj_participacion.value = '';
+
+            } catch (error) {
+                console.log('Error al obtener los detalles:', error);
+            }
+
+        }
+
+        async function eliminar_pj_propietario_bf(id_eliminar, id_general){
+            try {
+                var id = id_eliminar;
+                var id_general = id_general;
+                const response = await fetch('vistas/modal/modalContenidosTablas.php?eliminar_propietario_bfpjf=1&id='+ id +'&id_general='+ id_general);
+                const data = await response.text();
+                //$('.generales_beneficiarios_finales_pj').modal('hide');
+                document.querySelector('#propietarios_propietario_persona_juridica').innerHTML = data;
             } catch (error) {
                 console.log('Error al obtener los detalles:', error);
             }

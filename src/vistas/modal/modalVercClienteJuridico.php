@@ -33,8 +33,10 @@ $documentos_adjuntos = $cCclienteController->obntenerDocumentosAdjuntos($id);
 $uso_interno = $cCclienteController->obtenerUsoInterno($id);
 $declaracion_jurada_2 = $cCclienteController->obtenerDeclaracionJurada_2($id);
 $junta_directiva_dignatarios = $cCclienteController->obtener_pj_directiva_dignatarios_id($id);
-
-
+$obtener_registros_apot = $cCclienteController->obtener_registros_apot($id);
+$obtener_registros_bfn = $cCclienteController->obtener_registros_bfn($id);
+$obtener_registros_bfpj = $cCclienteController->obtener_registros_bfpj($id);
+$obtener_registros_propietario = $cCclienteController->obtener_registros_propietario($id); 
 
 if (isset($_GET['editar_formulario_cc'])) { ?>
 
@@ -611,7 +613,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                     <div class="card-body">
                                                         <div class="live-preview">
                                                             
-                                                            <a href="#" data-bs-toggle="modal" data-bs-target=".junta_directiva" class="btn btn-primary">Agregar</a>
+                                                            <a href="#" onclick="mostrar_ocultar_modal('junta_directiva', 'cClienteFormulario', '', '', 'jd_temp_id_general', <?php echo $id; ?>)" class="btn btn-primary">Agregar</a>
 
                                                             <table class="table">
                                                                 <thead>
@@ -625,7 +627,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         <th>Acciones</th>
                                                                     </tr>
                                                                 </thead>
-                                                                <tbody id="contenido_junta_directiva">
+                                                                <tbody id="contenido_junta_directiva_modal">
                                                                     <?php foreach ($junta_directiva_dignatarios as $key => $value) { ?>
                                                                             <tr>
                                                                                 <td><input value="<?php echo $value['pjdd_nombre_completo']; ?>" name="pjdd_nombre_completo[]" class="form-control"> </td>
@@ -634,7 +636,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                                 <td><input value="<?php echo $value['pjdd_id']; ?>" name="pjdd_id[]" class="form-control"></td>
                                                                                 <td><input value="<?php echo $value['pjdd_correo']; ?>" name="pjdd_correo[]" class="form-control"></td>
                                                                                 <td><input value="<?php echo $value['pjdd_direccion']; ?>" name="pjdd_direccion[]" class="form-control"></td>
-                                                                                <td><a href="#" onclick="eliminar_dd_temp(<?php echo $value['id']; ?>)" class="btn btn-danger">Eliminar</a></td>
+                                                                                <td><a href="#" onclick="eliminar_dd_final(<?php echo $value['id']; ?>, <?php echo $id; ?>)" class="btn btn-danger">Eliminar</a></td>
                                                                                 <input type="hidden" name="pjdd_telefono[]" value="<?php echo $value['pjdd_telefono']; ?>">
                                                                             </tr>
                                                                     <?php } ?>
@@ -667,7 +669,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                 <div class="card-body">
                                                     <div class="live-preview">
                                                         
-                                                        <a href="#" data-bs-toggle="modal" data-bs-target=".apoderados" class="btn btn-primary">Agregar</a>
+                                                        <a href="#" onclick="mostrar_ocultar_modal('apoderados', 'cClienteFormulario', '', '', 'a_id_general', <?php echo $id; ?>)" class="btn btn-primary">Agregar</a>
 
                                                         <table class="table">
                                                             <thead>
@@ -680,19 +682,19 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                     <th>Dirección</th>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody id="apoderados_tabla">
-                                                                <?php foreach ($obtener_registros_temp_apot as $key => $value) { ?>
-                                                                            <tr>
-                                                                                <td><input value="<?php echo $value['a_temp_nombre_completo']; ?>" name="pja_nombre_completo[]" class="form-control"> </td>
-                                                                                <td><input value="<?php echo $value['a_temp_cargo']; ?>" name="pja_cargo[]" class="form-control"></td>
-                                                                                <td><input value="<?php echo $value['a_temp_nacionalidad']; ?>" name="pja_nacionalidad[]" class="form-control"></td>
-                                                                                <td><input value="<?php echo $value['a_temp_id']; ?>" name="pja_id[]" class="form-control"></td>
-                                                                                <td><input value="<?php echo $value['a_temp_correo']; ?>" name="pja_correo[]" class="form-control"></td>
-                                                                                <td><input value="<?php echo $value['a_temp_direccion']; ?>" name="pja_direccion[]" class="form-control"></td>
-                                                                                <td><a href="#" onclick="eliminar_a_temp(<?php echo $value['id']; ?>)" class="btn btn-danger">Eliminar</a></td>
-                                                                                <input type="hidden" name="pja_telefono[]" value="<?php echo $value['a_temp_telefono']; ?>">
-                                                                            </tr>
-                                                                    <?php }  ?>
+                                                            <tbody id="apoderados_tabla_modal">
+                                                                <?php foreach ($obtener_registros_apot as $key => $value) { ?>
+                                                                    <tr>
+                                                                        <td><input value="<?php echo $value['pja_nombre_completo']; ?>" name="pja_nombre_completo[]" class="form-control"> </td>
+                                                                        <td><input value="<?php echo $value['pja_cargo']; ?>" name="pja_cargo[]" class="form-control"></td>
+                                                                        <td><input value="<?php echo $value['pja_nacionalidad']; ?>" name="pja_nacionalidad[]" class="form-control"></td>
+                                                                        <td><input value="<?php echo $value['pja_id']; ?>" name="pja_id[]" class="form-control"></td>
+                                                                        <td><input value="<?php echo $value['pja_correo']; ?>" name="pja_correo[]" class="form-control"></td>
+                                                                        <td><input value="<?php echo $value['pja_direccion']; ?>" name="pja_direccion[]" class="form-control"></td>
+                                                                        <td><a href="#" onclick="eliminar_apoderados(<?php echo $value['id']; ?>, <?php echo $id; ?>)" class="btn btn-danger">Eliminar</a></td>
+                                                                        <input type="hidden" name="pja_telefono[]" value="<?php echo $value['pja_telefono']; ?>">
+                                                                    </tr>
+                                                                <?php }  ?>
                                                             </tbody>
                                                         </table>
                                                         <!--end row-->
@@ -1857,8 +1859,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                     <div class="card-body">
                                                         <div class="live-preview">
                                                             
-                                                            <a href="#" data-bs-toggle="modal" data-bs-target=".generales_beneficiarios" class="btn btn-primary">Agregar</a>
-
+                                                            <a href="#" onclick="mostrar_ocultar_modal('generales_beneficiarios', 'cClienteFormulario', '', '', 'id_general_bfn', <?php echo $id; ?>)" class="btn btn-primary">Agregar</a>
                                                             <table class="table">
                                                                 <thead>
                                                                     <tr>
@@ -1870,25 +1871,25 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         <th>Acciones</th>
                                                                     </tr>
                                                                 </thead>
-                                                                <tbody id="generales_bf">
+                                                                <tbody id="generales_beneficiarios_final_natural">
                                                                 <?php 
-                                                                foreach ($obtener_registros_temp as $key => $value) { ?>
+                                                                foreach ($obtener_registros_bfn as $key => $value) { ?>
                                                                 <tr>
-                                                                    <td><input value="<?php echo $value['gbf_temp_nombre_completo']; ?>" name="pjgbf_nombre_completo[]" class="form-control"> </td>
-                                                                    <td><input value="<?php echo $value['gbf_temp_participacion']; ?>" name="pjgbf_porcentaje_participacion[]" class="form-control"></td>
-                                                                    <td><input value="<?php echo $value['gbf_temp_nacionalidad']; ?>" name="pjgbf_nacionalidad[]" class="form-control"></td>
-                                                                    <td><input value="<?php echo $value['gbf_temp_profesion']; ?>" name="pjgbf_profesion_oficio[]" class="form-control"></td>
-                                                                    <td><input value="<?php echo $value['gbf_temp_correo_electronico']; ?>" name="pjgbf_correo[]" class="form-control"></td>
-                                                                    <td><a href="#" onclick="eliminar_generales_bf_temp(<?php echo $value['id']; ?>)" class="btn btn-danger">Eliminar</a></td>
-                                                                    <input type="hidden" name="pjgbf_telefono[]" value="<?php echo $value['gbf_temp_telefono']; ?>">
-                                                                    <input type="hidden" name="pjgbf_genero[]" value="<?php echo $value['gbf_temp_genero']; ?>">
-                                                                    <input type="hidden" name="pjgbf_identificacion[]" value="<?php echo $value['gbf_temp_identificacion']; ?>">
-                                                                    <input type="hidden" name="pjgbf_pais_nacimiento[]" value="<?php echo $value['gbf_temp_pais_nacimiento']; ?>">
-                                                                    <input type="hidden" name="pjgbf_fecha_nacimiento[]" value="<?php echo $value['gbf_temp_fecha_nacimiento']; ?>">
-                                                                    <input type="hidden" name="pjgbf_pais_residencia[]" value="<?php echo $value['gbf_temp_pais_residencia']; ?>">
-                                                                    <input type="hidden" name="pjgbf_pais_residencia_fiscal[]" value="<?php echo $value['gbf_temp_pais_residencia_fiscal']; ?>">
-                                                                    <input type="hidden" name="pjgbf_lugar_trabajo[]" value="<?php echo $value['gbf_temp_lugar_trabajo']; ?>">
-                                                                    <input type="hidden" name="pjgbf_domicilio_personal[]" value="<?php echo $value['gbf_temp_domicilio_personal']; ?>">
+                                                                    <td><input value="<?php echo $value['pjgbf_nombre_completo']; ?>" name="pjgbf_nombre_completo[]" class="form-control"> </td>
+                                                                    <td><input value="<?php echo $value['pjgbf_porcentaje_participacion']; ?>" name="pjgbf_porcentaje_participacion[]" class="form-control"></td>
+                                                                    <td><input value="<?php echo $value['pjgbf_nacionalidad']; ?>" name="pjgbf_nacionalidad[]" class="form-control"></td>
+                                                                    <td><input value="<?php echo $value['pjgbf_profesion_oficio']; ?>" name="pjgbf_profesion_oficio[]" class="form-control"></td>
+                                                                    <td><input value="<?php echo $value['pjgbf_correo']; ?>" name="pjgbf_correo[]" class="form-control"></td>
+                                                                    <td><a href="#" onclick="eliminar_generales_bfn(<?php echo $value['id']; ?>, <?php echo $id; ?>)" class="btn btn-danger">Eliminar</a></td>
+                                                                    <input type="hidden" name="pjgbf_telefono[]" value="<?php echo $value['pjgbf_telefono']; ?>">
+                                                                    <input type="hidden" name="pjgbf_genero[]" value="<?php echo $value['pjgbf_genero']; ?>">
+                                                                    <input type="hidden" name="pjgbf_identificacion[]" value="<?php echo $value['pjgbf_identificacion']; ?>">
+                                                                    <input type="hidden" name="pjgbf_pais_nacimiento[]" value="<?php echo $value['pjgbf_pais_nacimiento']; ?>">
+                                                                    <input type="hidden" name="pjgbf_fecha_nacimiento[]" value="<?php echo $value['pjgbf_fecha_nacimiento']; ?>">
+                                                                    <input type="hidden" name="pjgbf_pais_residencia[]" value="<?php echo $value['pjgbf_pais_residencia']; ?>">
+                                                                    <input type="hidden" name="pjgbf_pais_residencia_fiscal[]" value="<?php echo $value['pjgbf_pais_residencia_fiscal']; ?>">
+                                                                    <input type="hidden" name="pjgbf_lugar_trabajo[]" value="<?php echo $value['pjgbf_lugar_trabajo']; ?>">
+                                                                    <input type="hidden" name="pjgbf_domicilio_personal[]" value="<?php echo $value['pjgbf_domicilio_personal']; ?>">
                                                                 </tr>
                                                                 <?php } ?>
                                                                 </tbody>
@@ -1920,7 +1921,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                 <div class="card-body">
                                                     <div class="live-preview">
                                                         
-                                                        <a href="#" data-bs-toggle="modal" data-bs-target=".generales_beneficiarios_juridicos" class="btn btn-primary">Agregar</a>
+                                                        <a href="#" onclick="mostrar_ocultar_modal('generales_beneficiarios_juridicos', 'cClienteFormulario', '', '', 'id_general_gbfpj', <?php echo $id; ?>)" class="btn btn-primary">Agregar</a>
 
                                                         <table class="table">
                                                             <thead>
@@ -1935,18 +1936,18 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             </thead> 
                                                             <tbody id="generales_beneficiarios_persona_juridica">
                                                             <?php 
-                                                                foreach ($obtener_registros_temp_bf as $key => $value) { ?>
+                                                                foreach ($obtener_registros_bfpj as $key => $value) { ?>
                                                                     <tr>
-                                                                        <td><input value="<?php echo $value['gbfpj_temp_nombre_completo_accionista']; ?>" name="gbfpj_nombre_completo_accionista[]" class="form-control"> </td>
-                                                                        <td><input value="<?php echo $value['gbfpj_temp_fecha_constitucion']; ?>" name="gbfpj_fecha_constitucion[]" class="form-control"></td>
-                                                                        <td><input value="<?php echo $value['gbfpj_temp_pais_constitucion']; ?>" name="gbfpj_pais_constitucion[]" class="form-control"></td>
-                                                                        <td><input value="<?php echo $value['gbfpj_temp_telefono']; ?>" name="gbfpj_telefono[]" class="form-control"></td>
-                                                                        <td><input value="<?php echo $value['gbfpj_temp_ruc']; ?>" name="gbfpj_ruc[]" class="form-control"></td>
-                                                                        <td><a href="#" onclick="eliminar_pj_beneficiario_generales_temp(<?php echo $value['id']; ?>)" class="btn btn-danger">Eliminar</a></td>
-                                                                        <input type="hidden" name="gbfpj_porcentaje_participacion[]" value="<?php echo $value['gbfpj_temp_porcentaje_participacion']; ?>">
-                                                                        <input type="hidden" name="gbfpj_sector_economico[]" value="<?php echo $value['gbfpj_temp_sector_economico']; ?>">
-                                                                        <input type="hidden" name="gbfpj_direccion[]" value="<?php echo $value['gbfpj_temp_direccion']; ?>">
-                                                                        <input type="hidden" name="gbfpj_tipo_pj[]" value="<?php echo $value['gbfpj_temp_tipo_pj']; ?>">
+                                                                        <td><input value="<?php echo $value['gbfpj_nombre_completo_accionista']; ?>" name="gbfpj_nombre_completo_accionista[]" class="form-control"> </td>
+                                                                        <td><input value="<?php echo $value['gbfpj_fecha_constitucion']; ?>" name="gbfpj_fecha_constitucion[]" class="form-control"></td>
+                                                                        <td><input value="<?php echo $value['gbfpj_pais_constitucion']; ?>" name="gbfpj_pais_constitucion[]" class="form-control"></td>
+                                                                        <td><input value="<?php echo $value['gbfpj_telefono']; ?>" name="gbfpj_telefono[]" class="form-control"></td>
+                                                                        <td><input value="<?php echo $value['gbfpj_ruc']; ?>" name="gbfpj_ruc[]" class="form-control"></td>
+                                                                        <td><a href="#" onclick="eliminar_pj_beneficiario_final_pj(<?php echo $value['id']; ?>,  <?php echo $id; ?>)" class="btn btn-danger">Eliminar</a></td>
+                                                                        <input type="hidden" name="gbfpj_porcentaje_participacion[]" value="<?php echo $value['gbfpj_porcentaje_participacion']; ?>">
+                                                                        <input type="hidden" name="gbfpj_sector_economico[]" value="<?php echo $value['gbfpj_sector_economico']; ?>">
+                                                                        <input type="hidden" name="gbfpj_direccion[]" value="<?php echo $value['gbfpj_direccion']; ?>">
+                                                                        <input type="hidden" name="gbfpj_tipo_pj[]" value="<?php echo $value['gbfpj_tipo_pj']; ?>">
                                                                     </tr>
                                                                 <?php } ?>
                                                             </tbody>
@@ -1976,7 +1977,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                 </div><!-- end card header -->
                                                 <div class="card-body">INDIQUE LOS ACCIONISTAS PERSONA NATURAL DE LAS ENTIDADES JURÍDICAS LISTADAS EN LA SECCIÓN II.
                                                     <div class="live-preview">
-                                                        <a href="#" data-bs-toggle="modal" data-bs-target=".propietarios_beneficiarios_juridicos" class="btn btn-primary">Agregar</a>
+                                                        <a href="#" onclick="mostrar_ocultar_modal('propietarios_beneficiarios_juridicos', 'cClienteFormulario', '', '', 'id_general_gprpj', <?php echo $id; ?>)" class="btn btn-primary">Agregar</a>
                                                         <table class="table">
                                                             <thead>
                                                                 <tr>
@@ -1988,26 +1989,26 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                     <th>Acciones</th>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody id="propietarios_beneficiarios_persona_juridica">
-                                                            <?php foreach ($obtener_registros_temp_propietario as $key => $value) { ?>
+                                                            <tbody id="propietarios_propietario_persona_juridica">
+                                                            <?php foreach ($obtener_registros_propietario as $key => $value) { ?>
                                                                 <tr>
-                                                                    <td><input value="<?php echo $value['pjpbj_temp_nombre_completo']; ?>" name="pjpbj_nombre_completo[]" class="form-control"> </td>
-                                                                    <td><input value="<?php echo $value['pjpbj_temp_nacionalidad']; ?>" name="pjpbj_nacionalidad[]" class="form-control"></td>
-                                                                    <td><input value="<?php echo $value['pjpbj_temp_profesion_oficio']; ?>" name="pjpbj_profesion_oficio[]" class="form-control"></td>
-                                                                    <td><input value="<?php echo $value['pjpbj_temp_correo']; ?>" name="pjpbj_correo[]" class="form-control"></td>
-                                                                    <td><input value="<?php echo $value['pjpbj_temp_porcentaje_participacion']; ?>" name="pjpbj_porcentaje_participacion[]" class="form-control"></td>
-                                                                    <td><a href="#" onclick="eliminar_pj_propietario_bf_temp(<?php echo $value['id']; ?>)" class="btn btn-danger">Eliminar</a></td>
-                                                                    <input type="hidden" name="pjpbj_genero[]" value="<?php echo $value['pjpbj_temp_genero']; ?>">
-                                                                    <input type="hidden" name="pjpbj_cedula_pasaporte[]" value="<?php echo $value['pjpbj_temp_cedula_pasaporte']; ?>">
-                                                                    <input type="hidden" name="pjpbj_pais_nacimineto[]" value="<?php echo $value['pjpbj_temp_pais_nacimiento']; ?>">
-                                                                    <input type="hidden" name="pjpbj_fecha_nacimiento[]" value="<?php echo $value['pjpbj_temp_fecha_nacimiento']; ?>">
-                                                                    <input type="hidden" name="pjpbj_pais_residencia[]" value="<?php echo $value['pjpbj_temp_pais_residencia']; ?>">
-                                                                    <input type="hidden" name="pjpbj_pais_residencia_fiscal[]" value="<?php echo $value['pjpbj_temp_pais_residencia_fiscal']; ?>">
-                                                                    <input type="hidden" name="pjpbj_lugar_trabajo[]" value="<?php echo $value['pjpbj_temp_lugar_trabajo']; ?>">
-                                                                    <input type="hidden" name="pjpbj_telefono[]" value="<?php echo $value['pjpbj_temp_telefono']; ?>">
-                                                                    <input type="hidden" name="pjpbj_domicilio_laboral[]" value="<?php echo $value['pjpbj_temp_domicilio_laboral']; ?>">
-                                                                    <input type="hidden" name="pjpbj_domicilio_personal[]" value="<?php echo $value['pjpbj_temp_domicilio_personal']; ?>">
-                                                                    <input type="hidden" name="pjpbj_entidad_participa[]" value="<?php echo $value['pjpbj_temp_entidad_participa']; ?>">
+                                                                    <td><input value="<?php echo $value['pjpbj_nombre_completo']; ?>" name="pjpbj_nombre_completo[]" class="form-control"> </td>
+                                                                    <td><input value="<?php echo $value['pjpbj_nacionalidad']; ?>" name="pjpbj_nacionalidad[]" class="form-control"></td>
+                                                                    <td><input value="<?php echo $value['pjpbj_profesion_oficio']; ?>" name="pjpbj_profesion_oficio[]" class="form-control"></td>
+                                                                    <td><input value="<?php echo $value['pjpbj_correo']; ?>" name="pjpbj_correo[]" class="form-control"></td>
+                                                                    <td><input value="<?php echo $value['pjpbj_porcentaje_participacion']; ?>" name="pjpbj_porcentaje_participacion[]" class="form-control"></td>
+                                                                    <td><a href="#" onclick="eliminar_pj_propietario_bf(<?php echo $value['id']; ?>, <?php echo $id; ?>)" class="btn btn-danger">Eliminar</a></td>
+                                                                    <input type="hidden" name="pjpbj_genero[]" value="<?php echo $value['pjpbj_genero']; ?>">
+                                                                    <input type="hidden" name="pjpbj_cedula_pasaporte[]" value="<?php echo $value['pjpbj_cedula_pasaporte']; ?>">
+                                                                    <input type="hidden" name="pjpbj_pais_nacimineto[]" value="<?php echo $value['pjpbj_pais_nacimineto']; ?>">
+                                                                    <input type="hidden" name="pjpbj_fecha_nacimiento[]" value="<?php echo $value['pjpbj_pais_nacimineto']; ?>">
+                                                                    <input type="hidden" name="pjpbj_pais_residencia[]" value="<?php echo $value['pjpbj_pais_residencia']; ?>">
+                                                                    <input type="hidden" name="pjpbj_pais_residencia_fiscal[]" value="<?php echo $value['pjpbj_pais_residencia_fiscal']; ?>">
+                                                                    <input type="hidden" name="pjpbj_lugar_trabajo[]" value="<?php echo $value['pjpbj_lugar_trabajo']; ?>">
+                                                                    <input type="hidden" name="pjpbj_telefono[]" value="<?php echo $value['pjpbj_telefono']; ?>">
+                                                                    <input type="hidden" name="pjpbj_domicilio_laboral[]" value="<?php echo $value['pjpbj_domicilio_laboral']; ?>">
+                                                                    <input type="hidden" name="pjpbj_domicilio_personal[]" value="<?php echo $value['pjpbj_domicilio_personal']; ?>">
+                                                                    <input type="hidden" name="pjpbj_entidad_participa[]" value="<?php echo $value['pjpbj_entidad_participa']; ?>">
                                                                 </tr>
 
                                                                 <?php } ?>
@@ -2708,6 +2709,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                 </div>
                             </div>
                             <!-- Junta directiva temporal -->
+                            <?php /*
                             <div class="tab-pane fade" id="directiva" role="tabpanel" aria-labelledby="directiva-tab">
                                 <div class="d-flex mb-2">
                                     
@@ -2735,8 +2737,8 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                         <th>Acciones</th>
                                                                     </tr>
                                                                 </thead>
-                                                                <tbody id="contenido_junta_directiva">
-                                                                    <?php foreach ($obtener_registros_temp_ddt as $key => $value) { ?>
+                                                                <tbody id="contenido_junta_directiva_modal">
+                                                                    <?php foreach ($junta_directiva_dignatarios as $key => $value) { ?>
                                                                             <tr>
                                                                                 <td><input value="<?php echo $value['jd_temp_nombre_completo']; ?>" name="pjdd_nombre_completo[]" class="form-control"> </td>
                                                                                 <td><input value="<?php echo $value['jd_temp_cargo']; ?>" name="pjdd_cargo[]" class="form-control"></td>
@@ -2763,7 +2765,9 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                     </div>
                                 </div>
                             
-                            <!-- Apoderados temporal -->
+                                <?php */ ?>
+                           
+                                <!-- Apoderados temporal -->
                             <div class="tab-pane fade" id="apoderados" role="tabpanel" aria-labelledby="apoderados-tab">
                                 <div class="d-flex mb-2">
 
