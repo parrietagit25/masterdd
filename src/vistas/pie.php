@@ -1007,7 +1007,16 @@
             <?php }elseif(isset($alerta) && $alerta == 3){ ?> 
                 setTimeout(document.getElementById("sa-error").click(), 2000);
             <?php } ?> 
-            
+
+            // desactivar la tecla enter
+
+            document.addEventListener("keydown", function(event) {
+                if (event.key === "Enter") {
+                    console.log("enter nell");
+                    event.preventDefault(); 
+                }
+            });
+                        
         </script>
     </body>
 </html>

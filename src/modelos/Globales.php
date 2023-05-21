@@ -74,7 +74,8 @@ class ModelGlobal extends Conexion {
     $sql = "INSERT INTO $tabla ($columnas) VALUES ($params)";
     $insert = $this->conn->query($sql);
 
-    $stmt = $this->conn->query(" SELECT TOP 1 id FROM $tabla ORDER BY id DESC");
+    //$stmt = $this->conn->query(" SELECT TOP 1 id FROM $tabla ORDER BY id DESC");
+    $stmt = $this->conn->query(" SELECT max(id) as id FROM $tabla");
     $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
     foreach ($rows as $key => $value) {
       $ultimoIdInsertado = $value['id'];
