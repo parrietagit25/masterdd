@@ -817,7 +817,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                         <div class="col-lg-12">
                                             <div class="card">
                                                 <div class="card-header align-items-center d-flex">
-                                                    <h4 class="card-title mb-0 flex-grow-1">DECLARACIÓN DE ACCIONISTAS.</h4>
+                                                    <h4 class="card-title mb-0 flex-grow-1">DECLARACIÓN DE ACCIONISTAS</h4>
                                                 </div><!-- end card header -->
                                                 <div class="card-body">
                                                     <div class="live-preview">
@@ -1115,7 +1115,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                         <div class="col-lg-12">
                                             <div class="card">
                                                 <div class="card-header align-items-center d-flex">
-                                                    <h4 class="card-title mb-0 flex-grow-1">TERCEROS AUTORIZADOS.</h4>
+                                                    <h4 class="card-title mb-0 flex-grow-1">TERCEROS AUTORIZADOS</h4>
                                                 </div><!-- end card header -->
                                                 <div class="card-body" >
 
@@ -1365,7 +1365,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                         <div class="col-lg-12">
                                             <div class="card">
                                                 <div class="card-header align-items-center d-flex">
-                                                    <h4 class="card-title mb-0 flex-grow-1">PERSONAS EXPUESTAS POLÍTICAMENTE.</h4>
+                                                    <h4 class="card-title mb-0 flex-grow-1">PERSONAS EXPUESTAS POLÍTICAMENTE</h4>
                                                 </div><!-- end card header -->
                                                 <div class="card-body">
                                                     <p>
@@ -1670,7 +1670,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                         <div class="col-lg-12">
                                             <div class="card">
                                                 <div class="card-header align-items-center d-flex">
-                                                    <h4 class="card-title mb-0 flex-grow-1">ADJUNTAR LOS SIGUIENTES DOCUMENTOS E INFORMACIÓN DE SOPORTE.</h4>
+                                                    <h4 class="card-title mb-0 flex-grow-1">ADJUNTAR LOS SIGUIENTES DOCUMENTOS E INFORMACIÓN DE SOPORTE</h4>
                                                 </div><!-- end card header -->
                                                 <div class="card-body">
                                                 </div>
@@ -1853,7 +1853,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                         <div class="col-lg-12">
                                             <div class="card">
                                                 <div class="card-header align-items-center d-flex">
-                                                    <h4 class="card-title mb-0 flex-grow-1">GENERALES DE LOS BENEFICIARIOS FINALES- PERSONA NATURAL.</h4>
+                                                    <h4 class="card-title mb-0 flex-grow-1">GENERALES DE LOS BENEFICIARIOS FINALES- PERSONA NATURAL</h4>
                                                 </div><!-- end card header -->
                                                     <div class="card-body">COMPLETE CON LOS DATOS DE LAS PERSONAS NATURALES QUE OSTENTAN UNA PARTICIPACIÓN DEL 25% O MÁS EN EL CLIENTE O PROVEEDOR.</div>
                                                     <div class="card-body">
@@ -1973,7 +1973,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                         <div class="col-lg-12">
                                             <div class="card">
                                                 <div class="card-header align-items-center d-flex">
-                                                    <h4 class="card-title mb-0 flex-grow-1">PROPIETARIOS DE LOS BENEFICIARIOS FINALES- PERSONA JURÍDICA.</h4>
+                                                    <h4 class="card-title mb-0 flex-grow-1">PROPIETARIOS DE LOS BENEFICIARIOS FINALES- PERSONA JURÍDICA</h4>
                                                 </div><!-- end card header -->
                                                 <div class="card-body">INDIQUE LOS ACCIONISTAS PERSONA NATURAL DE LAS ENTIDADES JURÍDICAS LISTADAS EN LA SECCIÓN II.
                                                     <div class="live-preview">
@@ -2048,7 +2048,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                         <div class="col-lg-12">
                                             <div class="card">
                                                 <div class="card-header align-items-center d-flex">
-                                                    <h4 class="card-title mb-0 flex-grow-1">DECLARACIÓN JURADA.</h4>
+                                                    <h4 class="card-title mb-0 flex-grow-1">DECLARACIÓN JURADA</h4>
                                                 </div><!-- end card header -->
                                                 <div class="card-body">
                                                     <p>
@@ -2122,8 +2122,9 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                         </p>
                                                         </div>
                                                         <!--end row-->
-                                                        <input type="submit" class="btn btn-primary" value="Actualizar" name="registro_cc_pj">
+                                                        <input type="submit" class="btn btn-primary" value="Actualizar" name="actualizar_cc_pj">
                                                         <button type="button" class="btn btn-primary btn-sm" id="sa-success" style="display:none;"></button>
+                                                        <input type="hidden" name="id_general" value="<?php echo $_GET['id']; ?>">
                                                     </div>
                                                     <div class="d-none code-view">
                                                         <pre class="language-markup" style="height: 450px;">

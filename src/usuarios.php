@@ -17,9 +17,18 @@ if (isset($_POST['registro_usuario'])) {
     $alerta = 1;
 }
 
-if (isset($_GET['id_eliminar'])) {
-    $usuariosControllers->eliminarUsuario($_GET['id_eliminar']);
-    $alerta = 2;
+if (isset($_POST['id_eliminar'])) {
+    $usuariosControllers->eliminarUsuario($_POST['id_eliminar']);
+    $alerta = 3;
+}
+
+if (isset($_POST['editar_usuario'])) {
+
+  $datos = $_POST;  
+  unset($datos['editar_usuario']);
+  $usuariosControllers->actualizarUsuario($datos); 
+  $alerta = 2;
+  
 }
 
     $view = $_GET["view"];

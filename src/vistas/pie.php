@@ -977,7 +977,6 @@
             var modulo = modulo;
             
             if (modulo == 'user') {
-                console.log('abotera');
                 try {
                     
                     var id = id_eliminar;
@@ -985,6 +984,28 @@
                     var contenido_modal = contenido_modal;
 
                     const response = await fetch('vistas/modal/modalUsuario.php?eliminar_usuario=1&id=' + id);
+                    const data = await response.text();
+                    $('#'+modal_show+'').modal('show');
+                    document.querySelector('#'+contenido_modal+'').innerHTML = data;
+                } catch (error) {
+                    console.log('Error al obtener los detalles:', error);
+                }
+            }            
+
+        }
+
+        async function modal_edit(id_edit, modulo, modal_show, contenido_modal){
+
+            var modulo = modulo;
+
+            if (modulo == 'edit_user') {
+                try {
+                    
+                    var id = id_edit;
+                    var modal_show = modal_show;
+                    var contenido_modal = contenido_modal;
+
+                    const response = await fetch('vistas/modal/modalUsuario.php?edit_usuario=1&id=' + id);
                     const data = await response.text();
                     $('#'+modal_show+'').modal('show');
                     document.querySelector('#'+contenido_modal+'').innerHTML = data;

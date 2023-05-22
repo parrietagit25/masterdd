@@ -18,8 +18,6 @@ class Usuario extends Conexion {
 
   public function eliminarUsuario($id) {
     $stmt = $this->conn->query("DELETE FROM usuarios WHERE id = $id");
-    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    return $rows;
   }
 
   public function obtenerUsuario($id) {
@@ -77,25 +75,14 @@ class Usuario extends Conexion {
   }
 
   function actualizar($tabla, $id, $datos) {
-    $set_values = "";
-    $param_types = "";
-    foreach ($datos as $column => $value) {
-        $set_values .= "$column = ?, ";
-        $param_types .= $this->get_param_type($value);
+    $set = "";
+    foreach ($datos as $columna => $valor) {
+        $set .= "$columna = '$valor', ";
     }
-    $set_values = rtrim($set_values, ", ");
-    $sql = "UPDATE $tabla SET $set_values WHERE id = ?";
-    $stmt = $this->conn->prepare($sql);
-    
-    $param_values = array_values($datos);
-    $param_values[] = $id;
-    $param_types .= "i"; // Assuming id is an integer
-
-    $stmt->bind_param($param_types, ...$param_values);
-
-    $resultado = $stmt->execute();
-    echo 'Registro Actualizado';
-    return $resultado;
+    $set = rtrim($set, ", ");
+    $where = " id = $id ";
+    $sql = "UPDATE $tabla SET $set WHERE $where";
+    $actualizar = $this->conn->query($sql);
   }
 
   function get_param_type($value) {

@@ -823,94 +823,267 @@ class CcclienteController {
 
         $this->ModelGlobal->actualizar($this->tabla_cc_expediente, "id_general = $id", $datos_expediente);
 
-        // ocupacion
+        // DECLARACIÓN DE FUENTES Y ORIGEN DE LOS FONDOS
 
-        $datos_ocupacionales = [];
+        $ldatos_declaracion_fondos = [];
         foreach ($datos as $key => $value) {
-            if (strpos($key, 'fo_') === 0) {
-                $datos_ocupacionales[$key] = $value; 
+            if (strpos($key, 'pjdf_') === 0) {
+                $ldatos_declaracion_fondos[$key] = $value; 
             }
         }
 
-        $this->ModelGlobal->actualizar($this->tabla_cc_ocupacionales, "id_general = $id", $datos_ocupacionales);
+        $this->ModelGlobal->actualizar($this->tabla_cc_pj_declaracion_fuentes, "id_general = $id", $ldatos_declaracion_fondos);
 
-        // declaracion 
+        // DATOS DEL REPRESENTANTE LEGAL 
 
-        $datos_declaracion = [];
+        $datos_representante_legal = [];
         foreach ($datos as $key => $value) {
-            if (strpos($key, 'fd_') === 0) {
-                $datos_declaracion[$key] = $value; 
+            if (strpos($key, 'pjrl_') === 0) {
+                $datos_representante_legal[$key] = $value; 
             }
         }
 
-        $this->ModelGlobal->actualizar($this->tabla_ccc_declaracion, "id_general = $id", $datos_declaracion);
+        $this->ModelGlobal->actualizar($this->tabla_cc_pj_representante_legal, "id_general = $id", $datos_representante_legal);
 
-        // referencias 
+        // JUNTA DIRECTIVA Y DIGNATARIOS array 
 
-        $datos_referencias = [];
+        $datos_cc_pj_junta_directiva_dignatarios = [];
         foreach ($datos as $key => $value) {
-            if (strpos($key, 'fr_') === 0) {
-                $datos_referencias[$key] = $value; 
+            if (strpos($key, 'pjdd_') === 0) {
+                $datos_cc_pj_junta_directiva_dignatarios[$key] = $value; 
             }
         }
 
-        $this->ModelGlobal->actualizar($this->tabla_cc_referencias, "id_general = $id", $datos_referencias);
+        $finalArrayda = [];
 
-        // Beneficiario final 
-
-        $datos_beneficiario = [];
-        foreach ($datos as $key => $value) {
-            if (strpos($key, 'fb_') === 0) {
-                $datos_beneficiario[$key] = $value; 
+        foreach($datos_cc_pj_junta_directiva_dignatarios as $key => $subArray) {
+            foreach($subArray as $index => $value) {
+                $finalArrayda[$index][$key] = $value;
             }
         }
 
-        $this->ModelGlobal->actualizar($this->tabla_cc_beneficiario, "id_general = $id", $datos_beneficiario);
+        foreach ($finalArrayda as $key => $value) {
+            $this->ModelGlobal->actualizar($this->tabla_cc_pj_directiva_dignatarios, "id_general = $id", $finalArrayda[$key]);
+        }
 
-        // Terceros autorizados
+        // APODERADOS array 
 
-        $datos_terceros_autorizados = [];
+        $datos_cc_pj_apoderados = [];
         foreach ($datos as $key => $value) {
-            if (strpos($key, 'ft_') === 0) {
-                $datos_terceros_autorizados[$key] = $value; 
+            if (strpos($key, 'pja_') === 0) {
+                $datos_cc_pj_apoderados[$key] = $value; 
             }
         }
 
-        $this->ModelGlobal->actualizar($this->tabla_cc_pj_terceros_autorizados, "id_general = $id", $datos_terceros_autorizados);
+        $finalArrayda = [];
 
-        // Personas expuestas
-
-        $datos_personas_expuestas = [];
-        foreach ($datos as $key => $value) {
-            if (strpos($key, 'fp_') === 0) {
-                $datos_personas_expuestas[$key] = $value; 
+        foreach($datos_cc_pj_apoderados as $key => $subArray) {
+            foreach($subArray as $index => $value) {
+                $finalArrayda[$index][$key] = $value;
             }
         }
 
-        $this->ModelGlobal->actualizar($this->tabla_cc_personas_expuestas, "id_general = $id", $datos_personas_expuestas);
+        foreach ($finalArrayda as $key => $value) {
+            $this->ModelGlobal->actualizar($this->tabla_cc_pj_apoderados, "id_general = $id", $finalArrayda[$key]);
+        }
 
-        // Declaracion jurada
+        // Propietarios
+
+        $datos_propietarios = [];
+        foreach ($datos as $key => $value) {
+            if (strpos($key, 'pjpr_') === 0) {
+                $datos_propietarios[$key] = $value; 
+            }
+        }
+
+        $this->ModelGlobal->actualizar($this->tabla_cc_pj_propietarios, "id_general = $id", $datos_propietarios);
+
+        // DECLARACIÓN DE ACCIONISTAS.
+
+        $datos_cc_pj_declaracion_accionista = [];
+        foreach ($datos as $key => $value) {
+            if (strpos($key, 'pjda_') === 0) {
+                $datos_cc_pj_declaracion_accionista[$key] = $value; 
+            }
+        }
+
+        $finalArrayda = [];
+
+        foreach($datos_cc_pj_declaracion_accionista as $key => $subArray) {
+            foreach($subArray as $index => $value) {
+                $finalArrayda[$index][$key] = $value;
+            }
+        }
+
+        foreach ($finalArrayda as $key => $value) {
+            $this->ModelGlobal->actualizar($this->tabla_cc_declaracion_accionistas, "id_general = $id", $finalArrayda[$key]);
+        }
+
+        // BENEFICIARIO FINAL
 
         $datos_cc_declaracion_jurada = [];
         foreach ($datos as $key => $value) {
-            if (strpos($key, 'fdc_') === 0) {
+            if (strpos($key, 'pjbf_') === 0) {
                 $datos_cc_declaracion_jurada[$key] = $value; 
             }
         }
 
-        $this->ModelGlobal->actualizar($this->tabla_cc_declaracion_jurada, "id_general = $id", $datos_cc_declaracion_jurada);
+        $this->ModelGlobal->actualizar($this->tabla_cc_pj_beneficiario_final, "id_general = $id", $datos_cc_declaracion_jurada);
 
-        // uso interno
+        // TERCEROS AUTORIZADOS
 
         $datos_cc_uso_interno = [];
         foreach ($datos as $key => $value) {
-            if (strpos($key, 'fui_') === 0) {
+            if (strpos($key, 'pjtu_') === 0) {
                 $datos_cc_uso_interno[$key] = $value; 
             }
         }
 
-        $this->ModelGlobal->actualizar($this->tabla_cc_uso_interno, "id_general = $id", $datos_cc_uso_interno);
+        $this->ModelGlobal->actualizar($this->tabla_cc_pj_terceros_autorizados, "id_general = $id", $datos_cc_uso_interno);
     
+        // PERSONAS EXPUESTAS POLÍTICAMENTE
+
+        $datos_cc_uso_interno = [];
+        foreach ($datos as $key => $value) {
+            if (strpos($key, 'pjpx_') === 0) {
+                $datos_cc_uso_interno[$key] = $value; 
+            }
+        }
+
+        $this->ModelGlobal->actualizar($this->tabla_cc_pj_personas_expuestas, "id_general = $id", $datos_cc_uso_interno);
+    
+        // REFERENCIAS array
+
+        $datos_cc_pj_referencias = [];
+        foreach ($datos as $key => $value) {
+            if (strpos($key, 'pjrf_') === 0) {
+                $datos_cc_pj_referencias[$key] = $value; 
+            }
+        }
+
+        $finalArrayda = [];
+
+        foreach($datos_cc_pj_referencias as $key => $subArray) {
+            foreach($subArray as $index => $value) {
+                $finalArrayda[$index][$key] = $value;
+            }
+        }
+
+        foreach ($finalArrayda as $key => $value) {
+            $this->ModelGlobal->actualizar($this->tabla_cc_pj_referencias, "id_general = $id", $finalArrayda[$key]);
+        }
+    
+        // DECLARACIÓN JURADA
+ 
+        $datos_cc_pj_dj = [];
+        foreach ($datos as $key => $value) {
+            if (strpos($key, 'pjdj_') === 0) {
+                $datos_cc_pj_dj[$key] = $value; 
+            }
+        }
+
+        $this->ModelGlobal->actualizar($this->tabla_cc_pj_declaracion_jurada, "id_general = $id", $datos_cc_pj_dj);
+    
+
+        // ADJUNTAR LOS SIGUIENTES DOCUMENTOS E INFORMACIÓN DE SOPORTE
+ 
+        /*$datos_cc_pj_ajuntos = [];
+        foreach ($datos as $key => $value) {
+            if (strpos($key, 'pjad_') === 0) {
+                $datos_cc_pj_ajuntos[$key] = $value; 
+            }
+        } 
+
+        $this->ModelGlobal->actualizar($this->tabla_cc_pj_adjuntos, "id_general = $id", $datos_cc_pj_ajuntos);*/
+    
+        // PARA USO INTERNO DE PANAMA CAR RENTAL, S.A.
+ 
+        $datos_cc_pj_uso_interno = [];
+        foreach ($datos as $key => $value) {
+            if (strpos($key, 'pjui_') === 0) {
+                $datos_cc_pj_uso_interno[$key] = $value; 
+            }
+        }
+
+        $this->ModelGlobal->actualizar($this->tabla_cc_pj_uso_interno, "id_general = $id", $datos_cc_pj_uso_interno);
+    
+        // GENERALES DE LOS BENEFICIARIOS FINALES- PERSONA NATURAL array
+
+        $datos_cc_pj_bf = [];
+        foreach ($datos as $key => $value) {
+            if (strpos($key, 'pjgbf_') === 0) {
+                $datos_cc_pj_bf[$key] = $value; 
+            }
+        }
+
+        $finalArrayda = [];
+
+        foreach($datos_cc_pj_bf as $key => $subArray) {
+            foreach($subArray as $index => $value) {
+                $finalArrayda[$index][$key] = $value;
+            }
+        }
+
+        foreach ($finalArrayda as $key => $value) {
+            $this->ModelGlobal->actualizar($this->tabla_cc_pj_general_bf_natural, "id_general = $id", $finalArrayda[$key]);
+        }
+    
+        // GENERALES DE LOS BENEFICIARIOS FINALES- PERSONA JURÍDICA array
+
+        $datos_cc_pj_bfpj = [];
+        foreach ($datos as $key => $value) {
+            if (strpos($key, 'gbfpj_') === 0) {
+                $datos_cc_pj_bfpj[$key] = $value; 
+            }
+        }
+
+        $finalArrayda = [];
+
+        foreach($datos_cc_pj_bfpj as $key => $subArray) {
+            foreach($subArray as $index => $value) {
+                $finalArrayda[$index][$key] = $value;
+            }
+        }
+
+        foreach ($finalArrayda as $key => $value) {
+            $this->ModelGlobal->actualizar($this->tabla_cc_pj_general_bf_pj, "id_general = $id", $finalArrayda[$key]);
+        }
+
+        // PROPIETARIOS DE LOS BENEFICIARIOS FINALES- PERSONA JURÍDICA array
+
+        $datos_cc_pj_pbfpj = [];
+        unset($datos['pjpbj_fecha_nacimiento']);
+        
+        foreach ($datos as $key => $value) {
+            if (strpos($key, 'pjpbj_') === 0) {
+                $datos_cc_pj_pbfpj[$key] = $value; 
+            }
+        }
+
+        $finalArrayda = [];
+
+        foreach($datos_cc_pj_pbfpj as $key => $subArray) {
+            foreach($subArray as $index => $value) {
+                $finalArrayda[$index][$key] = $value;
+            }
+        }
+
+        foreach ($finalArrayda as $key => $value) {
+            $this->ModelGlobal->actualizar($this->tabla_cc_propietarios_bf, "id_general = $id", $finalArrayda[$key]);
+        }
+    
+        // DECLARACIÓN JURADA
+ 
+        $datos_cc_pj_declaracion_jurada = [];
+        foreach ($datos as $key => $value) {
+            if (strpos($key, 'p_jdj_') === 0) {
+                $datos_cc_pj_declaracion_jurada[$key] = $value; 
+            }
+        }
+
+        $this->ModelGlobal->actualizar($this->tabla_cc_declaracion_jurada, "id_general = $id", $datos_cc_pj_declaracion_jurada);
+    
+
     }
 
     public function eliminar_cc_cliente($id){

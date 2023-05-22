@@ -51,6 +51,14 @@ class UsuarioController {
         return $this->usuarioModel->obtenerTodos($this->tabla_tipos);
     } 
     public function agregar_usuario($datos){
+        
+        if ($datos['password']== '') {
+            unset($datos['password']);
+        }else{
+            $hashed_password = password_hash($datos['password'], PASSWORD_DEFAULT);
+            $datos['password'] = $hashed_password; 
+        }
+
         $datos["stat"]= 1;
         return $this->usuarioModel->agregar($this->tabla_usuarios, $datos);
     }

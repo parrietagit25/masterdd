@@ -41,11 +41,11 @@
                     </a>
                     <div class="collapse menu-dropdown" id="mantenimientoForms">
                         <ul class="nav nav-sm flex-column">
-                            <li class="nav-item">
+                            <!--<li class="nav-item">
                                 <a href="usuarios.php?view=crear" class="nav-link">Registrar Usuario</a>
-                            </li>
+                            </li>-->
                             <li class="nav-item">
-                                <a href="usuarios.php?view=ver_usuarios" class="nav-link">Ver Usuarios</a>
+                                <a href="usuarios.php?view=ver_usuarios" class="nav-link">Usuarios</a>
                             </li>
                         </ul>
                     </div>

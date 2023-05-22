@@ -15,23 +15,27 @@ if (isset($_GET['eliminar_usuario'])) {
     </div>
     <input type="hidden" name="id_eliminar" value="<?php echo $id; ?>">
    <?php } ?>
-<?php }else{ ?>
 
+<?php }elseif(isset($_GET['edit_usuario'])){ 
+
+    $obtener_usuario = $usuariosController->obtenerUsuario($id);
+    $tipos = $usuariosController->tiposUsuarios();
+    foreach ($obtener_usuario as $key => $value) { ?>
 
         <div class="form-group">
             <label for="inputNombreCaso"> <b> Nombre Completo</b></label>
-            <input type="text" name="nombre" id="" class="form-control" required autocomplete="off" value="<?php echo $registroUnico["nombre"]; ?>">
+            <input type="text" name="nombre" id="" class="form-control" required autocomplete="off" value="<?php echo $value["nombre"]; ?>">
         </div>
         <div class="form-group">
             <label for="inputNombreCaso"> <b> Email</b></label>
-            <input type="text" name="email" id="" class="form-control" required autocomplete="off" value="<?php echo $registroUnico["email"]; ?>">
+            <input type="text" name="email" id="" class="form-control" required autocomplete="off" value="<?php echo $value["email"]; ?>">
         </div>
         <div class="form-group">
             <label for="inputNombreCaso"> <b> Tipo Usuario</b></label>
             <select name="tipo_user" id="" class="form-control">
                 <option value="">Seleccionar</option>
-                <?php foreach ($tipos as $key => $value) { ?>
-                <option value="<?php echo $value['tipo']; ?>" <?php if($value['tipo'] == $registroUnico["tipo_user"]){ echo 'selected';} ?>><?php echo $value['descripcion']; ?></option>
+                <?php foreach ($tipos as $key => $value2) { ?>
+                <option value="<?php echo $value2['tipo']; ?>" <?php if($value2['tipo'] == $value["tipo_user"]){ echo 'selected';} ?>><?php echo $value2['descripcion']; ?></option>
                 <?php } ?>
             </select>
         </div>
@@ -43,14 +47,12 @@ if (isset($_GET['eliminar_usuario'])) {
             <label for="inputNombreCaso"> <b> Estatus</b></label>
             <select name="stat" id="" class="form-control">
                 <option value="">Seleccionar</option>
-                <option value="1" <?php if($registroUnico['stat'] == 1){ echo 'selected';} ?>>ON</option>
-                <option value="2" <?php if($registroUnico['stat'] == 2){ echo 'selected';} ?>>OFF</option>
+                <option value="1" <?php if($value['stat'] == 1){ echo 'selected';} ?>>ON</option>
+                <option value="2" <?php if($value['stat'] == 2){ echo 'selected';} ?>>OFF</option>
             </select>
         </div>
         <br>
         <input type="hidden" name="id_usuario" value="<?php echo $id; ?>">
+        <?php } 
 
-
-<?php 
-
-}
+    } ?>

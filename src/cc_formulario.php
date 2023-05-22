@@ -19,9 +19,9 @@ if (isset($_POST['registro_cc_pj'])) {
   $alerta = 1;
 }
 
-if (isset($_POST['actualizar_cc_cliente'])) {
+if (isset($_POST['actualizar_cc_pj'])) {
   $datos = $_POST;  
-  unset($datos['actualizar_cc_cliente']);
+  unset($datos['actualizar_cc_pj']);
   $id_general = $_POST['id_general'];
   $cCclienteController->actualizar_cc_cliente($datos, $id_general);
   $cCclienteController->subir_archivos($_FILES, $id_general);
