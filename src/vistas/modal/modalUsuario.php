@@ -3,18 +3,18 @@ $modalDocu =1;
 $id = $_GET['id']; 
 require_once("../../controladores/UsuarioController.php");
 $usuariosController = new UsuarioController(); 
-$registroUnico = $usuariosController->obtenerUsuario($id);
-$tipos = $usuariosController->obtenerTipos();
 
-if (isset($_GET['eliminar_usuario'])) { ?>
+if (isset($_GET['eliminar_usuario'])) { 
 
+    $obtener_usuario = $usuariosController->obtenerUsuario($id);
+    foreach ($obtener_usuario as $key => $value) { ?>
     <div class="form-group">
         <label for="inputNombreCaso"> <b> Nombre del usuario </b></label>
-        <p><?php echo htmlspecialchars($registroUnico["nombre"]); ?></p>
+        <p><?php echo $value["nombre"]; ?></p>
         <label for="inputNumeroPrograma" style="color:red;"><b>Esta seguro que desea elimina este usuario ?</b></label>
     </div>
-    <input type="hidden" name="id" value="<?php echo $id; ?>">
-
+    <input type="hidden" name="id_eliminar" value="<?php echo $id; ?>">
+   <?php } ?>
 <?php }else{ ?>
 
 

@@ -972,6 +972,29 @@
             }
         }
 
+        async function modal_eliminar(id_eliminar, modulo, modal_show, contenido_modal){
+
+            var modulo = modulo;
+            
+            if (modulo == 'user') {
+                console.log('abotera');
+                try {
+                    
+                    var id = id_eliminar;
+                    var modal_show = modal_show;
+                    var contenido_modal = contenido_modal;
+
+                    const response = await fetch('vistas/modal/modalUsuario.php?eliminar_usuario=1&id=' + id);
+                    const data = await response.text();
+                    $('#'+modal_show+'').modal('show');
+                    document.querySelector('#'+contenido_modal+'').innerHTML = data;
+                } catch (error) {
+                    console.log('Error al obtener los detalles:', error);
+                }
+            }            
+
+        }
+
     </script>
         
         <!-- END layout-wrapper  incluido por el tema -->

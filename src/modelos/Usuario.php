@@ -17,18 +17,14 @@ class Usuario extends Conexion {
   }
 
   public function eliminarUsuario($id) {
-    $stmt = $this->conn->prepare("DELETE FROM usuarios WHERE id = ?");
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
-    echo 'Usuario eliminado';
+    $stmt = $this->conn->query("DELETE FROM usuarios WHERE id = $id");
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $rows;
   }
 
   public function obtenerUsuario($id) {
-    $stmt = $this->conn->prepare("SELECT * FROM usuarios WHERE id = ?");
-    $stmt->bind_param("i", $id);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    return $result->fetch_assoc();
+    $stmt = $this->conn->query("SELECT * FROM usuarios WHERE id = $id");
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
   public function autenticar($email, $password) {
@@ -60,26 +56,23 @@ class Usuario extends Conexion {
   function obtenerTodos($tabla) {
 
     $result = $this->conn->query("SELECT * FROM $tabla WHERE stat = 1");
-    return $result->fetch_all(MYSQLI_ASSOC);
+    return $result->fetchAll(PDO::FETCH_ASSOC);
 
   }
 
   public function agregar($tabla, $datos) {
 
     $columnas = implode(", ", array_keys($datos));
-    $placeholders = implode(", ", array_fill(0, count($datos), "?"));
-    $sql = "INSERT INTO $tabla ($columnas) VALUES ($placeholders)";
-    $stmt = $this->conn->prepare($sql);
-    $tipos = str_repeat("s", count($datos));
-    $params = array_merge([$tipos], array_values($datos));
-    $tmp = array();
-    foreach ($params as $key => $value) {
-        $tmp[$key] = &$params[$key];
+    $params = "'" . implode("', '", array_values($datos)) . "'";
+    $sql = "INSERT INTO $tabla ($columnas) VALUES ($params)";
+    $insert = $this->conn->query($sql);
+
+    $stmt = $this->conn->query(" SELECT max(id) as id FROM $tabla");
+    $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($rows as $key => $value) {
+      $ultimoIdInsertado = $value['id'];
     }
-    call_user_func_array([$stmt, 'bind_param'], $tmp);
-    $resultado = $stmt->execute();
-    echo 'Registro Realizados';
-    return $resultado;
+    return $ultimoIdInsertado;
     
   }
 

@@ -1106,7 +1106,7 @@
                                                         <div class="nav flex-column nav-pills text-center" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                                                             <a class="nav-link mb-2 active" id="portada-tab" data-bs-toggle="pill" href="#portada" role="tab" aria-controls="portada" aria-selected="true">PORTADA FILE VENTAS</a>
                                                             <a class="nav-link mb-2" id="generales-tab" data-bs-toggle="pill" href="#generales" role="tab" aria-controls="generales" aria-selected="true">GENERALES</a>
-                                                            <a class="nav-link mb-2" id="declaracion-tab" data-bs-toggle="pill" href="#declaracion" role="tab" aria-controls="declaracion" aria-selected="false">DECLARACION</a>
+                                                            <a class="nav-link mb-2" id="declaracion-tab" data-bs-toggle="pill" href="#declaracion" role="tab" aria-controls="declaracion" aria-selected="false">DECLARACIÓN</a>
                                                             <a class="nav-link mb-2" id="representante_legal-tab" data-bs-toggle="pill" href="#representante_legal" role="tab" aria-controls="representante_legal" aria-selected="false">REPRESENTANTE LEGAL</a>
                                                             <a class="nav-link" id="directiva-tab" data-bs-toggle="pill" href="#directiva" role="tab" aria-controls="directiva" aria-selected="false">DIRECTIVA Y DIGNATARIOS</a>
                                                             <a class="nav-link mb-2" id="apoderados-tab" data-bs-toggle="pill" href="#apoderados" role="tab" aria-controls="apoderados" aria-selected="false">APODERADOS</a>
@@ -1136,7 +1136,7 @@
                                                                         <div class="col-lg-12">
                                                                             <div class="card">
                                                                                 <div class="card-header align-items-center d-flex">
-                                                                                    <h4 class="card-title mb-0 flex-grow-1">CONTROL DE ENTREGA DE EXPEDIENTES  DE VENTAS DE AUTOS | PERSONA JURIDICA</h4>
+                                                                                    <h4 class="card-title mb-0 flex-grow-1">CONTROL DE ENTREGA DE EXPEDIENTES  DE VENTAS DE AUTOS | PERSONA JURÍDICA</h4>
                                                                                 </div><!-- end card header -->
                                                                                 <div class="card-body">
                                                                                     <div class="live-preview">
@@ -1434,7 +1434,7 @@
                                                                                         <div class="row gy-4">
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="exampleFormControlTextarea5" class="form-label">Actividaad principal</label>
+                                                                                                    <label for="exampleFormControlTextarea5" class="form-label">Actividad principal</label>
                                                                                                     <textarea class="form-control" id="exampleFormControlTextarea5"
                                                                                                         rows="3" name="pjdf_actividad_principal"></textarea>
                                                                                                 </div>
@@ -1538,7 +1538,7 @@
                                                                         <div class="col-lg-12">
                                                                             <div class="card">
                                                                                 <div class="card-header align-items-center d-flex">
-                                                                                    <h4 class="card-title mb-0 flex-grow-1">DATOS DEL REPRESENTANTE LEGAL.</h4>
+                                                                                    <h4 class="card-title mb-0 flex-grow-1">DATOS DEL REPRESENTANTE LEGAL</h4>
                                                                                 </div><!-- end card header -->
                                                                                 <div class="card-body"></div>
                                                                                 <div class="card-body">
@@ -1553,7 +1553,7 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Cedula / N# Pasaporte.</label>
+                                                                                                    <label for="basiInput" class="form-label">Cédula / N# Pasaporte.</label>
                                                                                                     <input type="text" class="form-control" name="pjrl_cedula_pasaporte">
                                                                                                 </div>
                                                                                             </div>
@@ -1602,7 +1602,7 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="iconInput" class="form-label">Correo Electronico </label>
+                                                                                                    <label for="iconInput" class="form-label">Correo Electrónico </label>
                                                                                                     <div class="form-icon">
                                                                                                         <input type="text" class="form-control form-control-icon"
                                                                                                             id="iconInput" placeholder="example@gmail.com" name="pjrl_correo">
@@ -1613,21 +1613,21 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Profesión.</label>
+                                                                                                    <label for="basiInput" class="form-label">Profesión</label>
                                                                                                     <input type="text" class="form-control" name="pjrl_profesion">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Lugar de trabajo.</label>
+                                                                                                    <label for="basiInput" class="form-label">Lugar de trabajo</label>
                                                                                                     <input type="text" class="form-control" name="pjrl_lugar_trabajo">
                                                                                                 </div>
                                                                                             </div>
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Teléfono.</label>
+                                                                                                    <label for="basiInput" class="form-label">Teléfono</label>
                                                                                                     <input type="text" class="form-control" name="pjrl_telefono">
                                                                                                 </div>
                                                                                             </div>
@@ -1773,7 +1773,7 @@
                                                                                                 <div>
                                                                                                     <label for="basiInput" class="form-label">¿ESTA EMPRESA ES PÚBLICA O PRIVADA?  </label>
                                                                                                     <br>
-                                                                                                    <label for="basiInput" class="form-label">Publica</label>
+                                                                                                    <label for="basiInput" class="form-label">Pública</label>
                                                                                                     <input class="form-check-input" type="radio" name="pjpr_publica_privada" id="formradioRight6" value="109BFF">
                                                                                                     <label for="basiInput" class="form-label">Privada</label>
                                                                                                     <input class="form-check-input" type="radio" name="pjpr_publica_privada" id="formradioRight6" value="111BFF">
@@ -2648,7 +2648,7 @@
                                                                                             <!--end col-->
                                                                                             <div class="col-xxl-3 col-md-6">
                                                                                                 <div>
-                                                                                                    <label for="basiInput" class="form-label">Relacón</label>
+                                                                                                    <label for="basiInput" class="form-label">Relación</label>
                                                                                                     <input type="text" class="form-control" id="basiInput" name="pjrf_relacion[]">
                                                                                                 </div>
                                                                                             </div>

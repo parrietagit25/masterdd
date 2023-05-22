@@ -46,8 +46,8 @@ class UsuarioController {
     public function autenticar($email, $password) {
         return $this->usuarioModel->autenticar($email, $password);
     }
-
-    public function obtenerTipos(){
+    
+    public function tiposUsuarios(){
         return $this->usuarioModel->obtenerTodos($this->tabla_tipos);
     } 
     public function agregar_usuario($datos){
