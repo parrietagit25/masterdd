@@ -20,6 +20,7 @@ class CcclienteController {
   private $tabla_paises;
   private $tabla_codigo;
   private $tabla_cc_expediente;
+  private $tabla_cc_adjuntos_general;
 
     public function __construct() {
         $this->ModelGlobal = new ModelGlobal();
@@ -36,6 +37,11 @@ class CcclienteController {
         $this->tabla_paises = "paises";
         $this->tabla_codigo = "codigos";
         $this->tabla_cc_expediente = "cc_expediente";
+        $this->tabla_cc_adjuntos_general = "adjuntos_general";
+    }
+
+    public function obtenerTodosAdjuntos($id){
+        return $this->ModelGlobal->obtenerRegistrosPorId($this->tabla_cc_adjuntos_general, " id_general = $id ");
     }
 
     public function obtenerUsuarios() {

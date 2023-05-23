@@ -29,6 +29,7 @@ $expuestas = $cCclienteController->obtenerExpuestas($id);
 $declaracion_jurada = $cCclienteController->obtenerDeclaracionJurada($id);
 $documentos_adjuntos = $cCclienteController->ontenerDocumentosAdjuntos($id);
 $uso_interno = $cCclienteController->obtenerUsoInterno($id);
+$todos_adjuntos = $cCclienteController->obtenerTodosAdjuntos($id);
 
 if (isset($_GET['editar_formulario_cc'])) { ?>
 
@@ -3260,5 +3261,53 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
         </div>
     </div>
 <?php }elseif(isset($_GET['adjuntos_formulario_cc'])){ ?>
-<h1>Adjuntos</h1>
+<button class="btn btn-primary" onclick="agregar_adjuntos(<?php echo $_GET['id']; ?>, 'registrar_cClienteAdjuntos', 'registar_ccliente_adjuntos', 'cClienteAdjuntos')">Agregar Adjunto</button>
+<br>
+<table id="buttons-datatables" class="display table table-bordered" style="width:100%">
+    <thead>
+        <tr>
+            <th>Descripcion del adjunto</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php foreach ($todos_adjuntos  as $key => $value) { ?>
+        <tr>
+            <td><a href="<?php echo $value['link_desc']; ?>" target="_blank"><?php echo $value['descripcion']; ?></a></td>
+            <td>
+                <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick=""><i class="ri-delete-bin-5-line"></i></button>
+            </td>
+        </tr>
+        <?php } ?>
+    </tbody>    
+</table>
+<?php }elseif(isset($_GET['adjuntos_cc_pn_reg'])){ ?> 
+
+    <div class="card-body">
+        <div class="live-preview">
+            <div class="row gy-4">
+                <!--end col-->
+                <div class="col-xxl-6 col-md-6">
+                    <div>
+                        <label for="basiInput" class="form-label">Descripcion</label>
+                        <input type="text" class="form-control" id="basiInput" name="fdc_nombre_completo" value="">
+                    </div>
+                </div>
+                <!--end col-->
+                <div class="col-xxl-6 col-md-6">
+                    <div>
+                        <label for="basiInput" class="form-label">Adjunto</label>
+                        <input type="file" class="form-control" id="basiInput" name="fdc_firma" value="">
+                        <br>
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <div class="d-none code-view">
+            <pre class="language-markup" style="height: 450px;">
+        </div>
+    </div>
+
 <?php } ?>

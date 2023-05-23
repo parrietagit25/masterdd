@@ -1052,7 +1052,7 @@ class CcclienteController {
         // PROPIETARIOS DE LOS BENEFICIARIOS FINALES- PERSONA JURÍDICA array
 
         $datos_cc_pj_pbfpj = [];
-        unset($datos['pjpbj_fecha_nacimiento']);
+        //unset($datos['pjpbj_fecha_nacimiento']);
         
         foreach ($datos as $key => $value) {
             if (strpos($key, 'pjpbj_') === 0) {

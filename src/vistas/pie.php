@@ -1016,6 +1016,50 @@
 
         }
 
+        async function modal_ver(id_ver, modulo, modal_show, contenido_modal){
+
+            var modulo = modulo;
+
+            if (modulo == 'ver_modal') {
+                try {
+                    
+                    var id = id_ver;
+                    var modal_show = modal_show;
+                    var contenido_modal = contenido_modal;
+
+                    const response = await fetch('vistas/modal/modalVercCliente.php?adjuntos_formulario_cc=1&id=' + id);
+                    const data = await response.text();
+                    $('#'+modal_show+'').modal('show');
+                    document.querySelector('#'+contenido_modal+'').innerHTML = data;
+                } catch (error) {
+                    console.log('Error al obtener los detalles:', error);
+                }
+            }            
+
+        }
+
+        async function agregar_adjuntos(id_general, modal_show, contenido_modal, ocultar_modal){
+
+            console.log('ponchera');
+
+            var modulo = modulo;
+            
+            try {
+                
+                var id = id_general;
+                var modal_show = modal_show;
+                var contenido_modal = contenido_modal;
+
+                const response = await fetch('vistas/modal/modalVercCliente.php?adjuntos_cc_pn_reg=1&id=' + id);
+                const data = await response.text();
+                $('#'+ocultar_modal+'').modal('hide');
+                $('#'+modal_show+'').modal('show');
+                document.querySelector('#'+contenido_modal+'').innerHTML = data;
+            } catch (error) {
+                console.log('Error al obtener los detalles:', error);
+            }
+        }
+
     </script>
         
         <!-- END layout-wrapper  incluido por el tema -->

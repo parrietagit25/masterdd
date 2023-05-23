@@ -1982,10 +1982,10 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                             <thead>
                                                                 <tr>
                                                                     <th>Nombre Completo</th>
-                                                                    <th>Porcentaje</th>
                                                                     <th>Nacionalidad</th>
-                                                                    <th>Profesión</th>
+                                                                    <th>Fecha N.</th>
                                                                     <th>Correo</th>
+                                                                    <th>Porcentaje</th>
                                                                     <th>Acciones</th>
                                                                 </tr>
                                                             </thead>
@@ -1994,14 +1994,14 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                                                                 <tr>
                                                                     <td><input value="<?php echo $value['pjpbj_nombre_completo']; ?>" name="pjpbj_nombre_completo[]" class="form-control"> </td>
                                                                     <td><input value="<?php echo $value['pjpbj_nacionalidad']; ?>" name="pjpbj_nacionalidad[]" class="form-control"></td>
-                                                                    <td><input value="<?php echo $value['pjpbj_profesion_oficio']; ?>" name="pjpbj_profesion_oficio[]" class="form-control"></td>
+                                                                    <td><input value="<?php echo $value['pjpbj_pais_nacimineto']; ?>" name="pjpbj_fecha_nacimiento[]" class="form-control"></td>
                                                                     <td><input value="<?php echo $value['pjpbj_correo']; ?>" name="pjpbj_correo[]" class="form-control"></td>
                                                                     <td><input value="<?php echo $value['pjpbj_porcentaje_participacion']; ?>" name="pjpbj_porcentaje_participacion[]" class="form-control"></td>
                                                                     <td><a href="#" onclick="eliminar_pj_propietario_bf(<?php echo $value['id']; ?>, <?php echo $id; ?>)" class="btn btn-danger">Eliminar</a></td>
                                                                     <input type="hidden" name="pjpbj_genero[]" value="<?php echo $value['pjpbj_genero']; ?>">
                                                                     <input type="hidden" name="pjpbj_cedula_pasaporte[]" value="<?php echo $value['pjpbj_cedula_pasaporte']; ?>">
                                                                     <input type="hidden" name="pjpbj_pais_nacimineto[]" value="<?php echo $value['pjpbj_pais_nacimineto']; ?>">
-                                                                    <input type="hidden" name="pjpbj_fecha_nacimiento[]" value="<?php echo $value['pjpbj_pais_nacimineto']; ?>">
+                                                                    <input type="hidden" value="<?php echo $value['pjpbj_profesion_oficio']; ?>" name="pjpbj_profesion_oficio[]">
                                                                     <input type="hidden" name="pjpbj_pais_residencia[]" value="<?php echo $value['pjpbj_pais_residencia']; ?>">
                                                                     <input type="hidden" name="pjpbj_pais_residencia_fiscal[]" value="<?php echo $value['pjpbj_pais_residencia_fiscal']; ?>">
                                                                     <input type="hidden" name="pjpbj_lugar_trabajo[]" value="<?php echo $value['pjpbj_lugar_trabajo']; ?>">
