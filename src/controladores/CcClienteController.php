@@ -308,6 +308,35 @@ class CcclienteController {
                 }elseif($key == 'fdcad_evidencia_ingresos'){
 
                     $ruta = "vistas/adjuntos/evidencia_ingreso/";
+
+                }elseif($key == 'link_descrip'){
+
+                    $ruta = "vistas/adjuntos/adjuntos_g_pn/";
+                }
+
+                if (strpos($key, 'link_descrip') === 0) { 
+                    $ruta = $ruta;
+                    $file_name = basename($_FILES[$key]["name"]);
+                    $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);
+                    $new_file_name = $id_general.'_'.uniqid() . "." . $file_ext;
+                    $target_file = $ruta . $new_file_name;
+                    $uploadOk = 1;
+                    
+                    // Verifica si el archivo ya existe
+                    if (file_exists($target_file)) {
+                        //echo "El archivo ya existe.";
+                        $uploadOk = 0;
+                    }
+            
+                    // Intenta mover el archivo a la carpeta de destino
+                    if ($uploadOk == 1 && move_uploaded_file($_FILES[$key]["tmp_name"], $target_file)) {
+                        $where = "id_general = $id_general";
+                        $datos = array($key=>$target_file);
+                        $this->ModelGlobal->actualizar($this->tabla_cc_adjuntos_general, $where, $datos);
+                    } else {
+                        //echo "Error al subir el archivo.";
+                    }
+                    
                 }
 
                 if (strpos($key, 'fdcad_') === 0) { 

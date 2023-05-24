@@ -25,19 +25,21 @@
                                                 <h5 class="modal-title" id="exampleMocClienteFormulario"></h5>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
-                                            <div class="modal-body">
-                                                <h6 class="fs-15">
-                                                    Registrar Adjuntos
-                                                </h6>
-                                                <div id="registar_ccliente_adjuntos">
+                                            <form action="" method="POST" enctype="multipart/form-data">
+                                                <div class="modal-body">
+                                                    <h6 class="fs-15">
+                                                        Registrar Adjuntos
+                                                    </h6>
+                                                    <div id="registar_ccliente_adjuntos">
 
+                                                    </div>
+                                                    
                                                 </div>
-                                                
-                                            </div>
-                                            <div class="modal-footer">
-                                                <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
-                                                <button class="btn btn-primary">Registrar Adjuntos</button>
-                                            </div>
+                                                <div class="modal-footer">
+                                                    <a href="javascript:void(0);" class="btn btn-link link-success fw-medium" data-bs-dismiss="modal"><i class="ri-close-line me-1 align-middle"></i> Cerrar</a>
+                                                    <button class="btn btn-primary" type="submit" name="registrar_adjunto">Registrar Adjuntos</button>
+                                                </div>
+                                            </form>
                                         </div><!-- /.modal-content -->
                                     </div><!-- /.modal-dialog -->
                                 </div><!-- /.modal -->

@@ -3290,14 +3290,15 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                 <div class="col-xxl-6 col-md-6">
                     <div>
                         <label for="basiInput" class="form-label">Descripcion</label>
-                        <input type="text" class="form-control" id="basiInput" name="fdc_nombre_completo" value="">
+                        <input type="text" class="form-control" id="basiInput" name="descripcion" value="">
                     </div>
                 </div>
                 <!--end col-->
                 <div class="col-xxl-6 col-md-6">
                     <div>
                         <label for="basiInput" class="form-label">Adjunto</label>
-                        <input type="file" class="form-control" id="basiInput" name="fdc_firma" value="">
+                        <input type="file" class="form-control" id="basiInput" name="link_descrip" value="">
+                        <input type="hidden" name="id_general" value="<?php echo $_GET['id']; ?>">
                         <br>
                     </div>
                 </div>

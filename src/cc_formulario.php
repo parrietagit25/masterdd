@@ -34,6 +34,11 @@ if (isset($_POST['eliminar_cc_cliente_pj'])) {
   $alerta = 3;
 }
 
+if (isset($_POST['registrar_adjunto'])) {
+  $cCclienteController->subir_archivos($_FILES, $id_general);
+  $alerta = 2;
+}
+
 if (isset($_GET["view"])) {
     $view = $_GET["view"];
   

@@ -19,7 +19,7 @@ class Conexion {
       try {
           //$conn = new PDO("mysql:host={$this->server};dbname=dbglmd0nhlfimi", 'u7tutx9cpc5lf', 'Chicho1787$$$');
           //$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-          $connectionString = "odbc:Driver={SQL Server};Server=PEDRO\SQLEXPRESS;Database=masterdd;Trusted_Connection=yes;";
+          $connectionString = "odbc:Driver={SQL Server};Server=PCRID239\SQLEXPRESS;Database=masterdd;Trusted_Connection=yes;";
           $conn = new PDO($connectionString);
           //echo "Conexión exitosa a la base de datos MySQL.";
       } catch (PDOException $e) {
