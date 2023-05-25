@@ -794,9 +794,9 @@
                                                             <td><?php echo $value['estado']; ?></td>
                                                             <td>
                                                                 <button type="button" class="btn btn-secondary btn-icon waves-effect waves-light" onclick="id_modal_edit_rec_pj(<?php echo $value['id']; ?>)"><i class="ri-edit-line"></i></button>
-                                                                <button type="button" class="btn btn-primary btn-icon waves-effect waves-light" onclick="modal_portada_id(<?php echo $value['id']; ?>)"><i class="ri-file-2-fill"></i></button>
-                                                                <button type="button" class="btn btn-success btn-icon waves-effect waves-light" onclick="modal_contrato_id(<?php echo $value['id']; ?>)"><i class=" ri-file-copy-2-line"></i></button>
-                                                                <button type="button" class="btn btn-warning btn-icon waves-effect waves-light"><i class=" ri-attachment-2"></i></button>
+                                                                <button type="button" class="btn btn-primary btn-icon waves-effect waves-light" onclick="modal_portada_pj_id(<?php echo $value['id']; ?>)"><i class="ri-file-2-fill"></i></button>
+                                                                <button type="button" class="btn btn-success btn-icon waves-effect waves-light" onclick="modal_contrato_id_pj(<?php echo $value['id']; ?>)"><i class=" ri-file-copy-2-line"></i></button>
+                                                                <!--<button type="button" class="btn btn-warning btn-icon waves-effect waves-light"><i class=" ri-attachment-2"></i></button>-->
                                                                 <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="id_modal_eliminar_rec_pj(<?php echo $value['id']; ?>)"><i class="ri-delete-bin-5-line"></i></button>
                                                             </td>
                                                         </tr>

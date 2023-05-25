@@ -309,12 +309,13 @@ class CcclienteController {
 
                     $ruta = "vistas/adjuntos/evidencia_ingreso/";
 
-                }elseif($key == 'link_descrip'){
-
+                }elseif($key == 'link_desc'){
+                    
                     $ruta = "vistas/adjuntos/adjuntos_g_pn/";
                 }
 
-                if (strpos($key, 'link_descrip') === 0) { 
+                if (strpos($key, 'link_desc') === 0) { 
+                    $ruta = "vistas/adjuntos/adjuntos_g_pn/";
                     $ruta = $ruta;
                     $file_name = basename($_FILES[$key]["name"]);
                     $file_ext = pathinfo($file_name, PATHINFO_EXTENSION);

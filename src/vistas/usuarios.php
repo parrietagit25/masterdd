@@ -149,40 +149,51 @@
                         </div>
                     </div>
 
-                    <div class="container">
+                    <div class="col-xxl-12">
                         <h1 class="my-4">Usuarios </h1>
-                        <button style="margin:5px;" class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#registrarDocumentacion">Registrar Usuario</button>
-                        <br>
-                        <table id="buttons-datatables" class="display table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th>ID</th>
-                                    <th>Nombre</th>
-                                    <th>Email</th>
-                                    <th>Tipos de usuario</th>
-                                    <th>Status</th>
-                                    <th>Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php foreach ($todos_registros_user as $key => $value) { ?>
-                                    <tr>
-                                        <td><?php echo htmlspecialchars($value["id"]); ?></td>
-                                        <td><?php echo htmlspecialchars($value["nombre"]); ?></td>
-                                        <td><?php echo htmlspecialchars($value["email"]); ?></td>
-                                        <td><?php echo htmlspecialchars($value["tipo_user"]); ?></td>
-                                        <td><?php if($value["stat"]==1){ echo '<span style="color:green">ON</span>'; }else{ echo '<span style="color:red">OFF</span>'; } ?></td>
-                                        <td>
-                                            <button type="button" class="btn btn-secondary btn-icon waves-effect waves-light" onclick="modal_edit(<?php echo $value['id']; ?>, 'edit_user', 'edit_contenido', 'edit_modal_eliminar')"><i class="ri-edit-line"></i></button>
-                                            <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="modal_eliminar(<?php echo $value['id']; ?>, 'user', 'eliminar_contenido', 'contenido_modal_eliminar')"><i class="ri-delete-bin-5-line"></i></button>
-                                        </td>
-                                    </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="container">
+                                    
+                                    <button style="margin:5px;" class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#registrarDocumentacion">Registrar Usuario</button>
+                                    <br>
+                                    <table id="buttons-datatables" class="display table table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Nombre</th>
+                                                <th>Email</th>
+                                                <th>Tipos de usuario</th>
+                                                <th>Status</th>
+                                                <th>Acciones</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php foreach ($todos_registros_user as $key => $value) { ?>
+                                                <tr>
+                                                    <td><?php echo htmlspecialchars($value["id"]); ?></td>
+                                                    <td><?php echo htmlspecialchars($value["nombre"]); ?></td>
+                                                    <td><?php echo htmlspecialchars($value["email"]); ?></td>
+                                                    <td><?php echo htmlspecialchars($value["tipo_user"]); ?></td>
+                                                    <td><?php if($value["stat"]==1){ echo '<span style="color:green">ON</span>'; }else{ echo '<span style="color:red">OFF</span>'; } ?></td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-secondary btn-icon waves-effect waves-light" onclick="modal_edit(<?php echo $value['id']; ?>, 'edit_user', 'edit_contenido', 'edit_modal_eliminar')"><i class="ri-edit-line"></i></button>
+                                                        <button type="button" class="btn btn-danger btn-icon waves-effect waves-light" onclick="modal_eliminar(<?php echo $value['id']; ?>, 'user', 'eliminar_contenido', 'contenido_modal_eliminar')"><i class="ri-delete-bin-5-line"></i></button>
+                                                    </td>
+                                                </tr>
+                                            <?php } ?>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
 
 <?php include 'pie.php'; ?>

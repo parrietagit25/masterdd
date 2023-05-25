@@ -4260,7 +4260,7 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
 
 <?php }elseif(isset($_GET['portada_formulario_cc'])){ ?>
     <div class="col-xl-3 col-lg-4 col-sm-6" style="margin-left:75px;">
-        <a href="vistas/documentos_generados/generar_pdf.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bxs-file-pdf" style="font-size: 100px;" ></i></a>
+        <a href="vistas/documentos_generados/general_pdf_pj_.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bxs-file-pdf" style="font-size: 100px;" ></i></a>
     </div>
 <?php }elseif(isset($_GET['recaudos_contratos_formulario_cc'])){ ?> 
     <div class="container">
@@ -4269,64 +4269,129 @@ if (isset($_GET['editar_formulario_cc'])) { ?>
                 Contrato <br>
                 <a href="vistas/documentos_generados/contrato_aut.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-highlight" style="font-size: 100px;" ></i></a>
                 <br>
-                <button class="btn btn-success">Enviar por Email</button>
+                <!-- <button class="btn btn-success">Enviar por Email</button> -->
             </div>
             <div class="col-sm-4">
                 Declaracion de domicilio<br>
                 <a href="vistas/documentos_generados/declaracion_domicilio.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-building-house" style="font-size: 100px;" ></i></a>
                 <br>
-                <button href="" class="btn btn-success">Enviar por Email</button>
+                <!-- <button class="btn btn-success">Enviar por Email</button> -->
             </div>
             <div class="col-sm-4">
                 Declaracion de Actividad <br>
                 <a href="vistas/documentos_generados/declaracion_actividad.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-show" style="font-size: 100px;" ></i></a>
                 <br>
-                <button href="" class="btn btn-success">Enviar por Email</button>
+                <!-- <button class="btn btn-success">Enviar por Email</button> -->
             </div>
             <div class="col-sm-4" style="margin-top:20px;">
                 Pago de Familiares<br>
                 <a href="vistas/documentos_generados/pago_familiares.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bxs-group" style="font-size: 100px;" ></i></a>
                 <br>
-                <button href="" class="btn btn-success">Enviar por Email</button>
+                <!-- <button class="btn btn-success">Enviar por Email</button> -->
             </div>
             <div class="col-sm-4" style="margin-top:20px;">
                 Pago de Terceros<br>
                 <a href="vistas/documentos_generados/pago_terceros.php?id=<?php echo $id; ?>" target="_blank"><i class=" bx bx-user-circle" style="font-size: 100px;" ></i></a>
                 <br>
-                <button href="" class="btn btn-success">Enviar por Email</button>
+                <!-- <button class="btn btn-success">Enviar por Email</button> -->
             </div>
             <div class="col-sm-4" style="margin-top:20px;">
                 Traspaso PN<br>
                 <a href="vistas/documentos_generados/traspaso_pn.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-repost" style="font-size: 100px;" ></i></a>
                 <br>
-                <button href="" class="btn btn-success">Enviar por Email</button>
+                <!-- <button class="btn btn-success">Enviar por Email</button> -->
             </div>
             <div class="col-sm-4" style="margin-top:20px;">
                 Traspaso PJ<br>
                 <a href="vistas/documentos_generados/traspaso_pj.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-rotate-right" style="font-size: 100px;" ></i></a>
                 <br>
-                <button href="" class="btn btn-success">Enviar por Email</button>
+                <!-- <button class="btn btn-success">Enviar por Email</button> -->
             </div>
             <div class="col-sm-4" style="margin-top:20px;">
                 Exoneracion Total<br>
                 <a href="vistas/documentos_generados/exoneracion_total.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-user-voice" style="font-size: 100px;" ></i></a>
                 <br>
-                <button href="" class="btn btn-success">Enviar por Email</button>
+                <!-- <button class="btn btn-success">Enviar por Email</button> -->
             </div>
             <div class="col-sm-4" style="margin-top:20px;">
                 Tesoreria Municipal<br>
                 <a href="vistas/documentos_generados/tesoreria_municipal.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-building" style="font-size: 100px;" ></i></a>
                 <br>
-                <button href="" class="btn btn-success">Enviar por Email</button>
+                <!-- <button class="btn btn-success">Enviar por Email</button> -->
             </div>
             <div class="col-sm-4" style="margin-top:20px;">
                 Detalle de Transaccion<br>
                 <a href="vistas/documentos_generados/detalle_transaccion.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-transfer" style="font-size: 100px;" ></i></a>
                 <br>
-                <button href="" class="btn btn-success">Enviar por Email</button>
+                <!-- <button class="btn btn-success">Enviar por Email</button> -->
             </div>
         </div>
     </div>
 <?php }elseif(isset($_GET['adjuntos_formulario_cc'])){ ?>
 <h1>Adjuntos</h1>
-<?php } ?>
+<?php }elseif(isset($_GET['recaudos_contratos_formulario_cc_pj'])){ ?> 
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4">
+                Contrato <br>
+                <a href="vistas/documentos_generados/contrato_aut.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-highlight" style="font-size: 100px;" ></i></a>
+                <br>
+                <!-- <button class="btn btn-success">Enviar por Email</button> -->
+            </div>
+            <div class="col-sm-4">
+                Declaracion de domicilio<br>
+                <a href="vistas/documentos_generados/declaracion_domicilio.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-building-house" style="font-size: 100px;" ></i></a>
+                <br>
+                <!--<button class="btn btn-success">Enviar por Email</button>-->
+            </div>
+            <div class="col-sm-4">
+                Declaracion de Actividad <br>
+                <a href="vistas/documentos_generados/declaracion_actividad.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-show" style="font-size: 100px;" ></i></a>
+                <br>
+                <!--<button class="btn btn-success">Enviar por Email</button>-->
+            </div>
+            <div class="col-sm-4" style="margin-top:20px;">
+                Pago de Familiares<br>
+                <a href="vistas/documentos_generados/pago_familiares.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bxs-group" style="font-size: 100px;" ></i></a>
+                <br>
+                <!--<button class="btn btn-success">Enviar por Email</button>-->
+            </div>
+            <div class="col-sm-4" style="margin-top:20px;">
+                Pago de Terceros<br>
+                <a href="vistas/documentos_generados/pago_terceros.php?id=<?php echo $id; ?>" target="_blank"><i class=" bx bx-user-circle" style="font-size: 100px;" ></i></a>
+                <br>
+                <!--<button class="btn btn-success">Enviar por Email</button>-->
+            </div>
+            <div class="col-sm-4" style="margin-top:20px;">
+                Traspaso PN<br>
+                <a href="vistas/documentos_generados/traspaso_pn.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-repost" style="font-size: 100px;" ></i></a>
+                <br>
+                <!--<button class="btn btn-success">Enviar por Email</button>-->
+            </div>
+            <div class="col-sm-4" style="margin-top:20px;">
+                Traspaso PJ<br>
+                <a href="vistas/documentos_generados/traspaso_pj.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-rotate-right" style="font-size: 100px;" ></i></a>
+                <br>
+                <!--<button class="btn btn-success">Enviar por Email</button>-->
+            </div>
+            <div class="col-sm-4" style="margin-top:20px;">
+                Exoneracion Total<br>
+                <a href="vistas/documentos_generados/exoneracion_total.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-user-voice" style="font-size: 100px;" ></i></a>
+                <br>
+                <!--<button class="btn btn-success">Enviar por Email</button>-->
+            </div>
+            <div class="col-sm-4" style="margin-top:20px;">
+                Tesoreria Municipal<br>
+                <a href="vistas/documentos_generados/tesoreria_municipal.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-building" style="font-size: 100px;" ></i></a>
+                <br>
+                <!--<button class="btn btn-success">Enviar por Email</button>-->
+            </div>
+            <div class="col-sm-4" style="margin-top:20px;">
+                Detalle de Transaccion<br>
+                <a href="vistas/documentos_generados/detalle_transaccion.php?id=<?php echo $id; ?>" target="_blank"><i class="bx bx-transfer" style="font-size: 100px;" ></i></a>
+                <br>
+                <!--<button class="btn btn-success">Enviar por Email</button>-->
+            </div>
+        </div>
+    </div>
+<?php }

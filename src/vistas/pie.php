@@ -97,11 +97,41 @@
                 .catch(function(error) {
                 console.log('Error al obtener los detalles:', error);
                 });
-        }
+        } 
 
+        function modal_portada_pj_id(id_portada){
+            var id = id_portada;
+            fetch('vistas/modal/modalVercClienteJuridico.php?portada_formulario_cc=1&id=' + id)
+                .then(function(response) {
+                return response.text();
+                })
+                .then(function(data) {
+                    $('.portada_contenido').modal('show');
+                document.querySelector('#contenido_modal_portada').innerHTML = data;
+                })
+                .catch(function(error) {
+                console.log('Error al obtener los detalles:', error);
+                });
+        }
+        
         function modal_contrato_id(id_contrato){ 
             var id = id_contrato;
             fetch('vistas/modal/modalVercCliente.php?recaudos_contratos_formulario_cc=1&id=' + id)
+                .then(function(response) {
+                return response.text();
+                })
+                .then(function(data) {
+                    $('.documentos_contenido').modal('show');
+                document.querySelector('#contenido_modal_documentos').innerHTML = data;
+                })
+                .catch(function(error) {
+                console.log('Error al obtener los detalles:', error);
+                });
+        }
+
+        function modal_contrato_id_pj(id_contrato){ 
+            var id = id_contrato;
+            fetch('vistas/modal/modalVercClienteJuridico.php?recaudos_contratos_formulario_cc_pj=1&id=' + id)
                 .then(function(response) {
                 return response.text();
                 })
